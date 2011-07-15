@@ -26,9 +26,14 @@
     </filter>
   </appender>
 
-  <category additivity="false" name="org.onehippo.forge.psutils.jcrmockup">
-    <level value="debug"/>
+  <category additivity="false" name="org.onehippo.forge.utilities">
+    <level value="info"/>
     <appender-ref ref="CONSOLE"/>
+  </category>
+
+  <category name="org">
+    <level value="error"/>
+    <appender-ref ref="CONSOLE" />
   </category>
 
   <root>
