@@ -19,8 +19,8 @@ commons/src/main/java/org/onehippo/forge/utilities/simpleocm/util/ConverterAdapt
 commons/src/main/java/org/onehippo/forge/utilities/simpleocm/util/FieldWrapper.java -text
 commons/src/main/java/org/onehippo/forge/utilities/simpleocm/util/GenericsUtil.java -text
 commons/src/main/java/org/onehippo/forge/utilities/simpleocm/util/RepositoryUtil.java -text
-commons/src/test/java/org/onehippo/forge/psutils/jcrmockup/ISO8601Test.java -text
-commons/src/test/java/org/onehippo/forge/psutils/jcrmockup/TestJcrMockup.java -text
+commons/src/test/java/org/onehippo/forge/utilities/jcrmockup/ISO8601Test.java -text
+commons/src/test/java/org/onehippo/forge/utilities/jcrmockup/TestJcrMockup.java -text
 commons/src/test/resources/content.xml -text
 commons/src/test/resources/log4j.dtd -text
 commons/src/test/resources/log4j.xml -text
