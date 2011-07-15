@@ -6,3 +6,16 @@ commons/src/main/java/org/onehippo/forge/utilities/jcrmockup/MockNode.java -text
 commons/src/main/java/org/onehippo/forge/utilities/jcrmockup/MockProperty.java -text
 commons/src/main/java/org/onehippo/forge/utilities/jcrmockup/NodeIteratorAnswer.java -text
 commons/src/main/java/org/onehippo/forge/utilities/jcrmockup/PropertyIteratorAnswer.java -text
+commons/src/main/java/org/onehippo/forge/utilities/simpleocm/JcrNodeType.java -text
+commons/src/main/java/org/onehippo/forge/utilities/simpleocm/JcrPath.java -text
+commons/src/main/java/org/onehippo/forge/utilities/simpleocm/build/NodeBuilder.java -text
+commons/src/main/java/org/onehippo/forge/utilities/simpleocm/build/NodeBuilderImpl.java -text
+commons/src/main/java/org/onehippo/forge/utilities/simpleocm/build/PropertyBuilder.java -text
+commons/src/main/java/org/onehippo/forge/utilities/simpleocm/load/BeanLoader.java -text
+commons/src/main/java/org/onehippo/forge/utilities/simpleocm/load/BeanLoaderImpl.java -text
+commons/src/main/java/org/onehippo/forge/utilities/simpleocm/load/FieldSetter.java -text
+commons/src/main/java/org/onehippo/forge/utilities/simpleocm/util/Converter.java -text
+commons/src/main/java/org/onehippo/forge/utilities/simpleocm/util/ConverterAdapter.java -text
+commons/src/main/java/org/onehippo/forge/utilities/simpleocm/util/FieldWrapper.java -text
+commons/src/main/java/org/onehippo/forge/utilities/simpleocm/util/GenericsUtil.java -text
+commons/src/main/java/org/onehippo/forge/utilities/simpleocm/util/RepositoryUtil.java -text

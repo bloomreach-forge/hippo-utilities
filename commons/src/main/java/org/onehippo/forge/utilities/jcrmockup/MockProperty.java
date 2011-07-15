@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.onehippo.forge.psutils.jcrmockup;
+package org.onehippo.forge.utilities.jcrmockup;
 
 import java.util.ArrayList;
 import java.util.List;
