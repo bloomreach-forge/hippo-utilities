@@ -149,7 +149,7 @@
       <dependency>
         <groupId>org.onehippo.cms7</groupId>
         <artifactId>hippo-repository-builtin</artifactId>
-        <version>${hippo.cms.version}</version>
+        <version>${hippo.repository.version}</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
@@ -161,8 +161,13 @@
       <dependency>
         <groupId>org.onehippo.cms7</groupId>
         <artifactId>hippo-repository-connector</artifactId>
-        <version>${hippo.cms.version}</version>
+        <version>${hippo.repository.version}</version>
         <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.onehippo.cms7</groupId>
+        <artifactId>hippo-repository-api</artifactId>
+        <version>${hippo.repository.version}</version>
       </dependency>
       <dependency>
         <groupId>org.onehippo.cms7</groupId>
