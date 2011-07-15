@@ -1,5 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.onehippo.cms7</groupId>
+    <artifactId>hippo-cms7-project</artifactId>
+    <version>7</version>
+  </parent>
+
   <name>Hippo Utilities Parent pom</name>
   <groupId>org.onehippo.forge.utilities</groupId>
   <artifactId>hippo-utilities</artifactId>
@@ -12,20 +19,14 @@
     <hippo.hst.version>2.22.02</hippo.hst.version>
 
     <guava.version>r06</guava.version>
-    <slf4j.log4j12.version>1.6.1</slf4j.log4j12.version>
-    <slf4j.api.version>1.6.1</slf4j.api.version>
-    <log4j.version>1.2.16</log4j.version>
-    <javax.jcr.version>2.0</javax.jcr.version>
     <javax.activation.version>1.1</javax.activation.version>
     <javax.transaction.version>1.1</javax.transaction.version>
     <commons-beanutils.version>1.8.3</commons-beanutils.version>
     <commons-net.version>2.0</commons-net.version>
     <jta.version>1.1</jta.version>
-    <servlet-api.version>2.4</servlet-api.version>
     <antlr.version>3.2</antlr.version>
     <wagon-svn.version>1.9</wagon-svn.version>
     <wagon-ftp.version>1.0-beta-6</wagon-ftp.version>
-    <wicket.version>1.4.7</wicket.version>
     <xstream.version>1.3.1</xstream.version>
 
     <!-- TEST DEPENDENCIES-->
@@ -34,12 +35,8 @@
     <fakeftp.version>2.2</fakeftp.version>
 
     <!-- Documentation -->
-    <maven.plugin.javadoc.version>2.7</maven.plugin.javadoc.version>
     <maven.plugin.site.version>3.0-beta-3</maven.plugin.site.version>
     <maven.plugin.jxr.version>2.2</maven.plugin.jxr.version>
-    <maven.plugin.taglib.version>2.4</maven.plugin.taglib.version>
-
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
   <scm>
@@ -175,41 +172,6 @@
       </dependency>
 
       <dependency>
-        <groupId>javax.jcr</groupId>
-        <artifactId>jcr</artifactId>
-        <version>${javax.jcr.version}</version>
-        <scope>provided</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>org.apache.wicket</groupId>
-        <artifactId>wicket</artifactId>
-        <version>${wicket.version}</version>
-        <scope>provided</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-log4j12</artifactId>
-        <version>${slf4j.log4j12.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>jcl-over-slf4j</artifactId>
-        <version>${slf4j.api.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-        <version>${slf4j.api.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>log4j</groupId>
-        <artifactId>log4j</artifactId>
-        <version>${log4j.version}</version>
-      </dependency>
-
-      <dependency>
         <groupId>com.thoughtworks.xstream</groupId>
         <artifactId>xstream</artifactId>
         <version>${xstream.version}</version>
@@ -222,6 +184,7 @@
         <version>${testng.version}</version>
         <scope>test</scope>
       </dependency>
+
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-all</artifactId>
@@ -236,21 +199,12 @@
     <repository>
       <id>hippo</id>
       <name>Hippo maven 2 repository</name>
-      <url>http://repository.onehippo.org/maven2/</url>
+      <url>http://maven.onehippo.com/maven2/</url>
       <snapshots/>
       <releases>
         <updatePolicy>never</updatePolicy>
       </releases>
       <layout>default</layout>
-    </repository>
-    <repository>
-      <id>hippo-maven2-snapshots</id>
-      <name>Hippo Maven 2</name>
-      <url>http://maven.onehippo.com/maven2-private-snapshots/</url>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots
-        >
     </repository>
   </repositories>
 
@@ -277,7 +231,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>${maven.plugin.javadoc.version}</version>
         <configuration>
           <aggregate>true</aggregate>
           <source>1.6</source>
