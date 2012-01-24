@@ -1,3 +1,15 @@
 /*.iml
 /.idea
 /.target
+cms/.classpath
+cms/.project
+cms/.settings
+commons/.classpath
+commons/.project
+commons/.settings
+content/.classpath
+content/.project
+content/.settings
+hst/.classpath
+hst/.project
+hst/.settings
