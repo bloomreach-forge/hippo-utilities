@@ -213,6 +213,7 @@
   </repositories>
 
   <modules>
+    <module>content</module>
     <module>cms</module>
     <module>hst</module>
     <module>commons</module>
