@@ -10,6 +10,7 @@ commons/.settings
 content/.classpath
 content/.project
 content/.settings
+content/target
 hst/.classpath
 hst/.project
 hst/.settings
