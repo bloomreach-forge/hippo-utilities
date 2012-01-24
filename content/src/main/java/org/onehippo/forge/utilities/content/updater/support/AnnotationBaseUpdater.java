@@ -24,47 +24,86 @@ import javax.jcr.RepositoryException;
 import org.apache.commons.lang.StringUtils;
 import org.hippoecm.repository.ext.UpdaterContext;
 import org.hippoecm.repository.ext.UpdaterItemVisitor;
+import org.hippoecm.repository.ext.UpdaterModule;
 import org.onehippo.forge.utilities.content.updater.annotations.PathVisitor;
 import org.onehippo.forge.utilities.content.updater.annotations.QueryVisitor;
 import org.onehippo.forge.utilities.content.updater.annotations.Updater;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class AnnotationBaseUpdater extends BaseUpdater {
+/**
+ * AnnotationBaseUpdater
+ * <P>AnnotationBaseUpdater supports {@link Updater}, {@link PathVisitor} and {@link QueryVisitor} for your convenience. 
+ * So you can easily implement your custom updater only by using annotations!</P>
+ * <P>You may define {@link PathVisitor} or/and {@link QueryVisitor} in any methods 
+ * which should be public and have only one parameter of {@link javax.jcr.Node} type.</P>
+ * <P>Here is a simple example:</P>
+ * <PRE>
+ * @Updater(name = "Updater-demosite-2.05.00",
+ *         start = { "demosite-2.04.00" },
+ *         end = { "demosite-2.05.00" })
+ * public class Updater_2_05_00 extends AnnotationBaseUpdater {
+ * 
+ *     @PathVisitor(
+ *             paths={
+ *                     "/hippo:configuration/hippo:initialize/hippo-namespaces-demosite-comment",
+ *                     "/hippo:configuration/hippo:initialize/demosite-sitemap"
+ *                 }
+ *             )
+ *     public void deleteInitializeNodes(Node node) throws RepositoryException { node.remove(); }
+ * 
+ *     @PathVisitor(
+ *             paths={
+ *                     "/hippo:namespaces/demosite/comment",
+ *                     "/hst:hst/hst:configurations/demosite/hst:sitemap"
+ *                 }
+ *             )
+ *     public void deleteNamespaceConfigurationNodes(Node node) throws RepositoryException { node.remove(); }
+ * }
+ * </PRE>
+ * <P>
+ * In the example above, the updater class defines its name and start/end version tags. 
+ * So, the updater will run on the system having 'demosite-2.04.00' value in '/hippo:configuration/hippo:initialize' node. 
+ * After running the updater, the system will have a new tag version, 'demosite-2.05.00' value in the node.
+ * The example updater implementation shown above defined two methods, both of which must be public and 
+ * have only one {@link javax.jcr.Node} type argument. The first method, #deleteInitializeNodes(Node), 
+ * is annotated by {@link PathVisitor}, so {@link AnnotationBaseUpdater} will automatically register visitors 
+ * by the paths and the visitors will invoke the #deleteInitializeNodes(Node) automatically. 
+ * In the example, it just removes the visiting nodes in order to re-initialize the initialize items.
+ * Also, the #deleteNamespaceConfigurationNodes(Node) method defines {@link PathVisitor} annotation as well 
+ * in order to remove namespace nodes and configuration nodes. 
+ * Anyway, you can define any methods with {@link PathVisitor} or {@link QueryVisitor}. 
+ * AnnotationBaseUpdater will register visitors to invoke your methods automatically.
+ * </P>
+ * 
+ * @author Woonsan Ko
+ * @version $Id$
+ */
+public class AnnotationBaseUpdater implements UpdaterModule {
 
     private static Logger log = LoggerFactory.getLogger(AnnotationBaseUpdater.class);
 
     private Updater updater;
 
     public void register(final UpdaterContext context) {
+
         updater = getClass().getAnnotation(Updater.class);
 
         if (updater == null) {
-            log.warn("The updater, {}, wasn't annotated by {}", getClass().getName(), Updater.class.getName());
-        } else {
-            String name = updater.name();
-            if (StringUtils.isBlank(name)) {
-                log.warn("The name of the updater is blank. Stop processing.");
-            } else {
-                log.debug("registering updater module name: '{}'", name);
-                context.registerName(name);
-                log.debug("registered updater module name: '{}'", name);
-            }
-        }
-
-        super.register(context);
-
-        if (updater == null) {
-            log.warn("The updater, {}, wasn't annotated by {}", getClass().getName(), Updater.class.getName());
+            log.warn("Stopped processing the updater, {}, wasn't annotated by {}.", getClass().getName(), Updater.class.getName());
             return;
         }
 
-        registerBeforeAfter(context);
-        registerVisitorsByMethodAnnotations(context);
-    }
+        String name = updater.name();
 
-    @Override
-    protected void registerTags(UpdaterContext context) {
+        if (StringUtils.isBlank(name)) {
+            log.warn("The name of the updater is blank. Stop processing.");
+        } else {
+            log.debug("registering updater module name: '{}'", name);
+            context.registerName(name);
+            log.debug("registered updater module name: '{}'", name);
+        }
+
         String[] start = updater.start();
 
         if (start != null) {
@@ -92,9 +131,7 @@ public class AnnotationBaseUpdater extends BaseUpdater {
                 log.debug("registered updater end tag: '{}'", tag);
             }
         }
-    }
 
-    protected void registerBeforeAfter(UpdaterContext context) {
         String[] before = updater.before();
 
         if (before != null) {
@@ -122,48 +159,76 @@ public class AnnotationBaseUpdater extends BaseUpdater {
                 log.debug("registered updater after: '{}'", value);
             }
         }
+
+        registerVisitorsByMethodAnnotations(context);
     }
 
-    protected void registerVisitorsByMethodAnnotations(final UpdaterContext context) {
+    private void registerVisitorsByMethodAnnotations(final UpdaterContext context) {
 
         Method[] methods = getClass().getMethods();
 
         for (final Method method : methods) {
+            
             PathVisitor pathVisitor = method.getAnnotation(PathVisitor.class);
             QueryVisitor queryVisitor = method.getAnnotation(QueryVisitor.class);
+            
+            if (pathVisitor == null && queryVisitor == null) {
+                log.debug("Skipping the method, {}, which wasn't annotated by PathVisitor or QueryVisitor.", method);
+                continue;
+            }
+
+            Class<?> [] paramTypes = method.getParameterTypes();
+            
+            if (paramTypes.length != 1 || !paramTypes[0].isAssignableFrom(Node.class)) {
+                log.warn("Invalid visitor annotated method, which should have only one javax.jcr.Node parameter: {}", method);
+                continue;
+            }
 
             if (pathVisitor != null) {
-                final String path = pathVisitor.path();
-                log.debug("registering path visitor on '{}' to invoke '{}'", path, method);
-                context.registerVisitor(new UpdaterItemVisitor.PathVisitor(path) {
-                    @Override
-                    protected void leaving(Node node, int level) throws RepositoryException {
-                        try {
-                            method.invoke(this, node);
-                        } catch (Exception e) {
-                            handleException(e, node, path);
+                String [] paths = pathVisitor.paths();
+                for (final String path : paths) {
+                    log.debug("registering path visitor on '{}' to invoke '{}'", path, method);
+                    context.registerVisitor(new UpdaterItemVisitor.PathVisitor(path) {
+                        @Override
+                        protected void leaving(Node node, int level) throws RepositoryException {
+                            try {
+                                method.invoke(AnnotationBaseUpdater.this, node);
+                            } catch (Exception e) {
+                                handleException(e, node, path);
+                            }
                         }
-                    }
-                });
-                log.debug("registered path visitor on '{}' to invoke '{}'", path, method);
+                    });
+                    log.debug("registered path visitor on '{}' to invoke '{}'", path, method);
+                }
             }
 
             if (queryVisitor != null) {
                 final String language = queryVisitor.language();
-                final String query = queryVisitor.query();
-                log.debug("registering query visitor on '{}' to invoke '{}'", query, method);
-                context.registerVisitor(new UpdaterItemVisitor.QueryVisitor(query, language) {
-                    @Override
-                    protected void leaving(Node node, int level) throws RepositoryException {
-                        try {
-                            method.invoke(this, node);
-                        } catch (Exception e) {
-                            handleException(e, node, query);
+                String [] queries = queryVisitor.queries();
+                for (final String query : queries) {
+                    log.debug("registering query visitor on '{}' to invoke '{}'", query, method);
+                    context.registerVisitor(new UpdaterItemVisitor.QueryVisitor(query, language) {
+                        @Override
+                        protected void leaving(Node node, int level) throws RepositoryException {
+                            try {
+                                method.invoke(AnnotationBaseUpdater.this, node);
+                            } catch (Exception e) {
+                                handleException(e, node, query);
+                            }
                         }
-                    }
-                });
-                log.debug("registered query visitor on '{}' to invoke '{}'", query, method);
+                    });
+                    log.debug("registered query visitor on '{}' to invoke '{}'", query, method);
+                }
             }
         }
     }
+
+    private void handleException(Exception ex, Node node, String name) {
+        try {
+            log.error("Caught exception for visitor " + name + " and node " + node.getPath(), ex);
+        } catch (Exception e) {
+            log.error("Caught exception in handleException() for visitor " + name, ex);
+        }
+    }
+
 }

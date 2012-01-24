@@ -20,10 +20,19 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+/**
+ * PathVisitor annotation
+ * 
+ * @author Woonsan Ko
+ */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.METHOD })
 public @interface PathVisitor {
 
-    String path();
+    /**
+     * The path values for PathVisitors
+     * @return
+     */
+    String [] paths();
 
 }

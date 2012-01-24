@@ -22,20 +22,44 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+/**
+ * Updater annotation
+ * @author Woonsan Ko
+ */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.TYPE })
 @Inherited
 public @interface Updater {
 
+    /**
+     * The updater name
+     * @return
+     */
     String name();
 
+    /**
+     * The values for start tags
+     * @return
+     */
     String[] start();
 
+    /**
+     * The values for end tags
+     * @return
+     */
     String[] end();
 
-    String[] before();
+    /**
+     * The values for before
+     * @return
+     */
+    String[] before() default {};
 
-    String[] after();
+    /**
+     * The values for after
+     * @return
+     */
+    String[] after() default {};
 
 }

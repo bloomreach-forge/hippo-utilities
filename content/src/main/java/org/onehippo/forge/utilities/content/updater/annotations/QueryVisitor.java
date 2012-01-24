@@ -22,12 +22,25 @@ import java.lang.annotation.Target;
 
 import javax.jcr.query.Query;
 
+/**
+ * QueryVisitor annotation
+ * 
+ * @author Woonsan Ko
+ */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.METHOD })
 public @interface QueryVisitor {
 
+    /**
+     * The query language value. The default value is "xpath".
+     * @return
+     */
     String language() default (Query.XPATH);
 
-    String query();
+    /**
+     * The query statements for query visitors
+     * @return
+     */
+    String [] queries();
 
 }
