@@ -1,6 +1,4 @@
 * text=auto !eol
-cms/src/main/java/org/onehippo/forge/utilities/cms/content/BaseCndUpdater.java -text
-cms/src/main/java/org/onehippo/forge/utilities/cms/content/BaseUpdater.java -text
 cms/src/main/java/org/onehippo/forge/utilities/cms/gallery/GalleryProcessor.java -text
 cms/src/main/java/org/onehippo/forge/utilities/cms/gallery/GalleryProcessorPlugin.java -text
 commons/src/main/java/org/onehippo/forge/utilities/AnnotationUtil.java -text
