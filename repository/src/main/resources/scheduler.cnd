@@ -1,0 +1,25 @@
+<'scheduler'='http://forge.onehippo.org/scheduler/nt/1.0'>
+
+[scheduler:scheduler]
+  - * (string) multiple
+
+[scheduler:jobConfiguration]
+  - * (boolean)
+  - * (date)
+  - * (double)
+  - * (long)
+  - * (string)
+  - * (string) multiple
+
+[scheduler:jobSchedule]
+  - scheduler:active (boolean)
+  - scheduler:cronExpression (string)
+  - scheduler:cronExpressionDescription (string)
+  - scheduler:jobClassName (string)
+  - scheduler:runInstantly (boolean)
+  + scheduler:jobConfiguration (scheduler:jobConfiguration)
+
+[scheduler:jobScheduleGroup]
+  - scheduler:active (boolean)
+  + * (scheduler:jobSchedule) multiple
+

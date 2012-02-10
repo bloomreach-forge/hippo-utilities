@@ -55,3 +55,4 @@ hst/src/test/java/org/onehippo/forge/utilities/hst/simpleocm/UtilsTest.java -tex
 hst/src/test/resources/content.xml -text
 hst/src/test/resources/log4j.dtd -text
 hst/src/test/resources/log4j.xml -text
+repository/src/main/resources/scheduler.cnd -text
