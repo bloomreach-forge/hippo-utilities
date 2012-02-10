@@ -11,6 +11,12 @@
 
   <dependencies>
     <dependency>
+      <groupId>org.onehippo.forge.utilities</groupId>
+      <artifactId>hippo-utilities-commons</artifactId>
+      <version>${project.version}</version>
+      <type>jar</type>
+    </dependency>
+    <dependency>
       <groupId>org.onehippo.cms7.hst</groupId>
       <artifactId>hst-api</artifactId>
       <scope>provided</scope>
@@ -29,6 +35,11 @@
     <dependency>
       <groupId>org.onehippo.cms7.hst</groupId>
       <artifactId>hst-content-beans</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.onehippo.cms7</groupId>
+      <artifactId>hippo-repository-engine</artifactId>
       <scope>provided</scope>
     </dependency>
     <dependency>

@@ -1,0 +1,1171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright 2011 Hippo
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  -->
+
+<sv:node xmlns:hippostd="http://www.onehippo.org/jcr/hippostd/nt/2.0"
+         xmlns:hippo="http://www.onehippo.org/jcr/hippo/nt/2.0.2"
+         xmlns:relateddocs="http://forge.onehippo.org/relateddocs/nt/1.1" xmlns:sv="http://www.jcp.org/jcr/sv/1.0"
+         sv:name="agenda">
+  <sv:property sv:name="jcr:primaryType" sv:type="Name">
+    <sv:value>hippostd:folder</sv:value>
+  </sv:property>
+  <sv:property sv:name="jcr:mixinTypes" sv:type="Name">
+    <sv:value>hippo:harddocument</sv:value>
+  </sv:property>
+  <sv:property sv:name="jcr:uuid" sv:type="String">
+    <sv:value>98267ef6-37c9-4842-b8d5-4bcab85e06eb</sv:value>
+  </sv:property>
+  <sv:property sv:name="hippo:paths" sv:type="String">
+    <sv:value>98267ef6-37c9-4842-b8d5-4bcab85e06eb</sv:value>
+    <sv:value>7ac7063d-7803-49aa-90f2-ab1c3ecd6642</sv:value>
+    <sv:value>996bcac5-86cf-49b5-a7a3-16a74863e814</sv:value>
+    <sv:value>2c21a29c-a5d1-4e84-aec4-594e5bf93b25</sv:value>
+    <sv:value>7d92c518-511b-49e0-92b5-126970694fa8</sv:value>
+    <sv:value>cafebabe-cafe-babe-cafe-babecafebabe</sv:value>
+  </sv:property>
+  <sv:property sv:name="hippo:related___pathreference" sv:type="String"/>
+  <sv:property sv:name="hippostd:foldertype" sv:type="String">
+    <sv:value>new-folder</sv:value>
+    <sv:value>new-document</sv:value>
+  </sv:property>
+  <sv:node sv:name="14-9-wie-denk-je-wel-dat-je-bent">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>hippo:handle</sv:value>
+    </sv:property>
+    <sv:property sv:name="jcr:mixinTypes" sv:type="Name">
+      <sv:value>hippo:hardhandle</sv:value>
+      <sv:value>hippo:translated</sv:value>
+    </sv:property>
+    <sv:property sv:name="jcr:uuid" sv:type="String">
+      <sv:value>c3085f6c-1a30-4c4d-a278-445b0267746d</sv:value>
+    </sv:property>
+    <sv:node sv:name="hippo:translation">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hippo:translation</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippo:language" sv:type="String">
+        <sv:value/>
+      </sv:property>
+      <sv:property sv:name="hippo:message" sv:type="String">
+        <sv:value>14-9: ‘Wie denk je wel dat je bent!’</sv:value>
+      </sv:property>
+    </sv:node>
+    <sv:node sv:name="14-9-wie-denk-je-wel-dat-je-bent">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>jcrmockup:agenda</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcr:mixinTypes" sv:type="Name">
+        <sv:value>hippo:harddocument</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcr:uuid" sv:type="String">
+        <sv:value>3b2c1d74-46cb-4b3f-ab05-b505095bcf43</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:agendadate_from" sv:type="Date">
+        <sv:value>2010-09-14T17:00:00.000+02:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:agendadate_to" sv:type="Date">
+        <sv:value>2010-09-14T21:00:00.000+02:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:documentdate" sv:type="Date">
+        <sv:value>2010-08-09T12:11:18.302+02:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:generate_anchors" sv:type="Boolean">
+        <sv:value>false</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:introduction" sv:type="String">
+        <sv:value>Eén van de centrale ontwikkelingstaken tijdens de adolescentie is het ontwikkelen van identiteit,
+          zelfbeeld en het aangaan van relaties met anderen. ‘Wie ben ik’? ‘Wie wil ik zijn’? en ‘Met wie wil ik zijn’?
+          Allemaal belangrijke vragen in een ontwikkelingsfase waarin autonomie, zelfbewustzijn, het aangaan van
+          relaties met leeftijdgenoten en het hanteren van een daarbij passend, nieuw evenwicht in het gezin centraal
+          staan. Bij jongeren met psychiatrische problemen zijn het vaak ook deze vragen die aan de orde komen tijdens
+          een behandeling
+        </sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:title" sv:type="String">
+        <sv:value>14-9: ‘Wie denk je wel dat je bent!’</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippo:availability" sv:type="String">
+        <sv:value>live</sv:value>
+        <sv:value>preview</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippo:paths" sv:type="String">
+        <sv:value>3b2c1d74-46cb-4b3f-ab05-b505095bcf43</sv:value>
+        <sv:value>c3085f6c-1a30-4c4d-a278-445b0267746d</sv:value>
+        <sv:value>98267ef6-37c9-4842-b8d5-4bcab85e06eb</sv:value>
+        <sv:value>7ac7063d-7803-49aa-90f2-ab1c3ecd6642</sv:value>
+        <sv:value>996bcac5-86cf-49b5-a7a3-16a74863e814</sv:value>
+        <sv:value>2c21a29c-a5d1-4e84-aec4-594e5bf93b25</sv:value>
+        <sv:value>7d92c518-511b-49e0-92b5-126970694fa8</sv:value>
+        <sv:value>cafebabe-cafe-babe-cafe-babecafebabe</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippo:related___pathreference" sv:type="String">
+        <sv:value>agenda/14-9-wie-denk-je-wel-dat-je-bent</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostd:holder" sv:type="String">
+        <sv:value>admin</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostd:state" sv:type="String">
+        <sv:value>published</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostd:stateSummary" sv:type="String">
+        <sv:value>live</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostd:tags" sv:type="String"/>
+      <sv:property sv:name="hippostdpubwf:createdBy" sv:type="String">
+        <sv:value>admin</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostdpubwf:creationDate" sv:type="Date">
+        <sv:value>2010-08-09T12:11:17.127+02:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostdpubwf:lastModificationDate" sv:type="Date">
+        <sv:value>2010-08-12T10:06:53.547+02:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostdpubwf:lastModifiedBy" sv:type="String">
+        <sv:value>admin</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostdpubwf:publicationDate" sv:type="Date">
+        <sv:value>2010-08-12T10:06:55.387+02:00</sv:value>
+      </sv:property>
+      <sv:node sv:name="jcrmockup:body">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>hippostd:html</sv:value>
+        </sv:property>
+        <sv:property sv:name="hippostd:content" sv:type="String">
+          <sv:value>&lt;html&gt;
+            &lt;body&gt;
+
+            &lt;p&gt;In dit middagsymposium wordt vanuit diverse invalshoeken de ontwikkeling van
+            identiteit en zelfbeeld tijdens de adolescentie belicht. Prof. dr. Marcel van
+            Aken schetst het ontwikkelingspsychologisch perspectief op persoonlijkheid en
+            sociale relaties. &lt;br/&gt;
+            Vervolgens zullen een aantal van de therapeuten van het behandelprogramma 12-18
+            jaar illustreren hoe het thema identiteit in diverse behandelvormen haar intrede
+            doet.&lt;/p&gt;
+
+            &lt;p&gt;
+             &lt;a target="_blank"
+            href="http://www.symfora.nl/binaries/website/pdf-voor-download/symfora-groep/agenda/2010/pip-folder-wie-denk-je-51612.pdf"&gt;Programma
+            en aanmeldingsprocedure
+            &lt;img alt="PDF" src="http://www.symfora.nl/images/icons/icon_pdf.gif" border="0"/&gt;&lt;/a&gt;
+            &lt;/p&gt;
+
+            &lt;/body&gt;
+            &lt;/html&gt;
+          </sv:value>
+        </sv:property>
+      </sv:node>
+      <sv:node sv:name="jcrmockup:agenda_location_extrainfo">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>hippostd:html</sv:value>
+        </sv:property>
+        <sv:property sv:name="hippostd:content" sv:type="String">
+          <sv:value>&lt;html&gt; &lt;body/&gt;&lt;/html&gt;</sv:value>
+        </sv:property>
+      </sv:node>
+      <sv:node sv:name="jcrmockup:metadata">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>jcrmockup:metadata</sv:value>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:author" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:date_revision" sv:type="Date">
+          <sv:value>2010-08-09T12:11:18.521+02:00</sv:value>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:doctype" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:editor" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:owner" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:status" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:target_age" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:target_audience" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:version" sv:type="String">
+          <sv:value/>
+        </sv:property>
+      </sv:node>
+      <sv:node sv:name="relateddocs:docs">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>relateddocs:docs</sv:value>
+        </sv:property>
+      </sv:node>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="thema-avond-triade-samenwerking-client-familie-en-behandelaar">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>hippo:handle</sv:value>
+    </sv:property>
+    <sv:property sv:name="jcr:mixinTypes" sv:type="Name">
+      <sv:value>hippo:hardhandle</sv:value>
+      <sv:value>hippo:translated</sv:value>
+    </sv:property>
+    <sv:property sv:name="jcr:uuid" sv:type="String">
+      <sv:value>df2a652e-608f-4a4e-b534-75484ebaf41c</sv:value>
+    </sv:property>
+    <sv:node sv:name="hippo:translation">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hippo:translation</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippo:language" sv:type="String">
+        <sv:value/>
+      </sv:property>
+      <sv:property sv:name="hippo:message" sv:type="String">
+        <sv:value>Thema-avond: Triade: samenwerking cliënt, familie en behandelaar</sv:value>
+      </sv:property>
+    </sv:node>
+    <sv:node sv:name="thema-avond-triade-samenwerking-client-familie-en-behandelaar">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>jcrmockup:agenda</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcr:mixinTypes" sv:type="Name">
+        <sv:value>hippo:harddocument</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcr:uuid" sv:type="String">
+        <sv:value>2a2f74bc-c45a-40cf-9ac9-36394e78d955</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:agendadate_from" sv:type="Date">
+        <sv:value>2010-09-14T17:30:00.000+02:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:agendadate_to" sv:type="Date">
+        <sv:value>2010-09-14T21:00:00.000+02:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:documentdate" sv:type="Date">
+        <sv:value>2010-08-09T12:15:17.252+02:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:generate_anchors" sv:type="Boolean">
+        <sv:value>false</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:introduction" sv:type="String">
+        <sv:value>Ypsilon, Labyrint~In Perspectief, Steunpunt Mantelzorg en Symfora groep regio Gooi en Vechtstreek
+          organiseren weer een thema-bijeenkomst voor familie en naasten.
+
+          Opgeven vooraf is niet nodig. De bijeenkomst is gratis. U bent van harte welkom.
+
+          Triade - samenwerking cliënt, familie en behandelaar
+        </sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:title" sv:type="String">
+        <sv:value>Thema-avond: Triade: samenwerking cliënt, familie en behandelaar</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippo:availability" sv:type="String">
+        <sv:value>live</sv:value>
+        <sv:value>preview</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippo:paths" sv:type="String">
+        <sv:value>2a2f74bc-c45a-40cf-9ac9-36394e78d955</sv:value>
+        <sv:value>df2a652e-608f-4a4e-b534-75484ebaf41c</sv:value>
+        <sv:value>98267ef6-37c9-4842-b8d5-4bcab85e06eb</sv:value>
+        <sv:value>7ac7063d-7803-49aa-90f2-ab1c3ecd6642</sv:value>
+        <sv:value>996bcac5-86cf-49b5-a7a3-16a74863e814</sv:value>
+        <sv:value>2c21a29c-a5d1-4e84-aec4-594e5bf93b25</sv:value>
+        <sv:value>7d92c518-511b-49e0-92b5-126970694fa8</sv:value>
+        <sv:value>cafebabe-cafe-babe-cafe-babecafebabe</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippo:related___pathreference" sv:type="String">
+        <sv:value>agenda/thema-avond-triade-samenwerking-client-familie-en-behandelaar</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostd:holder" sv:type="String">
+        <sv:value>admin</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostd:state" sv:type="String">
+        <sv:value>published</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostd:stateSummary" sv:type="String">
+        <sv:value>live</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostd:tags" sv:type="String"/>
+      <sv:property sv:name="hippostdpubwf:createdBy" sv:type="String">
+        <sv:value>admin</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostdpubwf:creationDate" sv:type="Date">
+        <sv:value>2010-08-09T12:15:16.436+02:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostdpubwf:lastModificationDate" sv:type="Date">
+        <sv:value>2010-08-12T09:52:04.399+02:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostdpubwf:lastModifiedBy" sv:type="String">
+        <sv:value>admin</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostdpubwf:publicationDate" sv:type="Date">
+        <sv:value>2010-08-12T09:52:11.435+02:00</sv:value>
+      </sv:property>
+      <sv:node sv:name="jcrmockup:body">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>hippostd:html</sv:value>
+        </sv:property>
+        <sv:property sv:name="hippostd:content" sv:type="String">
+          <sv:value>&lt;html&gt;
+            &lt;body&gt;
+            &lt;br/&gt;
+
+            &lt;/body&gt;
+            &lt;/html&gt;
+          </sv:value>
+        </sv:property>
+      </sv:node>
+      <sv:node sv:name="jcrmockup:agenda_location_extrainfo">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>hippostd:html</sv:value>
+        </sv:property>
+        <sv:property sv:name="hippostd:content" sv:type="String">
+          <sv:value>&lt;html&gt;
+            &lt;body&gt;
+
+            &lt;p&gt;Rembrandthof, Laan de Heelmeesters 2, 1211 MS Hilversum&lt;/p&gt;
+
+            &lt;/body&gt;
+            &lt;/html&gt;
+          </sv:value>
+        </sv:property>
+      </sv:node>
+      <sv:node sv:name="jcrmockup:metadata">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>jcrmockup:metadata</sv:value>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:author" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:date_revision" sv:type="Date">
+          <sv:value>2010-08-09T12:15:17.307+02:00</sv:value>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:doctype" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:editor" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:owner" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:status" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:target_age" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:target_audience" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:version" sv:type="String">
+          <sv:value/>
+        </sv:property>
+      </sv:node>
+      <sv:node sv:name="relateddocs:docs">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>relateddocs:docs</sv:value>
+        </sv:property>
+      </sv:node>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="afscheidssymposium-peter-van-harten-als-a-opleider">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>hippo:handle</sv:value>
+    </sv:property>
+    <sv:property sv:name="jcr:mixinTypes" sv:type="Name">
+      <sv:value>hippo:hardhandle</sv:value>
+      <sv:value>hippo:translated</sv:value>
+    </sv:property>
+    <sv:property sv:name="jcr:uuid" sv:type="String">
+      <sv:value>62efef8f-3470-4afc-808f-169830939cec</sv:value>
+    </sv:property>
+    <sv:node sv:name="hippo:translation">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hippo:translation</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippo:language" sv:type="String">
+        <sv:value/>
+      </sv:property>
+      <sv:property sv:name="hippo:message" sv:type="String">
+        <sv:value>Afscheidssymposium Peter van Harten als A-opleider</sv:value>
+      </sv:property>
+    </sv:node>
+    <sv:node sv:name="afscheidssymposium-peter-van-harten-als-a-opleider">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>jcrmockup:agenda</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcr:mixinTypes" sv:type="Name">
+        <sv:value>hippo:harddocument</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcr:uuid" sv:type="String">
+        <sv:value>6483a23f-b463-4dbd-8098-e94bf5b389ea</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:agendadate_from" sv:type="Date">
+        <sv:value>2010-09-28T17:00:00.000+02:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:agendadate_to" sv:type="Date">
+        <sv:value>2010-09-28T20:00:00.000+02:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:documentdate" sv:type="Date">
+        <sv:value>2010-08-09T12:16:27.038+02:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:generate_anchors" sv:type="Boolean">
+        <sv:value>false</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:introduction" sv:type="String">
+        <sv:value>Per 1 oktober neemt Peter van Harten afscheid als A-opleider. Peter was gedurende vijftien jaar
+          A-opleider, waarvan de laatste twaalf jaar bij Symfora. Zijn nieuwe functie is directeur van het Instituut
+          voor Opleiding, Onderzoek en Innovatie (IOOI) van Symfora / GGz Centraal. Daarnaast is Peter recent tot
+          hoogleraar benoemd aan de Universiteit van Maastricht.
+        </sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:title" sv:type="String">
+        <sv:value>Afscheidssymposium Peter van Harten als A-opleider</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippo:availability" sv:type="String">
+        <sv:value>live</sv:value>
+        <sv:value>preview</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippo:paths" sv:type="String">
+        <sv:value>6483a23f-b463-4dbd-8098-e94bf5b389ea</sv:value>
+        <sv:value>62efef8f-3470-4afc-808f-169830939cec</sv:value>
+        <sv:value>98267ef6-37c9-4842-b8d5-4bcab85e06eb</sv:value>
+        <sv:value>7ac7063d-7803-49aa-90f2-ab1c3ecd6642</sv:value>
+        <sv:value>996bcac5-86cf-49b5-a7a3-16a74863e814</sv:value>
+        <sv:value>2c21a29c-a5d1-4e84-aec4-594e5bf93b25</sv:value>
+        <sv:value>7d92c518-511b-49e0-92b5-126970694fa8</sv:value>
+        <sv:value>cafebabe-cafe-babe-cafe-babecafebabe</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippo:related___pathreference" sv:type="String">
+        <sv:value>agenda/afscheidssymposium-peter-van-harten-als-a-opleider</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostd:holder" sv:type="String">
+        <sv:value>admin</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostd:state" sv:type="String">
+        <sv:value>published</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostd:stateSummary" sv:type="String">
+        <sv:value>live</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostd:tags" sv:type="String"/>
+      <sv:property sv:name="hippostdpubwf:createdBy" sv:type="String">
+        <sv:value>admin</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostdpubwf:creationDate" sv:type="Date">
+        <sv:value>2010-08-09T12:16:26.454+02:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostdpubwf:lastModificationDate" sv:type="Date">
+        <sv:value>2010-08-12T09:51:49.669+02:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostdpubwf:lastModifiedBy" sv:type="String">
+        <sv:value>admin</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostdpubwf:publicationDate" sv:type="Date">
+        <sv:value>2010-08-12T09:52:14.634+02:00</sv:value>
+      </sv:property>
+      <sv:node sv:name="jcrmockup:body">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>hippostd:html</sv:value>
+        </sv:property>
+        <sv:property sv:name="hippostd:content" sv:type="String">
+          <sv:value>&lt;html&gt;
+            &lt;body&gt;
+            &lt;br/&gt;
+
+            &lt;p&gt; &lt;/p&gt;
+
+            &lt;table style="float: right; margin: 0px 0px 10px 20px;" border="0"&gt;
+            &lt;tbody&gt;
+            &lt;tr&gt;
+            &lt;td/&gt;
+            &lt;/tr&gt;
+            &lt;/tbody&gt;
+            &lt;/table&gt;
+            &lt;strong&gt;Symposium 'Psychiatrie en Magie' 28 september 2010 &lt;/strong&gt;
+            &lt;p&gt;Wetenschap en Magie hebben verschillende invalshoeken naar het onverklaarde.
+            Magie zou zich onderscheiden van het wetenschappelijke verklaringsmodel, doordat
+            de materiële werkelijkheid beïnvloed wordt met behulp van onzichtbare,
+            “magische”, krachten. Dit is echter ook gangbaar binnen de wetenschap. Zo heeft
+            bijvoorbeeld psychotherapie een effect op de hersenen dat zichtbaar is op
+            functionele MRI scans. Het is dus maar zeer de vraag of magie en wetenschap
+            elkaar uitsluiten en wellicht kan er in de psychiatrie meer gebruik worden
+            gemaakt van magische fenomenen, zoals aspecifieke factoren, het placebo effect
+            of culturele verschijnselen. Psychiaters, die ook wetenschapper zijn, zullen
+            herkennen dat grensverleggende wetenschappelijke inzichten ook grenzen aan
+            magie.&lt;/p&gt;
+
+            &lt;p&gt;Ook is er de vraag of succes en verdiensten zijn toe te schrijven aan gezond
+            verstand, een wetenschappelijke houding, discipline, en inzet óf aan een niet te
+            onderscheiden, magische, X factor. In dat geval is er mogelijk ook een magische
+            rol weggelegd voor opleiders. En kunnen
+            &lt;img height="267" hspace="0" width="195" align="right"
+            src="http://www.symfora.nl/binaries/internet/images/symfora-groep/agenda/peter-van-harten-klein.jpg"
+            border="0"/&gt;opleiders
+            deze X factor dan overbrengen aan hun opleidelingen?&lt;/p&gt;
+
+            &lt;p&gt;&lt;strong&gt;Sprekers &lt;/strong&gt; &lt;br/&gt;
+            drs. Rob Doornebal-Bakker, psychiater / eerste geneeskundige en promovendus
+            Symfora &lt;br/&gt;
+            prof. dr. Peter van Harten, psychiater / opleider Symfora en directeur IOOI GGz
+            Centraal &lt;br/&gt;
+            prof. dr. Wijbrand Hoek, psychiater / opleider en directeur Opleiding &amp;amp;
+            Onderzoek Parnassia Bavo Academie &lt;br/&gt;
+            prof. dr. René Kahn, psychiater en opleider UMC Utrecht &lt;br/&gt;
+            prof. dr. Frank Koerselman, psychiater / psychotherapeut UMC Utrecht &lt;br/&gt;
+            dr. Ralph Kupka, psychiater en opleider Altrecht &lt;br/&gt;
+            drs. Yvette Roke, psychiater en promovendus Symfora &lt;br/&gt;
+            drs. Ken Tanaka., arts in opleiding tot psychiater Symfora&lt;/p&gt;
+
+            &lt;p&gt;De dagvoorzitter is dr. Thea Heeren, Raad van Bestuur GGz Centraal&lt;/p&gt;
+
+            &lt;p&gt;Datum: dinsdag 28 september 2010 &lt;br/&gt;
+            Tijdstip:13.30 – 17.00 uur, aansluitend een feestelijke receptie tot 18.00 uur
+            &lt;br/&gt;
+            Locatie: gebouw De Veste, Zon &amp;amp; Schild / Symfora groep te Amersfoort &lt;br/&gt;
+            Accreditatie voor 3 punten is aangevraagd bij de NVvP.&lt;/p&gt;
+
+            &lt;p&gt;&lt;strong&gt;Informatie &lt;br/&gt;
+            &lt;/strong&gt;Voor vragen kunt u terecht bij de organisator van dit symposium: &lt;br/&gt;
+            Gerard Lamme, aios, bereikbaar via: (033) 4609 609 of
+            &lt;a href="mailto:gp.lamme@symfora.nl"&gt;gp.lamme@symfora.nl&lt;/a&gt;.&lt;/p&gt;
+
+            &lt;p&gt;&lt;strong&gt;Aanmelden &lt;br/&gt;
+            &lt;/strong&gt;U kunt u aanmelden per e-mail, met vermelding van uw BIG nummer, bij
+            Monique Buijs, secretaresse Amerhoogt:
+            &lt;a href="mailto:mah.buijs@symfora.nl"&gt;mah.buijs@symfora.nl&lt;/a&gt; of via (033) 4
+            609 644.&lt;/p&gt;
+
+            &lt;p&gt;Binnenkort versturen wij individuele uitnodigingen.&lt;/p&gt;
+
+            &lt;/body&gt;
+            &lt;/html&gt;
+          </sv:value>
+        </sv:property>
+      </sv:node>
+      <sv:node sv:name="jcrmockup:agenda_location_extrainfo">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>hippostd:html</sv:value>
+        </sv:property>
+        <sv:property sv:name="hippostd:content" sv:type="String">
+          <sv:value>&lt;html&gt;
+            &lt;body&gt;
+
+            &lt;p&gt;Locatie Zon &amp;amp; Schild, gebouw de Veste, Utrechtseweg 266, 3818 EW
+            Amersfoort&lt;/p&gt;
+
+            &lt;/body&gt;
+            &lt;/html&gt;
+          </sv:value>
+        </sv:property>
+      </sv:node>
+      <sv:node sv:name="jcrmockup:metadata">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>jcrmockup:metadata</sv:value>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:author" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:date_revision" sv:type="Date">
+          <sv:value>2010-08-09T12:16:27.086+02:00</sv:value>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:doctype" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:editor" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:owner" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:status" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:target_age" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:target_audience" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:version" sv:type="String">
+          <sv:value/>
+        </sv:property>
+      </sv:node>
+      <sv:node sv:name="relateddocs:docs">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>relateddocs:docs</sv:value>
+        </sv:property>
+      </sv:node>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="thema-avond-stress-en-mantelzorg">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>hippo:handle</sv:value>
+    </sv:property>
+    <sv:property sv:name="jcr:mixinTypes" sv:type="Name">
+      <sv:value>hippo:hardhandle</sv:value>
+      <sv:value>hippo:translated</sv:value>
+    </sv:property>
+    <sv:property sv:name="jcr:uuid" sv:type="String">
+      <sv:value>8f27ad92-80e9-4330-8400-8e22648f7763</sv:value>
+    </sv:property>
+    <sv:node sv:name="hippo:translation">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hippo:translation</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippo:language" sv:type="String">
+        <sv:value/>
+      </sv:property>
+      <sv:property sv:name="hippo:message" sv:type="String">
+        <sv:value>Thema-avond: Stress en Mantelzorg</sv:value>
+      </sv:property>
+    </sv:node>
+    <sv:node sv:name="thema-avond-stress-en-mantelzorg">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>jcrmockup:agenda</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcr:mixinTypes" sv:type="Name">
+        <sv:value>hippo:harddocument</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcr:uuid" sv:type="String">
+        <sv:value>57884812-d64b-447e-a716-5cf398455244</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:agendadate_from" sv:type="Date">
+        <sv:value>2010-10-12T21:30:00.000+02:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:agendadate_to" sv:type="Date">
+        <sv:value>2010-12-17T17:00:00.000+01:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:documentdate" sv:type="Date">
+        <sv:value>2010-08-09T12:20:08.639+02:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:generate_anchors" sv:type="Boolean">
+        <sv:value>false</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:introduction" sv:type="String">
+        <sv:value>Ypsilon, Labyrint~In Perspectief, Steunpunt Mantelzorg en Symfora groep regio Gooi en Vechtstreek
+          organiseren weer een thema-bijeenkomst voor familie en naasten.
+
+          Opgeven vooraf is niet nodig. De bijeenkomst is gratis. U bent van harte welkom.
+        </sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:title" sv:type="String">
+        <sv:value>Thema-avond: Stress en Mantelzorg</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippo:availability" sv:type="String">
+        <sv:value>live</sv:value>
+        <sv:value>preview</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippo:paths" sv:type="String">
+        <sv:value>57884812-d64b-447e-a716-5cf398455244</sv:value>
+        <sv:value>8f27ad92-80e9-4330-8400-8e22648f7763</sv:value>
+        <sv:value>98267ef6-37c9-4842-b8d5-4bcab85e06eb</sv:value>
+        <sv:value>7ac7063d-7803-49aa-90f2-ab1c3ecd6642</sv:value>
+        <sv:value>996bcac5-86cf-49b5-a7a3-16a74863e814</sv:value>
+        <sv:value>2c21a29c-a5d1-4e84-aec4-594e5bf93b25</sv:value>
+        <sv:value>7d92c518-511b-49e0-92b5-126970694fa8</sv:value>
+        <sv:value>cafebabe-cafe-babe-cafe-babecafebabe</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippo:related___pathreference" sv:type="String">
+        <sv:value>agenda/thema-avond-stress-en-mantelzorg</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostd:holder" sv:type="String">
+        <sv:value>admin</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostd:state" sv:type="String">
+        <sv:value>published</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostd:stateSummary" sv:type="String">
+        <sv:value>live</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostd:tags" sv:type="String"/>
+      <sv:property sv:name="hippostdpubwf:createdBy" sv:type="String">
+        <sv:value>admin</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostdpubwf:creationDate" sv:type="Date">
+        <sv:value>2010-08-09T12:20:08.068+02:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostdpubwf:lastModificationDate" sv:type="Date">
+        <sv:value>2010-08-12T09:51:36.345+02:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostdpubwf:lastModifiedBy" sv:type="String">
+        <sv:value>admin</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostdpubwf:publicationDate" sv:type="Date">
+        <sv:value>2010-08-12T09:52:18.364+02:00</sv:value>
+      </sv:property>
+      <sv:node sv:name="jcrmockup:body">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>hippostd:html</sv:value>
+        </sv:property>
+        <sv:property sv:name="hippostd:content" sv:type="String">
+          <sv:value>&lt;html&gt;
+            &lt;body&gt;
+
+            &lt;p&gt;&lt;strong&gt;Stress en mantelzorg&lt;/strong&gt;&lt;/p&gt;
+
+            &lt;p&gt;Stress, hoe kunnen mantelzorgers van mensen met psychische problemen hier
+            gezond mee omgaan? Een deskundige komt hierover vertellen en vragen
+            beantwoorden. &lt;br/&gt;
+            Stress en het voorkomen van overspannenheid en burn-out zijn dit jaar centraal
+            thema van de Landelijke Dag Psychische Gezondheid, 10 oktobr 2010.&lt;/p&gt;
+
+            &lt;p&gt;Wilt u meer weten, bel of mail dan naar: &lt;br/&gt;
+            Ypsilon, (035) 5 413 223,
+            &lt;a href="mailto:piendelange@hccnet.nl"&gt;piendelange@hccnet.nl&lt;/a&gt; &lt;br/&gt;
+            Labyrint~In Perspectief, (035) 5 381 195,
+            &lt;a href="mailto:schenkkan@schenkkan.nl"&gt;schenkkan@schenkkan.nl&lt;/a&gt; &lt;br/&gt;
+            Steunpunt Mantelzorg, (035) 6 970 050,
+            &lt;a href="mailto:nannekedekuiper@mantelzorggooi.nl"&gt;nannekedekuiper@mantelzorggooi.nl&lt;/a&gt;
+            &lt;br/&gt;
+            Symfora groep afdeling Pragendaie &amp;amp; Innovatie, (035) 6 557 428,
+            &lt;a href="mailto:pragendaiegooi@symfora.nl"&gt;pragendaiegooi@symfora.nl&lt;/a&gt;&lt;/p&gt;
+
+            &lt;p&gt;Aanvullende informatie vindt u op de pagina
+            &lt;a href="http://www.symfora.nl/nl/patientenennaasten/welke_vraag,cursusaanbod/hilversum/beginpagina.html"&gt;Cursussen
+            en voorlichtingsavonden&lt;/a&gt;.&lt;/p&gt;
+
+            &lt;/body&gt;
+            &lt;/html&gt;
+          </sv:value>
+        </sv:property>
+      </sv:node>
+      <sv:node sv:name="jcrmockup:agenda_location_extrainfo">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>hippostd:html</sv:value>
+        </sv:property>
+        <sv:property sv:name="hippostd:content" sv:type="String">
+          <sv:value>&lt;html&gt;
+            &lt;body&gt;
+
+            &lt;p&gt;Rembrandthof, Laan de Heelmeesters 2, 1211 MS Hilversum&lt;/p&gt;
+
+            &lt;/body&gt;
+            &lt;/html&gt;
+          </sv:value>
+        </sv:property>
+      </sv:node>
+      <sv:node sv:name="jcrmockup:metadata">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>jcrmockup:metadata</sv:value>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:author" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:date_revision" sv:type="Date">
+          <sv:value>2010-08-09T12:20:08.683+02:00</sv:value>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:doctype" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:editor" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:owner" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:status" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:target_age" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:target_audience" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:version" sv:type="String">
+          <sv:value/>
+        </sv:property>
+      </sv:node>
+      <sv:node sv:name="relateddocs:docs">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>relateddocs:docs</sv:value>
+        </sv:property>
+      </sv:node>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="thema-avond-als-iemand-niet-meer-wil-leven">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>hippo:handle</sv:value>
+    </sv:property>
+    <sv:property sv:name="jcr:mixinTypes" sv:type="Name">
+      <sv:value>hippo:hardhandle</sv:value>
+      <sv:value>hippo:translated</sv:value>
+    </sv:property>
+    <sv:property sv:name="jcr:uuid" sv:type="String">
+      <sv:value>90bb0596-799c-4faf-904c-c2ee26eba7c6</sv:value>
+    </sv:property>
+    <sv:node sv:name="hippo:translation">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hippo:translation</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippo:language" sv:type="String">
+        <sv:value/>
+      </sv:property>
+      <sv:property sv:name="hippo:message" sv:type="String">
+        <sv:value>Thema-avond: Als iemand niet meer wil leven</sv:value>
+      </sv:property>
+    </sv:node>
+    <sv:node sv:name="thema-avond-als-iemand-niet-meer-wil-leven">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>jcrmockup:agenda</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcr:mixinTypes" sv:type="Name">
+        <sv:value>hippo:harddocument</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcr:uuid" sv:type="String">
+        <sv:value>769ccff8-28b3-48c4-b9ca-3352c47afa3f</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:agendadate_from" sv:type="Date">
+        <sv:value>2010-11-09T21:30:00.000+01:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:agendadate_to" sv:type="Date">
+        <sv:value>2010-11-11T23:00:00.000+01:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:documentdate" sv:type="Date">
+        <sv:value>2010-08-09T12:22:31.077+02:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:generate_anchors" sv:type="Boolean">
+        <sv:value>false</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:introduction" sv:type="String">
+        <sv:value>Ypsilon, Labyrint~In Perspectief, Steunpunt Mantelzorg en Symfora groep regio Gooi en Vechtstreek
+          organiseren weer een thema-bijeenkomst voor familie en naasten.
+
+          Opgeven vooraf is niet nodig. De bijeenkomst is gratis. U bent van harte welkom.
+        </sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:title" sv:type="String">
+        <sv:value>Thema-avond: Als iemand niet meer wil leven</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippo:availability" sv:type="String">
+        <sv:value>live</sv:value>
+        <sv:value>preview</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippo:paths" sv:type="String">
+        <sv:value>769ccff8-28b3-48c4-b9ca-3352c47afa3f</sv:value>
+        <sv:value>90bb0596-799c-4faf-904c-c2ee26eba7c6</sv:value>
+        <sv:value>98267ef6-37c9-4842-b8d5-4bcab85e06eb</sv:value>
+        <sv:value>7ac7063d-7803-49aa-90f2-ab1c3ecd6642</sv:value>
+        <sv:value>996bcac5-86cf-49b5-a7a3-16a74863e814</sv:value>
+        <sv:value>2c21a29c-a5d1-4e84-aec4-594e5bf93b25</sv:value>
+        <sv:value>7d92c518-511b-49e0-92b5-126970694fa8</sv:value>
+        <sv:value>cafebabe-cafe-babe-cafe-babecafebabe</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippo:related___pathreference" sv:type="String">
+        <sv:value>agenda/thema-avond-als-iemand-niet-meer-wil-leven</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostd:holder" sv:type="String">
+        <sv:value>admin</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostd:state" sv:type="String">
+        <sv:value>published</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostd:stateSummary" sv:type="String">
+        <sv:value>live</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostd:tags" sv:type="String"/>
+      <sv:property sv:name="hippostdpubwf:createdBy" sv:type="String">
+        <sv:value>admin</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostdpubwf:creationDate" sv:type="Date">
+        <sv:value>2010-08-09T12:22:30.504+02:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostdpubwf:lastModificationDate" sv:type="Date">
+        <sv:value>2010-08-12T09:51:25.875+02:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostdpubwf:lastModifiedBy" sv:type="String">
+        <sv:value>admin</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostdpubwf:publicationDate" sv:type="Date">
+        <sv:value>2010-08-12T09:52:21.311+02:00</sv:value>
+      </sv:property>
+      <sv:node sv:name="jcrmockup:body">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>hippostd:html</sv:value>
+        </sv:property>
+        <sv:property sv:name="hippostd:content" sv:type="String">
+          <sv:value>&lt;html&gt;
+            &lt;body&gt;
+            &lt;strong&gt;Als iemand niet meer wil leven &lt;/strong&gt;
+            &lt;p&gt;Hoe ga je als familie of directbetrokkene ermee om wanneer iemand dood wil.
+            Hoe reageer je op een doodswens van iemand met een psychische ziekte? &lt;br/&gt;
+            Een deskundige vertelt over dit onderwerp en beantwoordt uw vragen.&lt;/p&gt;
+
+            &lt;p&gt;Wilt u meer weten, bel of mail dan naar: &lt;br/&gt;
+            Ypsilon, (035) 5 413 223,
+            &lt;a href="mailto:piendelange@hccnet.nl"&gt;piendelange@hccnet.nl&lt;/a&gt; &lt;br/&gt;
+            Labyrint~In Perspectief, (035) 5 381 195,
+            &lt;a href="mailto:schenkkan@schenkkan.nl"&gt;schenkkan@schenkkan.nl&lt;/a&gt; &lt;br/&gt;
+            Steunpunt Mantelzorg, (035) 6 970 050,
+            &lt;a href="mailto:nannekedekuiper@mantelzorggooi.nl"&gt;nannekedekuiper@mantelzorggooi.nl&lt;/a&gt;
+            &lt;br/&gt;
+            Symfora groep afdeling Pragendaie &amp;amp; Innovatie, (035) 6 557 428,
+            &lt;a href="mailto:pragendaiegooi@symfora.nl"&gt;pragendaiegooi@symfora.nl&lt;/a&gt;&lt;/p&gt;
+
+            &lt;p&gt;Aanvullende informatie vindt u op de pagina
+            &lt;a href="http://www.symfora.nl/nl/patientenennaasten/welke_vraag,cursusaanbod/hilversum/beginpagina.html"&gt;Cursussen
+            en voorlichtingsavonden&lt;/a&gt;.&lt;/p&gt;
+
+            &lt;/body&gt;
+            &lt;/html&gt;
+          </sv:value>
+        </sv:property>
+      </sv:node>
+      <sv:node sv:name="jcrmockup:agenda_location_extrainfo">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>hippostd:html</sv:value>
+        </sv:property>
+        <sv:property sv:name="hippostd:content" sv:type="String">
+          <sv:value>&lt;html&gt;
+            &lt;body&gt;
+
+            &lt;p&gt;Rembrandthof, Laan de Heelmeesters 2, 1211 MS Hilversum&lt;/p&gt;
+
+            &lt;/body&gt;
+            &lt;/html&gt;
+          </sv:value>
+        </sv:property>
+      </sv:node>
+      <sv:node sv:name="jcrmockup:metadata">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>jcrmockup:metadata</sv:value>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:author" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:date_revision" sv:type="Date">
+          <sv:value>2010-08-09T12:22:31.122+02:00</sv:value>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:doctype" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:editor" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:owner" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:status" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:target_age" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:target_audience" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:version" sv:type="String">
+          <sv:value/>
+        </sv:property>
+      </sv:node>
+      <sv:node sv:name="relateddocs:docs">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>relateddocs:docs</sv:value>
+        </sv:property>
+      </sv:node>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="thema-avond-afsluitende-gezellige-bijeenkomst">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>hippo:handle</sv:value>
+    </sv:property>
+    <sv:property sv:name="jcr:mixinTypes" sv:type="Name">
+      <sv:value>hippo:hardhandle</sv:value>
+      <sv:value>hippo:translated</sv:value>
+    </sv:property>
+    <sv:property sv:name="jcr:uuid" sv:type="String">
+      <sv:value>e20c7666-4f0a-4b4b-b637-1da6675f5163</sv:value>
+    </sv:property>
+    <sv:node sv:name="hippo:translation">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>hippo:translation</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippo:language" sv:type="String">
+        <sv:value/>
+      </sv:property>
+      <sv:property sv:name="hippo:message" sv:type="String">
+        <sv:value>Thema-avond: Afsluitende gezellige bijeenkomst</sv:value>
+      </sv:property>
+    </sv:node>
+    <sv:node sv:name="thema-avond-afsluitende-gezellige-bijeenkomst">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>jcrmockup:agenda</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcr:mixinTypes" sv:type="Name">
+        <sv:value>hippo:harddocument</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcr:uuid" sv:type="String">
+        <sv:value>aceac5d9-d254-4df7-af9e-121559373258</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:agendadate_from" sv:type="Date">
+        <sv:value>2010-12-07T21:24:00.000+01:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:agendadate_to" sv:type="Date">
+        <sv:value>2010-12-31T17:00:00.000+01:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:documentdate" sv:type="Date">
+        <sv:value>2010-08-09T12:24:41.306+02:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:generate_anchors" sv:type="Boolean">
+        <sv:value>false</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:introduction" sv:type="String">
+        <sv:value>Ypsilon, Labyrint~In Perspectief, Steunpunt Mantelzorg en Symfora groep regio Gooi en Vechtstreek
+          organiseren een gezellige avond voor familie en naasten.
+
+          De bijeenkomst is gratis. U bent van harte welkom.
+
+          Als u komt, graag van tevoren even opgeven bij de Symfora afdeling Pragendaie, in verband met het inkopen van
+          de consumpties:
+          (035) 6 557 428 of pragendaiegooi@symfora.nl
+        </sv:value>
+      </sv:property>
+      <sv:property sv:name="jcrmockup:title" sv:type="String">
+        <sv:value>Thema-avond: Afsluitende gezellige bijeenkomst</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippo:availability" sv:type="String">
+        <sv:value>live</sv:value>
+        <sv:value>preview</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippo:paths" sv:type="String">
+        <sv:value>aceac5d9-d254-4df7-af9e-121559373258</sv:value>
+        <sv:value>e20c7666-4f0a-4b4b-b637-1da6675f5163</sv:value>
+        <sv:value>98267ef6-37c9-4842-b8d5-4bcab85e06eb</sv:value>
+        <sv:value>7ac7063d-7803-49aa-90f2-ab1c3ecd6642</sv:value>
+        <sv:value>996bcac5-86cf-49b5-a7a3-16a74863e814</sv:value>
+        <sv:value>2c21a29c-a5d1-4e84-aec4-594e5bf93b25</sv:value>
+        <sv:value>7d92c518-511b-49e0-92b5-126970694fa8</sv:value>
+        <sv:value>cafebabe-cafe-babe-cafe-babecafebabe</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippo:related___pathreference" sv:type="String">
+        <sv:value>agenda/thema-avond-afsluitende-gezellige-bijeenkomst</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostd:holder" sv:type="String">
+        <sv:value>admin</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostd:state" sv:type="String">
+        <sv:value>published</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostd:stateSummary" sv:type="String">
+        <sv:value>live</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostd:tags" sv:type="String"/>
+      <sv:property sv:name="hippostdpubwf:createdBy" sv:type="String">
+        <sv:value>admin</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostdpubwf:creationDate" sv:type="Date">
+        <sv:value>2010-08-09T12:24:40.793+02:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostdpubwf:lastModificationDate" sv:type="Date">
+        <sv:value>2010-08-12T09:51:08.790+02:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostdpubwf:lastModifiedBy" sv:type="String">
+        <sv:value>admin</sv:value>
+      </sv:property>
+      <sv:property sv:name="hippostdpubwf:publicationDate" sv:type="Date">
+        <sv:value>2010-08-12T09:52:24.630+02:00</sv:value>
+      </sv:property>
+      <sv:node sv:name="jcrmockup:body">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>hippostd:html</sv:value>
+        </sv:property>
+        <sv:property sv:name="hippostd:content" sv:type="String">
+          <sv:value>&lt;html&gt;
+            &lt;body&gt;
+
+            &lt;p&gt;&lt;strong&gt;Afsluitende gezellige bijeenkomst&lt;/strong&gt;&lt;/p&gt;
+
+            &lt;p&gt;Onder het genot van een hapje en een drankje kunnen familieleden en vrienden
+            van psychiatrische cliënten elkaar een hart onder de riem steken. Aanwezig zijn
+            vertegenwoordigers van familieverenigingen Ypsilon en Labyrint~In Perspectief.
+            Ook Steunpunt Mantelzorg en Symfora leveren hun aandeel. Deze avond heeft vooral
+            een ondersteunend en informeel karakter.&lt;/p&gt;
+
+            &lt;p&gt;Wilt u meer weten, bel of mail dan naar: &lt;br/&gt;
+            Ypsilon, (035) 5 413 223,
+            &lt;a href="mailto:piendelange@hccnet.nl"&gt;piendelange@hccnet.nl&lt;/a&gt; &lt;br/&gt;
+            Labyrint~In Perspectief, (035) 5 381 195,
+            &lt;a href="mailto:schenkkan@schenkkan.nl"&gt;schenkkan@schenkkan.nl&lt;/a&gt; &lt;br/&gt;
+            Steunpunt Mantelzorg, (035) 6 970 050,
+            &lt;a href="mailto:nannekedekuiper@mantelzorggooi.nl"&gt;nannekedekuiper@mantelzorggooi.nl&lt;/a&gt;
+            &lt;br/&gt;
+            Symfora groep afdeling Pragendaie &amp;amp; Innovatie, (035) 6 557 428,
+            &lt;a href="mailto:pragendaiegooi@symfora.nl"&gt;pragendaiegooi@symfora.nl&lt;/a&gt;&lt;/p&gt;
+
+            &lt;p&gt;Aanvullende informatie vindt u op de pagina
+            &lt;a href="http://www.symfora.nl/nl/patientenennaasten/welke_vraag,cursusaanbod/hilversum/beginpagina.html"&gt;Cursussen
+            en voorlichtingsavonden&lt;/a&gt;.&lt;/p&gt;
+
+            &lt;/body&gt;
+            &lt;/html&gt;
+          </sv:value>
+        </sv:property>
+      </sv:node>
+      <sv:node sv:name="jcrmockup:agenda_location_extrainfo">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>hippostd:html</sv:value>
+        </sv:property>
+        <sv:property sv:name="hippostd:content" sv:type="String">
+          <sv:value>&lt;html&gt;
+            &lt;body&gt;
+
+            &lt;p&gt;Rembrandthof, Laan de Heelmeesters 2, 1211 MS Hilversum&lt;/p&gt;
+
+            &lt;/body&gt;
+            &lt;/html&gt;
+          </sv:value>
+        </sv:property>
+      </sv:node>
+      <sv:node sv:name="jcrmockup:metadata">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>jcrmockup:metadata</sv:value>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:author" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:date_revision" sv:type="Date">
+          <sv:value>2010-08-09T12:24:41.349+02:00</sv:value>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:doctype" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:editor" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:owner" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:status" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:target_age" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:target_audience" sv:type="String">
+          <sv:value/>
+        </sv:property>
+        <sv:property sv:name="jcrmockup:version" sv:type="String">
+          <sv:value/>
+        </sv:property>
+      </sv:node>
+      <sv:node sv:name="relateddocs:docs">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>relateddocs:docs</sv:value>
+        </sv:property>
+      </sv:node>
+    </sv:node>
+  </sv:node>
+</sv:node>
