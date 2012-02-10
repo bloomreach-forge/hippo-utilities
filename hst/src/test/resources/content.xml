@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Copyright 2011 Hippo
+  Copyright 2012 Hippo
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -15,10 +15,7 @@
   limitations under the License.
   -->
 
-<sv:node xmlns:hippostd="http://www.onehippo.org/jcr/hippostd/nt/2.0"
-         xmlns:hippo="http://www.onehippo.org/jcr/hippo/nt/2.0.2"
-         xmlns:relateddocs="http://forge.onehippo.org/relateddocs/nt/1.1" xmlns:sv="http://www.jcp.org/jcr/sv/1.0"
-         sv:name="agenda">
+<sv:node xmlns:sv="http://www.jcp.org/jcr/sv/1.0" sv:name="agenda">
   <sv:property sv:name="jcr:primaryType" sv:type="Name">
     <sv:value>hippostd:folder</sv:value>
   </sv:property>
