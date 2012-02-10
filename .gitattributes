@@ -5,7 +5,7 @@ cms/src/main/java/org/onehippo/forge/utilities/cms/gallery/GalleryProcessor.java
 cms/src/main/java/org/onehippo/forge/utilities/cms/gallery/GalleryProcessorPlugin.java -text
 commons/src/main/java/org/onehippo/forge/utilities/AnnotationUtil.java -text
 commons/src/main/java/org/onehippo/forge/utilities/GenericsUtil.java -text
-commons/src/main/java/org/onehippo/forge/utilities/PsUtil.java -text
+commons/src/main/java/org/onehippo/forge/utilities/HippoUtil.java -text
 commons/src/main/java/org/onehippo/forge/utilities/RepositoryUtil.java -text
 commons/src/main/java/org/onehippo/forge/utilities/ftp/SimpleFtpClient.java -text
 commons/src/main/java/org/onehippo/forge/utilities/ftp/SimpleFtpClientResult.java -text

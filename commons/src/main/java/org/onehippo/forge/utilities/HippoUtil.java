@@ -31,15 +31,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * PsUtil
- *
- * @version $Id: PsUtil.java 92541 2010-08-05 10:22:01Z mmilicevic $
+ * HippoUtil
  */
-public final class PsUtil {
+public final class HippoUtil {
     @SuppressWarnings("unused")
-    private static Logger log = LoggerFactory.getLogger(PsUtil.class);
+    private static Logger log = LoggerFactory.getLogger(HippoUtil.class);
 
-    public static final Map<String, String> mimeTypeToExtensionMap = 
+    public static final Map<String, String> mimeTypeToExtensionMap =
         new HashMap<String , String>() {
             private static final long serialVersionUID = -3566373789286953339L;
         {
@@ -66,10 +64,10 @@ public final class PsUtil {
 
     public static final String DEFAULT_APPEND_TEXT = " ...";
     public static final String[] EMPTY_STRING_ARRAY = new String[0];
-    
+
     /**
-     * Abbreviate a text to _approximately_ some number of characters, trying to 
-     * find a nice word end and then appending some string (defaulting to three dots).  
+     * Abbreviate a text to _approximately_ some number of characters, trying to
+     * find a nice word end and then appending some string (defaulting to three dots).
      */
     public static String abbreviateText(final String text, final int numberOfCharacters, final String appendText) {
 
@@ -116,8 +114,8 @@ public final class PsUtil {
     }
 
     /**
-     * Abbreviate a text to _approximately_ some number of characters, trying to 
-     * find a nice word end and then appending three dots.  
+     * Abbreviate a text to _approximately_ some number of characters, trying to
+     * find a nice word end and then appending three dots.
      */
     public static String abbreviateText(final String text, final int numberOfCharacters) {
         return abbreviateText(text, numberOfCharacters, null);
@@ -152,10 +150,10 @@ public final class PsUtil {
     }
 
     /**
-     * Remove empty (length zero when trimmed) values from a list. 
+     * Remove empty (length zero when trimmed) values from a list.
      */
     public static List<String> removeEmptyValues(final List<String> values) {
-        
+
         if (values == null) {
             return null;
         }
@@ -170,15 +168,15 @@ public final class PsUtil {
     }
 
     /**
-     * Remove empty (length zero when trimmed) values from an array. 
+     * Remove empty (length zero when trimmed) values from an array.
      */
     public static String[] removeEmptyValues(final String[] values) {
-        
+
         if (values == null) {
             return null;
         }
-        
-        final List<String> result = removeEmptyValues(Arrays.asList(values)); 
+
+        final List<String> result = removeEmptyValues(Arrays.asList(values));
         return result.toArray(new String[result.size()]);
     }
 
@@ -235,7 +233,7 @@ public final class PsUtil {
             return null;
         }
 
-        return mimeTypeToExtensionMap.get(mimeType); 
+        return mimeTypeToExtensionMap.get(mimeType);
     }
 
 }
