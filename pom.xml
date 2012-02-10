@@ -226,10 +226,10 @@
   </repositories>
 
   <modules>
-    <module>content</module>
+    <module>commons</module>
     <module>cms</module>
     <module>hst</module>
-    <module>commons</module>
+    <module>repository</module>
   </modules>
 
   <build>

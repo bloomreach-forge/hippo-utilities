@@ -8,7 +8,7 @@
     <version>1.01.00-SNAPSHOT</version>
   </parent>
 
-  <artifactId>hippo-utilities-content</artifactId>
+  <artifactId>hippo-utilities-repository</artifactId>
   <packaging>jar</packaging>
 
   <dependencies>

@@ -9,11 +9,11 @@ commons/.classpath
 commons/.project
 commons/.settings
 commons/target
-content/.classpath
-content/.project
-content/.settings
-content/target
 hst/.classpath
 hst/.project
 hst/.settings
 hst/target
+repository/.classpath
+repository/.project
+repository/.settings
+repository/target
