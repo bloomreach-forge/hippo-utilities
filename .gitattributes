@@ -23,7 +23,6 @@ commons/src/test/resources/content.xml -text
 commons/src/test/resources/log4j.dtd -text
 commons/src/test/resources/log4j.xml -text
 commons/src/test/resources/repository.xml -text
-content/src/main/java/org/onehippo/forge/utilities/content/updater/support/UpdaterUtils.java -text svneol=unset#text/plain
 hst/src/main/java/org/onehippo/forge/utilities/hst/CompUtil.java -text
 hst/src/main/java/org/onehippo/forge/utilities/hst/component/BaseComponent.java -text
 hst/src/main/java/org/onehippo/forge/utilities/hst/component/Container.java -text
