@@ -65,14 +65,15 @@ public class JobSchedule {
         jobName = node.getName();
 
         // properties
-        active = NodeUtils.getBoolean(node, Namespace.Property.ACTIVE);
+        active = NodeUtils.getBoolean(node, Namespace.Property.ACTIVE, true);
         cronExpression = NodeUtils.getString(node, Namespace.Property.CRON_EXPRESSION);
         cronExpressionDescription = NodeUtils.getString(node, Namespace.Property.CRON_EXPRESSION_DESCRIPTION);
         runInstantly = NodeUtils.getBoolean(node, Namespace.Property.RUN_INSTANTLY);
         jobClassName = NodeUtils.getString(node, Namespace.Property.JOB_CLASS_NAME);
 
-        jobConfiguration = new JobConfiguration(node.getNode(Namespace.Node.JOB_CONFIGURATION));
-
+        if (node.hasNode(Namespace.Node.JOB_CONFIGURATION)) {
+            jobConfiguration = new JobConfiguration(node.getNode(Namespace.Node.JOB_CONFIGURATION));
+        }
     }
 
     // for debugging and logging

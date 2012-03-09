@@ -42,15 +42,17 @@ public class JobScheduleGroup {
                     Namespace.NodeType.JOB_SCHEDULE_GROUP, ((node == null) ? "null" : node.getPrimaryNodeType())));
         }
 
-        active = NodeUtils.getBoolean(node, Namespace.Property.ACTIVE);
+        active = NodeUtils.getBoolean(node, Namespace.Property.ACTIVE, true);
 
         groupName = node.getName();
 
         // load job schedules
-        final NodeIterator iterator = node.getNodes(Namespace.NodeType.JOB_SCHEDULE);
+        final NodeIterator iterator = node.getNodes();
         while (iterator.hasNext()) {
             final Node subNode = iterator.nextNode();
-            jobSchedules.add(new JobSchedule(groupName, subNode));
+            if (subNode.isNodeType(Namespace.NodeType.JOB_SCHEDULE)) {
+                jobSchedules.add(new JobSchedule(groupName, subNode));
+            }
         }
     }
 

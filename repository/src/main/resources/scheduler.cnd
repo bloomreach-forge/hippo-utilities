@@ -21,5 +21,6 @@
   + * (scheduler:jobSchedule) multiple
 
 [scheduler:scheduler]
+  - * (string)
   - scheduler:active (boolean)
   + * (scheduler:jobScheduleGroup) multiple

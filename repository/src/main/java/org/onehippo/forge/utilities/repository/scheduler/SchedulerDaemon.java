@@ -42,11 +42,12 @@ public class SchedulerDaemon implements DaemonModule, EventListener {
 
     private final DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd-HHmmss");
 
-    private Scheduler quartzScheduler;
-
-    protected final List<JobScheduleGroup> jobScheduleGroups = new ArrayList<JobScheduleGroup>();
     private Session session;
     private SchedulerNode schedulerNode;
+
+    protected Scheduler quartzScheduler;
+
+    protected final List<JobScheduleGroup> jobScheduleGroups = new ArrayList<JobScheduleGroup>();
 
 
     /**
@@ -113,11 +114,11 @@ public class SchedulerDaemon implements DaemonModule, EventListener {
     }
 
     /**
-     * Setup the configuration for the quartz scheduler.
+     * Get the configuration for the quartz scheduler.
      *
      * @return the configuration properties for the quartz scheduler
      */
-    protected Properties setup(Node node) throws RepositoryException {
+    protected Properties getQuartzSchedulerConfiguration(Node node) throws RepositoryException {
         Properties properties = new Properties();
         properties.put("org.quartz.scheduler.instanceName",
                 NodeUtils.getString(node, "org.quartz.scheduler.instanceName", "Job Scheduler"));
@@ -224,24 +225,27 @@ public class SchedulerDaemon implements DaemonModule, EventListener {
             // be aware that if runInstantly is on and and is active, with every change of the
             // configuration node the job will be triggered if the job is set to runNow
             final String jobName = jobSchedule.getJobName() + getDateString();
-            Trigger trigger;
+            Trigger trigger = null;
             if (jobSchedule.runInstantly()) {
                 trigger = TriggerUtils.makeImmediateTrigger(0, 0);
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTime(new Date());
                 calendar.add(Calendar.SECOND, 45);
                 trigger.setStartTime(calendar.getTime());
-            } else {
+            } else if (jobSchedule.getCronExpression() != null){
                 trigger = new CronTrigger();
                 ((CronTrigger) trigger).setCronExpression(jobSchedule.getCronExpression());
             }
 
-            trigger.setJobDataMap(dataMap);
-            trigger.setName(jobName);
-            trigger.setGroup(jobSchedule.getGroupName());
+            if (trigger != null) {
+                trigger.setJobDataMap(dataMap);
+                trigger.setName(jobName);
+                trigger.setGroup(jobSchedule.getGroupName());
 
-            quartzScheduler.scheduleJob(new JobDetail(jobName, jobSchedule.getGroupName(), jobClass), trigger);
-            logger.info("scheduled job {}", jobSchedule);
+                quartzScheduler.scheduleJob(new JobDetail(jobName, jobSchedule.getGroupName(), jobClass), trigger);
+
+                logger.info("scheduled job {}", jobSchedule);
+            }
         } catch (ParseException exception) {
             logger.error("Cron parse error on cron expression " + jobSchedule.getCronExpression() +
                     " scheduling quartz job " + jobSchedule.getJobName(), exception);
@@ -262,7 +266,9 @@ public class SchedulerDaemon implements DaemonModule, EventListener {
         }
 
         if (quartzScheduler == null) {
-            final Properties properties = setup(schedulerNode.getNode());
+            final Properties properties = getQuartzSchedulerConfiguration(schedulerNode.getNode());
+
+            logger.info("Creating quartz scheduler from node {} with properties {}", schedulerNode.getNode().getPath(), properties);
             final StdSchedulerFactory factory;
             try {
                 factory = new JCRSchedulerFactory(session);
@@ -294,5 +300,4 @@ public class SchedulerDaemon implements DaemonModule, EventListener {
         Calendar now = Calendar.getInstance();
         return dateFormat.format(now.getTime());
     }
-
 }

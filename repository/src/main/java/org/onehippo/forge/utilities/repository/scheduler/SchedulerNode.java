@@ -54,13 +54,15 @@ public class SchedulerNode {
                     Namespace.NodeType.SCHEDULER, ((node == null) ? "null" : node.getPrimaryNodeType())));
         }
 
-        active = NodeUtils.getBoolean(node, Namespace.Property.ACTIVE);
+        active = NodeUtils.getBoolean(node, Namespace.Property.ACTIVE, true);
 
         // load job schedule groups
-        final NodeIterator iterator = node.getNodes(Namespace.NodeType.JOB_SCHEDULE_GROUP);
+        final NodeIterator iterator = node.getNodes();
         while (iterator.hasNext()) {
             final Node groupNode = iterator.nextNode();
-            jobScheduleGroups.add(new JobScheduleGroup(groupNode));
+            if (groupNode.isNodeType(Namespace.NodeType.JOB_SCHEDULE_GROUP)) {
+                jobScheduleGroups.add(new JobScheduleGroup(groupNode));
+            }
         }
     }
 }

@@ -20,15 +20,25 @@ public class NodeUtils {
      * Get a boolean property from a node, returning false if not found
      */
     public static boolean getBoolean(final Node node, final String propertyName) {
+        return getBoolean(node, propertyName, false);
+    }
+
+    /**
+     * Get a boolean property from a node, returning a default if not found
+     */
+    public static boolean getBoolean(final Node node, final String propertyName, final boolean defaultValue) {
+
         try {
-            final Property property = node.getProperty(propertyName);
-            if (property != null) {
-                return property.getValue().getBoolean();
+            if (node.hasProperty(propertyName)) {
+                final Property property = node.getProperty(propertyName);
+                if (property != null) {
+                    return property.getValue().getBoolean();
+                }
             }
         } catch (RepositoryException e) {
             throw new IllegalStateException(e);
         }
-        return false;
+        return defaultValue;
     }
 
     /**
@@ -36,9 +46,11 @@ public class NodeUtils {
      */
     public static Date getDate(final Node node, final String propertyName) {
         try {
-            final Property property = node.getProperty(propertyName);
-            if (property != null) {
-                return property.getValue().getDate().getTime();
+            if (node.hasProperty(propertyName)) {
+                final Property property = node.getProperty(propertyName);
+                if (property != null) {
+                    return property.getValue().getDate().getTime();
+                }
             }
         } catch (RepositoryException e) {
             throw new IllegalStateException(e);
@@ -51,9 +63,11 @@ public class NodeUtils {
      */
     public static Double getDouble(final Node node, final String propertyName) {
         try {
-            final Property property = node.getProperty(propertyName);
-            if (property != null) {
-                return property.getValue().getDouble();
+            if (node.hasProperty(propertyName)) {
+                final Property property = node.getProperty(propertyName);
+                if (property != null) {
+                    return property.getValue().getDouble();
+                }
             }
         } catch (RepositoryException e) {
             throw new IllegalStateException(e);
@@ -66,9 +80,11 @@ public class NodeUtils {
      */
     public static Long getLong(final Node node, final String propertyName) {
         try {
-            final Property property = node.getProperty(propertyName);
-            if (property != null) {
-                return property.getValue().getLong();
+            if (node.hasProperty(propertyName)) {
+                final Property property = node.getProperty(propertyName);
+                if (property != null) {
+                    return property.getValue().getLong();
+                }
             }
         } catch (RepositoryException e) {
             throw new IllegalStateException(e);
@@ -88,9 +104,11 @@ public class NodeUtils {
      */
     public static String getString(final Node node, final String propertyName, final String defaultValue) {
         try {
-            final Property property = node.getProperty(propertyName);
-            if (property != null) {
-                return property.getValue().getString();
+            if (node.hasProperty(propertyName)) {
+                final Property property = node.getProperty(propertyName);
+                if (property != null) {
+                    return property.getValue().getString();
+                }
             }
         } catch (RepositoryException e) {
             return defaultValue;
@@ -103,16 +121,18 @@ public class NodeUtils {
      */
     public static String[] getStrings(final Node node, final String propertyName, final String defaultValue[]) {
         try {
-            final Property property = node.getProperty(propertyName);
-            if(property !=null && !property.isMultiple()){
-                return null;
-            }
-            if (property != null) {
-                List<String> values = new LinkedList<String>();
-                for(Value value : property.getValues()) {
-                    values.add(value.getString());
+            if (node.hasProperty(propertyName)) {
+                final Property property = node.getProperty(propertyName);
+                if (property != null && !property.isMultiple()) {
+                    return null;
                 }
-                return values.toArray(new String[values.size()]);
+                if (property != null) {
+                    List<String> values = new LinkedList<String>();
+                    for (Value value : property.getValues()) {
+                        values.add(value.getString());
+                    }
+                    return values.toArray(new String[values.size()]);
+                }
             }
         } catch (RepositoryException e) {
             return defaultValue;
