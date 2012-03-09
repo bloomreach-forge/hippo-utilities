@@ -10,7 +10,7 @@
   <name>Hippo Utilities Parent pom</name>
   <groupId>org.onehippo.forge.utilities</groupId>
   <artifactId>hippo-utilities</artifactId>
-  <version>1.01.00-SNAPSHOT</version>
+  <version>1.01.00</version>
   <packaging>pom</packaging>
 
   <properties>
@@ -46,9 +46,9 @@
   </properties>
 
   <scm>
-    <connection>scm:svn:https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities/trunk</connection>
-    <developerConnection>scm:svn:https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities/trunk</developerConnection>
-    <url>https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities/trunk</url>
+    <connection>scm:svn:https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities/tags/hippo-utilities-1.01.00</connection>
+    <developerConnection>scm:svn:https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities/tags/hippo-utilities-1.01.00</developerConnection>
+    <url>https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities/tags/hippo-utilities-1.01.00</url>
   </scm>
 
   <distributionManagement>
@@ -236,7 +236,7 @@
       <id>hippo</id>
       <name>Hippo maven 2 repository</name>
       <url>http://maven.onehippo.com/maven2/</url>
-      <snapshots/>
+      <snapshots />
       <releases>
         <updatePolicy>never</updatePolicy>
       </releases>
