@@ -8,11 +8,15 @@ import javax.jcr.PropertyIterator;
 import javax.jcr.RepositoryException;
 
 /**
- * Configuration object for a Job implementation.
+ * Configuration object for a job implementation.
  */
 public class JobConfiguration {
 
-    private Node node;
+    private final Node node;
+
+    public JobConfiguration() throws RepositoryException {
+        this.node = null;
+    }
 
     public JobConfiguration(final Node node) throws RepositoryException {
         if (!node.isNodeType(Namespace.NodeType.JOB_CONFIGURATION)) {
@@ -46,7 +50,7 @@ public class JobConfiguration {
         return NodeUtils.getString(node, propertyName, defaultValue);
     }
 
-    public String [] getStrings(final String propertyName, final String [] defaultValues) {
+    public String[] getStrings(final String propertyName, final String[] defaultValues) {
         return NodeUtils.getStrings(node, propertyName, defaultValues);
     }
 
@@ -55,14 +59,16 @@ public class JobConfiguration {
     public String toString() {
         final StringBuilder builder = new StringBuilder();
         try {
-            PropertyIterator it = node.getProperties();
-            while (it.hasNext()) {
-                final Property property = it.nextProperty();
-                builder.append(property.getDefinition().getName());
-                builder.append("=");
-                builder.append(property.getValue());
-                if (it.hasNext()) {
-                    builder.append(",");
+            if (node != null) {
+                PropertyIterator it = node.getProperties();
+                while (it.hasNext()) {
+                    final Property property = it.nextProperty();
+                    builder.append(property.getDefinition().getName());
+                    builder.append("=");
+                    builder.append(property.getValue());
+                    if (it.hasNext()) {
+                        builder.append(", ");
+                    }
                 }
             }
         } catch (RepositoryException e) {

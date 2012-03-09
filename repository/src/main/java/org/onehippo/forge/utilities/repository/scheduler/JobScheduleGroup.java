@@ -61,7 +61,7 @@ public class JobScheduleGroup {
     public String toString() {
         StringBuilder builder = new StringBuilder(JobScheduleGroup.class.getSimpleName());
         builder.append("[groupName=").append(groupName);
-        builder.append("active=").append(active);
+        builder.append(", active=").append(active);
         builder.append("]");
         return builder.toString();
     }

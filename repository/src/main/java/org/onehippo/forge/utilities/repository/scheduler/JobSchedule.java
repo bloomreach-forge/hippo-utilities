@@ -74,6 +74,9 @@ public class JobSchedule {
         if (node.hasNode(Namespace.Node.JOB_CONFIGURATION)) {
             jobConfiguration = new JobConfiguration(node.getNode(Namespace.Node.JOB_CONFIGURATION));
         }
+        else {
+            jobConfiguration = new JobConfiguration();
+        }
     }
 
     // for debugging and logging
@@ -81,12 +84,12 @@ public class JobSchedule {
     public String toString() {
         StringBuilder builder = new StringBuilder(JobSchedule.class.getSimpleName());
         builder.append("[groupName=").append(groupName);
-        builder.append("jobName=").append(jobName);
-        builder.append("jobClassName=").append(jobClassName);
-        builder.append("active=").append(active);
-        builder.append("runInstantly=").append(runInstantly);
-        builder.append("cronExpression=").append(cronExpression);
-        builder.append("cronExpressionDescription=").append(cronExpressionDescription);
+        builder.append(", jobName=").append(jobName);
+        builder.append(", jobClassName=").append(jobClassName);
+        builder.append(", active=").append(active);
+        builder.append(", runInstantly=").append(runInstantly);
+        builder.append(", cronExpression=").append(cronExpression);
+        builder.append(", cronExpressionDescription=").append(cronExpressionDescription);
         builder.append("]");
         return builder.toString();
     }

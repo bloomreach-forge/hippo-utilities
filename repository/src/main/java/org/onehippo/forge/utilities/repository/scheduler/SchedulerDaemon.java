@@ -47,7 +47,7 @@ public class SchedulerDaemon implements DaemonModule, EventListener {
     /**
      * Initializes the daemon, loads the configuration, starts the scheduler and creates the jobs.
      *
-     * @param session the jcr session.
+     * @param session the jcr session.                                          2
      * @throws javax.jcr.RepositoryException if registering the event listener on the configuration node in the repository fails.
      */
     public void initialize(final Session session) throws RepositoryException {
@@ -221,14 +221,18 @@ public class SchedulerDaemon implements DaemonModule, EventListener {
             final String jobName = jobSchedule.getJobName() + getDateString();
             Trigger trigger = null;
             if (jobSchedule.runInstantly()) {
+                // runInstantly means after 30 seconds
                 trigger = TriggerUtils.makeImmediateTrigger(0, 0);
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTime(new Date());
-                calendar.add(Calendar.SECOND, 45);
+                calendar.add(Calendar.SECOND, 30);
                 trigger.setStartTime(calendar.getTime());
             } else if (jobSchedule.getCronExpression() != null){
                 trigger = new CronTrigger();
                 ((CronTrigger) trigger).setCronExpression(jobSchedule.getCronExpression());
+            }
+            else {
+                logger.warn("job {} NOT scheduled: lacking either cron expression or runInstanly flag", jobSchedule);
             }
 
             if (trigger != null) {
