@@ -3,10 +3,8 @@ package org.onehippo.forge.utilities.repository.scheduler;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 import java.util.Properties;
 
 import javax.jcr.Node;
@@ -42,13 +40,9 @@ public class SchedulerDaemon implements DaemonModule, EventListener {
 
     private final DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd-HHmmss");
 
-    private Session session;
-    private SchedulerNode schedulerNode;
-
+    protected Session session;
+    protected SchedulerNode schedulerNode;
     protected Scheduler quartzScheduler;
-
-    protected final List<JobScheduleGroup> jobScheduleGroups = new ArrayList<JobScheduleGroup>();
-
 
     /**
      * Initializes the daemon, loads the configuration, starts the scheduler and creates the jobs.
@@ -189,7 +183,7 @@ public class SchedulerDaemon implements DaemonModule, EventListener {
         }
 
         try {
-            for (JobScheduleGroup group : jobScheduleGroups) {
+            for (JobScheduleGroup group : schedulerNode.getJobScheduleGroups()) {
                 if (group.active()) {
                     for (JobSchedule jobSchedule : group.getJobSchedules()) {
                         if (jobSchedule.active()) {

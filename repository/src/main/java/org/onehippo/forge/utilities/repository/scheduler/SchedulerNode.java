@@ -38,6 +38,13 @@ public class SchedulerNode {
     }
 
     /**
+     * Get the list of job schedule groups
+     */
+    public List<JobScheduleGroup> getJobScheduleGroups() {
+        return jobScheduleGroups;
+    }
+
+    /**
      * Reload the groupd
      */
     public void reload() throws RepositoryException {
@@ -57,6 +64,7 @@ public class SchedulerNode {
         active = NodeUtils.getBoolean(node, Namespace.Property.ACTIVE, true);
 
         // load job schedule groups
+        jobScheduleGroups.clear();
         final NodeIterator iterator = node.getNodes();
         while (iterator.hasNext()) {
             final Node groupNode = iterator.nextNode();
