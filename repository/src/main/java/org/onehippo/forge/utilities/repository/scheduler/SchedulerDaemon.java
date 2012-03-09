@@ -100,9 +100,9 @@ public class SchedulerDaemon implements DaemonModule, EventListener {
      * Is called when the module is shutting down. Kills all jobs and logs out the session.
      */
     public void shutdown() {
-        logger.info("+------------------------------------------+");
-        logger.info("|         Shutting  down jobs              |");
-        logger.info("+------------------------------------------+");
+        logger.info("+-----------------------------------------+");
+        logger.info("|         Shutting down jobs              |");
+        logger.info("+-----------------------------------------+");
         if (scheduler != null) {
             killAllJobs();
             try {

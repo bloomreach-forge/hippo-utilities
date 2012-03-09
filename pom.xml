@@ -31,6 +31,7 @@
     <testng.version>5.10</testng.version>
     <mockito.version>1.8.5</mockito.version>
     <fakeftp.version>2.2</fakeftp.version>
+    <junit.version>4.5</junit.version>
 
     <!-- documentation -->
     <maven.plugin.site.version>3.0-beta-3</maven.plugin.site.version>
@@ -206,6 +207,7 @@
         <scope>provided</scope>
       </dependency>
 
+      <!-- TEST -->
       <dependency>
         <groupId>org.testng</groupId>
         <artifactId>testng</artifactId>
@@ -213,8 +215,13 @@
         <version>${testng.version}</version>
         <scope>test</scope>
       </dependency>
-
       <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${junit.version}</version>
+        <scope>test</scope>
+      </dependency>
+        <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-all</artifactId>
         <version>${mockito.version}</version>

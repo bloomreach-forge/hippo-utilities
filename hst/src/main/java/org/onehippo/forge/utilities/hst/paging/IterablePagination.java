@@ -26,8 +26,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * IterablePagination
- * @version $Id: IterablePagination.java 92541 2010-08-05 10:22:01Z mmilicevic $
+ * IterablePagination: a Pageable with HippoBean items.
  */
 public class IterablePagination<T extends HippoBean> extends Pageable {
 
@@ -35,26 +34,55 @@ public class IterablePagination<T extends HippoBean> extends Pageable {
 
     private static final int DEFAULT_PAGE_RANGE = 10;
 
+    private int defaultPageRange = DEFAULT_PAGE_RANGE;
+
     private List<T> items;
 
-    @SuppressWarnings({"unchecked"})
-    public IterablePagination(final HippoBeanIterator beans, final int currentPage) {
-        super(beans.getSize(), currentPage);
-        items = new ArrayList<T>();
-        process(beans);
+    /**
+     * Constructor to be used when the paging has been done beforehand (for example in HST query).
+     * The beans iterator size should be the same as pageSize (except maybe for the last page).
+     *
+     * E.g. when HstQuery is used to get the beans, both HstQuery#setLimit and HstQuery#setOffset has been used.
+     */
+    public IterablePagination(final HippoBeanIterator beans, final int totalSize, final int pageSize, final int currentPage) {
+        super(totalSize, currentPage, pageSize);
+
+        // add all from iterator; assumption that paging is done beforehand
+        processItems(beans);
     }
 
-    public IterablePagination(final HippoBeanIterator beans, final int pageSize, final int currentPage) {
-        super(beans.getSize(), currentPage, pageSize);
-        items = new ArrayList<T>();
-        process(beans);
-    }
-
-    public IterablePagination(int total, List<T> items) {
-        super(total);
+    /**
+     * Constructor to be used when the paging has been done beforehand (for example in HST query).
+     */
+    public IterablePagination(int totalSize, List<T> items) {
+        super(totalSize);
         this.items = new ArrayList<T>(items);
     }
 
+    /**
+     * Constructor to be used when the paging is not done beforehand (for example in HST query), but has to be done by
+     * this class, for instance paging on facet navigation results.
+     */
+    @SuppressWarnings({"unchecked"})
+    public IterablePagination(final HippoBeanIterator beans, final int currentPage) {
+        super(beans.getSize(), currentPage);
+        processOffset(beans);
+    }
+
+    /**
+     * Constructor to be used when the paging is not done beforehand (for example in HST query), but has to be done by
+     * this class, for instance paging on facet navigation results.
+     */
+    public IterablePagination(final HippoBeanIterator beans, final int pageSize, final int currentPage) {
+        super(beans.getSize(), currentPage, pageSize);
+        items = new ArrayList<T>();
+        processOffset(beans);
+    }
+
+    /**
+     * Constructor to be used when the paging is not done beforehand (for example in HST query), but has to be done by
+     * this class, for instance paging on facet navigation results.
+     */
     public IterablePagination(List<T> items, final int pageSize, final int currentPage) {
         super(items.size(), currentPage, pageSize);
         this.items = new ArrayList<T>();
@@ -73,18 +101,122 @@ public class IterablePagination<T extends HippoBean> extends Pageable {
         }
     }
 
-    public IterablePagination(final HippoDocumentIterator<T> beans, final int results, final int pageSize,
-        final int pageNumber) {
-        super(results, pageNumber, pageSize);
-        items = new ArrayList<T>();
-        processDocuments(beans);
+    /**
+     * Constructor to be used when the paging is not done beforehand (for example in HST query), but has to be done by
+     * this class, for instance paging on facet navigation results.
+     */
+    public IterablePagination(final HippoDocumentIterator<T> beans, final int totalSize, final int pageSize, final int pageNumber) {
+        super(totalSize, pageNumber, pageSize);
+        processDocumentsOffset(beans);
     }
 
+    /**
+     * Add an item
+     *
+     * @param item the item
+     */
     public void addItem(T item) {
         items.add(item);
     }
 
-    private void processDocuments(HippoDocumentIterator<T> documentsIterator) {
+    /**
+     * Set the default page range, i.e. the page range width, that will be used to determine the actual page range
+     * by subtracting the page fill (== half the default page range) from current page and adding the same fill to the
+     * current page.
+     *
+     * @param defaultPageRange value of default page range
+     */
+    public void setDefaultPageRange(int defaultPageRange) {
+        this.defaultPageRange = defaultPageRange;
+    }
+
+    /**
+     * Get all paged items
+     *
+     * @return all paged items
+     */
+    public List<? extends HippoBean> getItems() {
+        return items;
+    }
+
+    @SuppressWarnings({"unchecked"})
+    public void setItems(List<? extends HippoBean> items) {
+        this.items = (List<T>) items;
+    }
+
+    /**
+     * Default page range for given page
+     * @param page current page
+     * @return page surrounded by results on both side e.g. {@literal 1, 2, 3, 4<selected page>5, 6 ,7 ,8,9 etc.>}
+     * @see #getDefaultPageFill()
+     */
+    public List<Long> getPageRange(final int page) {
+        return getPageRangeWithFill(page, getDefaultPageFill());
+    }
+
+    /**
+     * Default Page range for current selected page, it is "google alike" page range with x pages before selected item
+     * and x+1 after selected item.
+     * @return range based on default fill {@literal 1, 2, 3, 4, 5 <selected 6>, 7, 8,9 etc. }
+     * @see #getDefaultPageFill()
+     */
+    public List<Long> getCurrentRange() {
+        return getPageRangeWithFill(getCurrentPage(), getDefaultPageFill());
+    }
+
+    /**
+     * Return previous X and next X pages for given page, based on total pages.
+     * @param page selected page
+     * @param fillIn selected page
+     * @return page range for given page
+     */
+    public List<Long> getPageRangeWithFill(long page, final int fillIn) {
+        final List<Long> pages = new ArrayList<Long>();
+        // do bound checking
+        if (page < 0) {
+            page = 1;
+        }
+        if (page > getTotalPages()) {
+            page = getTotalPages();
+        }
+        // fill in lower range: e.g. for 2 it will be 1
+        long start = page - fillIn;
+        long endCorrectionCorrection = 0;
+        if (start <= 0) {
+            endCorrectionCorrection =  1 - start;
+            start = 1;
+        }
+        // end part:
+        long end = page + fillIn;
+        long startCorrection = 0;
+        if (end > getTotalPages()) {
+            startCorrection = getTotalPages() - end;
+            end = getTotalPages();
+        }
+
+        // put corrections to keep range correct, adding to end what was subtracted from start or vice versa
+        if ((start + startCorrection) > 0) {
+            start += startCorrection;
+        }
+        if ((end + endCorrectionCorrection) <= getTotalPages()) {
+            end += endCorrectionCorrection;
+        }
+
+        for (long i = start; i <= end; i++) {
+            pages.add(i);
+        }
+        return pages;
+    }
+
+    protected int getDefaultPageRange() {
+        return defaultPageRange;
+    }
+
+    protected int getDefaultPageFill() {
+        return defaultPageRange / 2;
+    }
+
+    protected void processDocumentsOffset(HippoDocumentIterator<T> documentsIterator) {
         items = new ArrayList<T>();
         int startAt = getStartOffset();
         if (startAt < getTotal()) {
@@ -103,7 +235,7 @@ public class IterablePagination<T extends HippoBean> extends Pageable {
         }
     }
 
-    private void process(HippoBeanIterator beans) {
+    protected void processOffset(HippoBeanIterator beans) {
         items = new ArrayList<T>();
         int startAt = getStartOffset();
         if (startAt < getTotal()) {
@@ -122,67 +254,17 @@ public class IterablePagination<T extends HippoBean> extends Pageable {
         }
     }
 
-    public List<? extends HippoBean> getItems() {
-        return items;
-    }
-
-    @SuppressWarnings({"unchecked"})
-    public void setItems(List<? extends HippoBean> items) {
-        this.items = (List<T>) items;
-    }
-
     /**
-     * Default page range for given page
-     * @param page current page
-     * @return page surrounded by results on both side e.g. {@literal 1, 2, 3, 4<selected page>5, 6 ,7 ,8,9 etc.>}
-     * @see #getDefaultPageRange()
+     * Process items without offset
      */
-    public List<Long> getPageRange(final int page) {
-        return getPageRangeWithFill(page, getDefaultPageRange());
+    protected void processItems(HippoBeanIterator beans) {
+        items = new ArrayList<T>();
+        while (beans.hasNext()) {
+            T bean = (T) beans.nextHippoBean();
+            if (bean != null) {
+                items.add(bean);
+            }
+        }
     }
 
-    /**
-     * Default Page range for current selected page, it is "google alike" page range with x pages before selected item
-     * and x+1 after selected item.
-     * @return range based on default fill {@literal 1, 2, 3, 4, 5 <selected 6>, 7, 8,9 etc. }
-     * @see #getDefaultPageRange()
-     */
-    public List<Long> getCurrentRange() {
-        return getPageRangeWithFill(getCurrentPage(), getDefaultPageRange());
-    }
-
-    /**
-     * Return previous X and next X pages for given page, based on total pages.
-     * @param page selected page
-     * @param fillIn selected page
-     * @return page range for given page
-     */
-    public List<Long> getPageRangeWithFill(long page, final int fillIn) {
-        final List<Long> pages = new ArrayList<Long>();
-        // do bound checking
-        if (page < 0) {
-            page = 1;
-        }
-        if (page > getTotalPages()) {
-            page = getTotalPages();
-        }
-        // fill in lower range: e.g. for 2 it will  be 1
-        long start = page - fillIn;
-        if (start <= 0) {
-            start = 1;
-        }
-        // end part:
-        long end = page + fillIn + 1;
-        if (end > getTotalPages()) {
-            end = getTotalPages();
-        }
-        for (long i = start; i <= end; i++) {
-            pages.add(i);
-        }
-        return pages;
-    }
-
-    protected int getDefaultPageRange() {
-        return DEFAULT_PAGE_RANGE;
-    }
 }
