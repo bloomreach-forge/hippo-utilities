@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.onehippo.forge.utilities;
+package org.onehippo.forge.utilities.commons;
 
 import java.io.InputStream;
 import java.util.ArrayList;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.onehippo.forge.utilities;
+package org.onehippo.forge.utilities.commons;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;

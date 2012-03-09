@@ -21,10 +21,10 @@ import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 
 import org.hippoecm.hst.content.beans.ContentNodeBindingException;
-import org.onehippo.forge.utilities.RepositoryUtil;
+import org.onehippo.forge.utilities.commons.RepositoryUtil;
 import org.onehippo.forge.utilities.hst.simpleocm.load.BeanLoaderImpl;
 import org.onehippo.forge.utilities.hst.simpleocm.model.Agenda;
-import org.onehippo.forge.utilities.jcrmockup.JcrMockUp;
+import org.onehippo.forge.utilities.commons.jcrmockup.JcrMockUp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;

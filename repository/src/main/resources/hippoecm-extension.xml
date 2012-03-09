@@ -5,7 +5,7 @@
     <sv:value>hippo:initializefolder</sv:value>
   </sv:property>
   <sv:property sv:name="hippo:version" sv:type="String">
-    <sv:value>hippo-utilities-repository-1.0x</sv:value>
+    <sv:value>utilities-repository-1.0x</sv:value>
   </sv:property>
 
   <sv:node sv:name="scheduler">

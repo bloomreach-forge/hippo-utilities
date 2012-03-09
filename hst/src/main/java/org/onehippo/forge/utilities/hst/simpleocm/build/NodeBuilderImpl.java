@@ -31,7 +31,7 @@ import org.apache.commons.lang.StringUtils;
 import org.hippoecm.hst.content.beans.ContentNodeBinder;
 import org.hippoecm.hst.content.beans.ContentNodeBindingException;
 import org.hippoecm.repository.api.NodeNameCodec;
-import org.onehippo.forge.utilities.GenericsUtil;
+import org.onehippo.forge.utilities.commons.GenericsUtil;
 import org.onehippo.forge.utilities.hst.simpleocm.JcrNodeType;
 import org.onehippo.forge.utilities.hst.simpleocm.JcrPath;
 import org.onehippo.forge.utilities.hst.simpleocm.util.Converter;

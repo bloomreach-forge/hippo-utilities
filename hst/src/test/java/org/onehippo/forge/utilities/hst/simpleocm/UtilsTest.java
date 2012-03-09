@@ -24,8 +24,8 @@ import javax.jcr.Property;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 
-import org.onehippo.forge.utilities.GenericsUtil;
-import org.onehippo.forge.utilities.jcrmockup.JcrMockUp;
+import org.onehippo.forge.utilities.commons.GenericsUtil;
+import org.onehippo.forge.utilities.commons.jcrmockup.JcrMockUp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;

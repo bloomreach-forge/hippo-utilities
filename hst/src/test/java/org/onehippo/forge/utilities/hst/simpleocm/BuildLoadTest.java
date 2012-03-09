@@ -34,7 +34,7 @@ import org.onehippo.forge.utilities.hst.simpleocm.model.ExtraAgenda;
 import org.onehippo.forge.utilities.hst.simpleocm.model.HippoHtml;
 import org.onehippo.forge.utilities.hst.simpleocm.model.Preference;
 import org.onehippo.forge.utilities.hst.simpleocm.model.User;
-import org.onehippo.forge.utilities.jcrmockup.JcrMockUp;
+import org.onehippo.forge.utilities.commons.jcrmockup.JcrMockUp;
 import org.testng.annotations.Test;
 
 public class BuildLoadTest {

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.onehippo.forge.utilities.jcrmockup;
+package org.onehippo.forge.utilities.commons.jcrmockup;
 
 import java.util.Iterator;
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.onehippo.forge.utilities.ftp;
+package org.onehippo.forge.utilities.commons.ftp;
 
 import java.io.Closeable;
 import java.io.IOException;

@@ -21,6 +21,7 @@ import static org.testng.AssertJUnit.assertTrue;
 import java.lang.reflect.Method;
 import java.util.Collection;
 
+import org.onehippo.forge.utilities.commons.AnnotationUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
