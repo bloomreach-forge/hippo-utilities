@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Properties;
 
 import javax.jcr.Node;
-import javax.jcr.NodeIterator;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import javax.jcr.observation.Event;
@@ -39,15 +38,15 @@ public class SchedulerDaemon implements DaemonModule, EventListener {
 
     private static final Logger logger = LoggerFactory.getLogger(SchedulerDaemon.class);
 
-    private static final String SCHEDULER_PATH_QUERY = "//element(*, scheduler:jobScheduleGroup)";
+    private static final String SCHEDULER_QUERY = "//element(*, " + Namespace.NodeType.SCHEDULER + ")";
 
     private final DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd-HHmmss");
 
-    private Scheduler scheduler;
+    private Scheduler quartzScheduler;
 
     protected final List<JobScheduleGroup> jobScheduleGroups = new ArrayList<JobScheduleGroup>();
     private Session session;
-    private Node schedulerNode;
+    private SchedulerNode schedulerNode;
 
 
     /**
@@ -59,41 +58,23 @@ public class SchedulerDaemon implements DaemonModule, EventListener {
     public void initialize(final Session session) throws RepositoryException {
         this.session = session;
 
-        try {
-            // select one scheduler:scheduler node by query
-            final Query query = session.getWorkspace().getQueryManager().createQuery(SCHEDULER_PATH_QUERY, Query.XPATH);
-            final QueryResult result = query.execute();
-            if (!result.getNodes().hasNext()) {
-                logger.info("Scheduler Daemon not configured, can't find node by type {}", Namespace.NodeType.SCHEDULER);
-                return;
-            }
-
-            schedulerNode = result.getNodes().nextNode();
-
-            // TODO check property 'scheduler:active' on schedulerNode; do not create JCRScheduler if false
-            // (also in onEvent!)
-
-            // TODO do not create/start JCRScheduler if there are no active schedules (als in onEvent)
-
-            final Properties properties = setup(schedulerNode);
-            final StdSchedulerFactory factory = new JCRSchedulerFactory(session);
-            factory.initialize(properties);
-
-            scheduler = factory.getScheduler();
-            scheduler.start();
-
-            loadScheduleGroups();
-            killAllJobs();
-            scheduleJobs();
-
-            // register listener so we can re-configure the jobs:
-            session.getWorkspace().getObservationManager().addEventListener(this,
-                    Event.NODE_ADDED | Event.PROPERTY_CHANGED, schedulerNode.getPath(), true, null, null, true);
-
-        } catch (SchedulerException se) {
-            logger.error("Error initializing scheduler.", se);
+        // select one scheduler:scheduler node by query
+        final Query query = session.getWorkspace().getQueryManager().createQuery(SCHEDULER_QUERY, Query.XPATH);
+        final QueryResult result = query.execute();
+        if (!result.getNodes().hasNext()) {
+            logger.info("Scheduler Daemon not configured, can't find node by type {}", Namespace.NodeType.SCHEDULER);
+            return;
         }
 
+        schedulerNode = createSchedulerNode(result.getNodes().nextNode());
+
+        createQuartzScheduler();
+        killAllJobs();
+        scheduleJobs();
+
+        // register listener so we can re-configure the jobs:
+        session.getWorkspace().getObservationManager().addEventListener(this,
+                Event.NODE_ADDED | Event.PROPERTY_CHANGED, schedulerNode.getNode().getPath(), true, null, null, true);
     }
 
     /**
@@ -103,14 +84,8 @@ public class SchedulerDaemon implements DaemonModule, EventListener {
         logger.info("+-----------------------------------------+");
         logger.info("|         Shutting down jobs              |");
         logger.info("+-----------------------------------------+");
-        if (scheduler != null) {
-            killAllJobs();
-            try {
-                scheduler.shutdown();
-            } catch (SchedulerException e) {
-                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-            }
-        }
+        killAllJobs();
+        destroyQuartzScheduler();
         session.logout();
     }
 
@@ -121,14 +96,17 @@ public class SchedulerDaemon implements DaemonModule, EventListener {
      * @param events the events
      */
     public void onEvent(EventIterator events) {
-        logger.info(" Reloading Scheduler configuration ");
-        if (logger.isDebugEnabled()) {
-            logger.debug("Reloading scheduler configuration.");
-        }
+        logger.info("Reloading scheduler configuration");
         try {
-            loadScheduleGroups();
+            schedulerNode.reload();
             killAllJobs();
-            scheduleJobs();
+            if (!schedulerNode.active()) {
+                destroyQuartzScheduler();
+            }
+            else {
+                createQuartzScheduler();
+                scheduleJobs();
+            }
         } catch (RepositoryException e) {
             logger.error("RepositoryException on events {}", events, e);
         }
@@ -139,7 +117,7 @@ public class SchedulerDaemon implements DaemonModule, EventListener {
      *
      * @return the configuration properties for the quartz scheduler
      */
-    private Properties setup(Node node) throws RepositoryException {
+    protected Properties setup(Node node) throws RepositoryException {
         Properties properties = new Properties();
         properties.put("org.quartz.scheduler.instanceName",
                 NodeUtils.getString(node, "org.quartz.scheduler.instanceName", "Job Scheduler"));
@@ -158,32 +136,30 @@ public class SchedulerDaemon implements DaemonModule, EventListener {
         return properties;
     }
 
-    protected void loadScheduleGroups() throws RepositoryException {
-        jobScheduleGroups.clear();
-
-        // load job schedule groups
-        final NodeIterator iterator = schedulerNode.getNodes();
-        while (iterator.hasNext()) {
-            final Node subNode = iterator.nextNode();
-            if (subNode.isNodeType(Namespace.NodeType.JOB_SCHEDULE)) {
-                jobScheduleGroups.add(new JobScheduleGroup(schedulerNode));
-            }
-        }
+    /**
+     * Create an scheduler node object
+     * @param node
+     * @return
+     * @throws RepositoryException
+     */
+    protected SchedulerNode createSchedulerNode(final Node node) throws RepositoryException {
+        return new SchedulerNode(node);
     }
 
     /**
      * Kill all existing Quartz jobs
      */
     protected void killAllJobs() {
+
         // kill all jobs - means kill all existing, also if they are not configured anymore
-        if (scheduler == null) {
+        if (quartzScheduler == null) {
             return;
         }
 
         try {
-            for (String groupName : scheduler.getJobGroupNames()) {
+            for (String groupName : quartzScheduler.getJobGroupNames()) {
                 logger.info("Killing all quartz jobs in group: " + groupName + " ***");
-                final String[] jobNames = scheduler.getJobNames(groupName);
+                final String[] jobNames = quartzScheduler.getJobNames(groupName);
                 for (String jobName : jobNames) {
                     if (logger.isInfoEnabled()) {
                         logger.info("Killing quartz job {}", jobName);
@@ -191,7 +167,7 @@ public class SchedulerDaemon implements DaemonModule, EventListener {
 
                     // try per job
                     try {
-                        scheduler.deleteJob(jobName, groupName);
+                        quartzScheduler.deleteJob(jobName, groupName);
                     } catch (SchedulerException se) {
                         logger.error("Error occurred deleting job " + jobName + " from group " + groupName, se);
                     }
@@ -206,6 +182,11 @@ public class SchedulerDaemon implements DaemonModule, EventListener {
      * Schedules the configured jobs
      */
     protected void scheduleJobs() {
+
+        if (quartzScheduler == null) {
+            return;
+        }
+
         try {
             for (JobScheduleGroup group : jobScheduleGroups) {
                 if (group.active()) {
@@ -259,7 +240,7 @@ public class SchedulerDaemon implements DaemonModule, EventListener {
             trigger.setName(jobName);
             trigger.setGroup(jobSchedule.getGroupName());
 
-            scheduler.scheduleJob(new JobDetail(jobName, jobSchedule.getGroupName(), jobClass), trigger);
+            quartzScheduler.scheduleJob(new JobDetail(jobName, jobSchedule.getGroupName(), jobClass), trigger);
             logger.info("scheduled job {}", jobSchedule);
         } catch (ParseException exception) {
             logger.error("Cron parse error on cron expression " + jobSchedule.getCronExpression() +
@@ -267,6 +248,45 @@ public class SchedulerDaemon implements DaemonModule, EventListener {
         } catch (ClassNotFoundException cce) {
             logger.error("ClassNotFoundException for class " + jobSchedule.getJobClassName() +
                     " scheduling quartz job " + jobSchedule.getJobName(), cce);
+        }
+    }
+
+    /**
+     * Create the quartz scheduler lazily
+     */
+    protected void createQuartzScheduler() throws RepositoryException {
+
+        if (!schedulerNode.active()) {
+            logger.info("Scheduler at {} is inactive, not creating quartz scheduler", schedulerNode.getNode().getPath());
+            return;
+        }
+
+        if (quartzScheduler == null) {
+            final Properties properties = setup(schedulerNode.getNode());
+            final StdSchedulerFactory factory;
+            try {
+                factory = new JCRSchedulerFactory(session);
+                factory.initialize(properties);
+
+                quartzScheduler = factory.getScheduler();
+                quartzScheduler.start();
+            } catch (SchedulerException e) {
+                logger.error("Error creating quartz scheduler", e);
+            }
+        }
+    }
+
+    protected void destroyQuartzScheduler() {
+
+        logger.info("Destroying quartz scheduler " + quartzScheduler);
+
+        if (quartzScheduler != null) {
+            try {
+                quartzScheduler.shutdown();
+                quartzScheduler = null;
+            } catch (SchedulerException e) {
+                logger.error("Error shutting down quartzScheduler", e);
+            }
         }
     }
 

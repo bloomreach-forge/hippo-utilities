@@ -1,8 +1,5 @@
 <'scheduler'='http://forge.onehippo.org/scheduler/nt/1.0'>
 
-[scheduler:scheduler]
-  - * (string) multiple
-
 [scheduler:jobConfiguration]
   - * (boolean)
   - * (date)
@@ -23,3 +20,6 @@
   - scheduler:active (boolean)
   + * (scheduler:jobSchedule) multiple
 
+[scheduler:scheduler]
+  - scheduler:active (boolean)
+  + * (scheduler:jobScheduleGroup) multiple

@@ -1,14 +1,15 @@
 package org.onehippo.forge.utilities.repository.scheduler;
 
-import javax.jcr.Node;
-import javax.jcr.NodeIterator;
-import javax.jcr.RepositoryException;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.jcr.Node;
+import javax.jcr.NodeIterator;
+import javax.jcr.RepositoryException;
+
 public class JobScheduleGroup {
 
-    private List<JobSchedule> jobSchedules = new LinkedList<JobSchedule>();
+    private final List<JobSchedule> jobSchedules = new LinkedList<JobSchedule>();
 
     private boolean active;
     private String groupName;
@@ -19,7 +20,7 @@ public class JobScheduleGroup {
         fromNode(node);
     }
 
-    public boolean active(){
+    public boolean active() {
         return active;
     }
 
@@ -32,7 +33,7 @@ public class JobScheduleGroup {
     }
 
     /**
-     * Load the job schedule group from a node of type {@link org.onehippo.scheduler.daemon.Namespace.NodeType#JOB_SCHEDULE_GROUP}.
+     * Load the job schedule group from a node of type {@link Namespace.NodeType#JOB_SCHEDULE_GROUP}.
      */
     protected void fromNode(final Node node) throws RepositoryException {
 
@@ -46,12 +47,20 @@ public class JobScheduleGroup {
         groupName = node.getName();
 
         // load job schedules
-        final NodeIterator iterator = node.getNodes();
+        final NodeIterator iterator = node.getNodes(Namespace.NodeType.JOB_SCHEDULE);
         while (iterator.hasNext()) {
             final Node subNode = iterator.nextNode();
-            if (subNode.isNodeType(Namespace.NodeType.JOB_SCHEDULE)) {
-                jobSchedules.add(new JobSchedule(groupName, subNode));
-            }
+            jobSchedules.add(new JobSchedule(groupName, subNode));
         }
+    }
+
+    // for debugging and logging
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder(JobScheduleGroup.class.getSimpleName());
+        builder.append("[groupName=").append(groupName);
+        builder.append("active=").append(active);
+        builder.append("]");
+        return builder.toString();
     }
 }

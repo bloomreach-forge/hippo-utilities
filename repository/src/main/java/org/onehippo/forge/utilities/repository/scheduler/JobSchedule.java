@@ -88,6 +88,5 @@ public class JobSchedule {
         builder.append("cronExpressionDescription=").append(cronExpressionDescription);
         builder.append("]");
         return builder.toString();
-
     }
 }
