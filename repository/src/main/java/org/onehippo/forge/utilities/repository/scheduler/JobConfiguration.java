@@ -57,9 +57,12 @@ public class JobConfiguration {
     // for debugging and logging
     @Override
     public String toString() {
-        final StringBuilder builder = new StringBuilder();
-        try {
-            if (node != null) {
+        final StringBuilder builder = new StringBuilder(JobConfiguration.class.getSimpleName()).append("[");
+        if (node != null) {
+            try {
+                builder.append("node=");
+                builder.append(node.getPath());
+                builder.append(", properties: ");
                 PropertyIterator it = node.getProperties();
                 while (it.hasNext()) {
                     final Property property = it.nextProperty();
@@ -70,10 +73,13 @@ public class JobConfiguration {
                         builder.append(", ");
                     }
                 }
+            } catch (RepositoryException e) {
+                builder.append("RepositoryException in toString of ").append(JobConfiguration.class.getName()).append(": ").append(e.getMessage());
             }
-        } catch (RepositoryException e) {
-            builder.append("RepositoryException in toString of ").append(JobConfiguration.class.getName()).append(": ").append(e.getMessage());
+        } else {
+            builder.append("node=null");
         }
+        builder.append("]");
         return builder.toString();
     }
 }
