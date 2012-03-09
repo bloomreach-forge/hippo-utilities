@@ -1,4 +1,4 @@
-package org.onehippo.forge.utilities.repository.scheduler.test;
+package org.onehippo.forge.utilities.repository.scheduler.tester;
 
 import javax.jcr.Session;
 
@@ -12,10 +12,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Test job
+ * Tester job
  */
-public class TestJob implements Job {
-    private static final Logger logger = LoggerFactory.getLogger(TestJob.class);
+public class TesterJob implements Job {
+    private static final Logger logger = LoggerFactory.getLogger(TesterJob.class);
 
     @Override
     public void execute(final JobExecutionContext context) throws JobExecutionException {
