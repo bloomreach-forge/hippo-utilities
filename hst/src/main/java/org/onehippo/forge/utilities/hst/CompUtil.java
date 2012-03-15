@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.onehippo.forge.utilities.hst;
+package org.onehippo.forge.psutils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -177,10 +177,31 @@ public class CompUtil {
     }
     
     /**
+     * Get a public request parameter as integer, returning a default value in
+     * case of error if the parameter is not there.
+     */
+    public static int getPublicRequestParameterInt(final BaseHstComponent comp, final HstRequest request,
+                final String paramName, final int defaultValue) {
+        final String value = comp.getPublicRequestParameter(request, paramName);
+
+        if (value != null) {
+            try {
+                return Integer.parseInt(value.trim());
+            }
+            catch (NumberFormatException nfe) {
+                return defaultValue;
+            }
+        }
+
+        return defaultValue;
+    }
+
+    /**
      * Returns an array of values for a public request parameter. For use of multiple checkboxes
      * @param request
      * @param paramName
      * @return String[] value of the request parameter. null if the parameter does not exist or is empty.
+     * @deprecated please use HST native BaseHstComponent#getPublicRequestParameters()
      */
     public String[] getPublicRequestParameters(final BaseHstComponent comp, final HstRequest request, final String paramName) {
 
