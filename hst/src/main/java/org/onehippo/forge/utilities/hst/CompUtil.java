@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.onehippo.forge.psutils;
+package org.onehippo.forge.utilities.hst;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -28,7 +28,7 @@ import org.hippoecm.hst.core.component.HstRequest;
 public class CompUtil {
 
     private static final String CLEANUP_CHARS = "[\f\n\r\t]";
-    
+
     private CompUtil() {
         // prevent instantiation
     }
@@ -52,8 +52,8 @@ public class CompUtil {
     }
 
     /**
-     * Get a string from a configuration parameter, returning a default value if 
-     * the parameter is not there. 
+     * Get a string from a configuration parameter, returning a default value if
+     * the parameter is not there.
      */
     public static String getParameter(final BaseHstComponent comp, final HstRequest request, final String paramName, final String defaultValue) {
 
@@ -62,7 +62,7 @@ public class CompUtil {
     }
 
     /**
-     * Get a string List from comma-separated values of a configuration parameter. 
+     * Get a string List from comma-separated values of a configuration parameter.
      */
     public static List<String> getParameterList(final BaseHstComponent comp, final HstRequest request, final String paramName) {
 
@@ -82,8 +82,8 @@ public class CompUtil {
     }
 
     /**
-     * Get an int from a configuration parameter, returning a default value in 
-     * case of error or if the parameter is not there. 
+     * Get an int from a configuration parameter, returning a default value in
+     * case of error or if the parameter is not there.
      */
     public static int getParameterInt(final BaseHstComponent comp, final HstRequest request, final String paramName, final int defaultValue) {
 
@@ -91,26 +91,26 @@ public class CompUtil {
         if (paramValue != null) {
             try {
                 return Integer.parseInt(paramValue.trim());
-            } 
+            }
             catch (NumberFormatException nfe) {
                 return defaultValue;
             }
         }
-    
+
         return defaultValue;
     }
 
     /**
-     * Get a boolean from a configuration parameter, returning 'false' in case  
-     * of error or if the parameter is not there. 
+     * Get a boolean from a configuration parameter, returning 'false' in case
+     * of error or if the parameter is not there.
      */
     public static boolean getParameterBoolean(final BaseHstComponent comp, final HstRequest request, final String paramName) {
         return getParameterBoolean(comp, request, paramName, false);
     }
 
     /**
-     * Get a boolean from a configuration parameter, returning a default value 
-     * if the parameter is not there, and false if the parsing fails. 
+     * Get a boolean from a configuration parameter, returning a default value
+     * if the parameter is not there, and false if the parsing fails.
      */
     public static boolean getParameterBoolean(final BaseHstComponent comp, HstRequest request, String paramName, boolean defaultValue) {
         final String paramValue = comp.getParameter(paramName, request);
@@ -121,43 +121,43 @@ public class CompUtil {
     }
 
     /**
-     * Get a local configuration parameter, i.e. not overridden by parent 
-     * components, returning a default value if the parameter is not there. 
+     * Get a local configuration parameter, i.e. not overridden by parent
+     * components, returning a default value if the parameter is not there.
      */
     public static String getLocalParameter(final BaseHstComponent comp, final HstRequest request,
                 final String paramName, final String defaultValue) {
-    
+
         final String value = comp.getLocalParameter(paramName, request);
         return (value != null) ? value.trim() : defaultValue;
     }
 
     /**
-     * Get a local configuration parameter as integer, i.e. not overridden by 
-     * parent components, returning a default value if the parameter is not 
-     * there or if parsing fails. 
+     * Get a local configuration parameter as integer, i.e. not overridden by
+     * parent components, returning a default value if the parameter is not
+     * there or if parsing fails.
      */
-    public static int getLocalParameterInt(final BaseHstComponent comp, final HstRequest request, 
+    public static int getLocalParameterInt(final BaseHstComponent comp, final HstRequest request,
             final String paramName, final int defaultValue) {
 
         final String value = comp.getLocalParameter(paramName, request);
         if (value != null) {
             try {
                 return Integer.parseInt(value.trim());
-            } 
+            }
             catch (NumberFormatException nfe) {
                 return defaultValue;
             }
         }
-        
+
         return defaultValue;
     }
-    
+
     /**
-     * Get a local configuration parameter as boolean, i.e. not overridden by 
-     * parent components, returning a default value if the parameter is not 
-     * there. 
+     * Get a local configuration parameter as boolean, i.e. not overridden by
+     * parent components, returning a default value if the parameter is not
+     * there.
      */
-    public static boolean getLocalParameterBoolean(final BaseHstComponent comp, final HstRequest request, 
+    public static boolean getLocalParameterBoolean(final BaseHstComponent comp, final HstRequest request,
             final String paramName, final boolean defaultValue) {
         final String paramValue = comp.getLocalParameter(paramName, request);
         if (paramValue != null) {
@@ -167,15 +167,15 @@ public class CompUtil {
     }
 
     /**
-     * Get a public request parameter, returning a default value if the 
-     * parameter is not there. 
+     * Get a public request parameter, returning a default value if the
+     * parameter is not there.
      */
-    public static String getPublicRequestParameter(final BaseHstComponent comp, final HstRequest request, 
+    public static String getPublicRequestParameter(final BaseHstComponent comp, final HstRequest request,
                 final String paramName, final String defaultValue) {
         final String value = comp.getPublicRequestParameter(request, paramName);
         return (value != null) ? value.trim() : defaultValue;
     }
-    
+
     /**
      * Get a public request parameter as integer, returning a default value in
      * case of error if the parameter is not there.
@@ -206,18 +206,18 @@ public class CompUtil {
     public String[] getPublicRequestParameters(final BaseHstComponent comp, final HstRequest request, final String paramName) {
 
         String contextNamespaceReference = request.getRequestContext().getContextNamespace();
-        
+
         if (contextNamespaceReference == null) {
             contextNamespaceReference = "";
         }
-        
+
         final Map<String, String []> namespaceLessParameters = request.getParameterMap(contextNamespaceReference);
         return namespaceLessParameters.get(paramName);
     }
 
     /**
-     * Get a request parameter as integer, returning a default value if the 
-     * parameter is not there or if parsing fails. 
+     * Get a request parameter as integer, returning a default value if the
+     * parameter is not there or if parsing fails.
      */
     public static int getRequestParameterInt(final HstRequest request, final String paramName, final int defaultValue) {
 
@@ -225,15 +225,15 @@ public class CompUtil {
         if (paramValue != null) {
             try {
                 return Integer.parseInt(paramValue.trim());
-            } 
+            }
             catch (NumberFormatException nfe) {
                 return defaultValue;
             }
         }
-        
+
         return defaultValue;
     }
-    
+
     protected static String getCleanUpChars() {
         return CLEANUP_CHARS;
     }
