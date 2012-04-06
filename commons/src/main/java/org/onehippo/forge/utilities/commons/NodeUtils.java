@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-package org.onehippo.forge.utilities.repository.scheduler;
+package org.onehippo.forge.utilities.commons;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -27,8 +28,6 @@ import javax.jcr.Value;
 
 /**
  * Utility to read JCR properties.
- * <p/>
- * TODO FIXME move NodeUtils to commons
  */
 public class NodeUtils {
 
@@ -36,11 +35,11 @@ public class NodeUtils {
      * Get a boolean property from a node, returning false if not found
      */
     public static boolean getBoolean(final Node node, final String propertyName) {
-        return getBoolean(node, propertyName, false);
+        return getBoolean(node, propertyName, false/*defaultValue*/);
     }
 
     /**
-     * Get a boolean property from a node, returning a default if not found
+     * Get a boolean property from a node, returning a default value if not found
      */
     public static boolean getBoolean(final Node node, final String propertyName, final boolean defaultValue) {
         if (node != null) {
@@ -59,9 +58,16 @@ public class NodeUtils {
     }
 
     /**
-     * Get a Date property from a node, returning a null if not found
+     * Get a Date property from a node, returning null if not found
      */
     public static Date getDate(final Node node, final String propertyName) {
+        return getDate(node, propertyName, null/*defaultValue*/);
+    }
+
+    /**
+     * Get a Date property from a node, returning a default value if not found
+     */
+    public static Date getDate(final Node node, final String propertyName, final Date defaultValue) {
         if (node != null) {
             try {
                 if (node.hasProperty(propertyName)) {
@@ -74,13 +80,46 @@ public class NodeUtils {
                 throw new IllegalStateException(e);
             }
         }
-        return null;
+        return defaultValue;
+    }
+
+    /**
+     * Get a decimal property from a node, returning null if not found
+     */
+    public static BigDecimal getDecimal(final Node node, final String propertyName) {
+        return getDecimal(node, propertyName, null/*defaultValue*/);
+    }
+
+    /**
+     * Get a decimal property from a node, returning a default value if not found
+     */
+    public static BigDecimal getDecimal(final Node node, final String propertyName, final BigDecimal defaultValue) {
+        if (node != null) {
+            try {
+                if (node.hasProperty(propertyName)) {
+                    final Property property = node.getProperty(propertyName);
+                    if (property != null) {
+                        return property.getValue().getDecimal();
+                    }
+                }
+            } catch (RepositoryException e) {
+                throw new IllegalStateException(e);
+            }
+        }
+        return defaultValue;
     }
 
     /**
      * Get a double property from a node, returning null if not found
      */
     public static Double getDouble(final Node node, final String propertyName) {
+        return getDouble(node, propertyName, null/*defaultValue*/);
+    }
+
+    /**
+     * Get a double property from a node, returning a default value if not found
+     */
+    public static Double getDouble(final Node node, final String propertyName, final Double defaultValue) {
         if (node != null) {
             try {
                 if (node.hasProperty(propertyName)) {
@@ -93,13 +132,20 @@ public class NodeUtils {
                 throw new IllegalStateException(e);
             }
         }
-        return null;
+        return defaultValue;
     }
 
     /**
      * Get a long property from a node, returning null if not found
      */
     public static Long getLong(final Node node, final String propertyName) {
+        return getLong(node, propertyName, null/*defaultValue*/);
+    }
+
+    /**
+     * Get a long property from a node, returning a default value if not found
+     */
+    public static Long getLong(final Node node, final String propertyName, final Long defaultValue) {
         if (node != null) {
             try {
                 if (node.hasProperty(propertyName)) {
@@ -112,7 +158,7 @@ public class NodeUtils {
                 throw new IllegalStateException(e);
             }
         }
-        return null;
+        return defaultValue;
     }
 
     /**
@@ -142,15 +188,22 @@ public class NodeUtils {
     }
 
     /**
-     * Get a String property from a node, returning a default value if not found
+     * Get a String property from a node, returning null if not found
      */
+    public static String[] getStrings(final Node node, final String propertyName) {
+        return getStrings(node, propertyName, null/*defaultValue*/);
+    }
+
+    /**
+    * Get a String property from a node, returning a default value if not found
+    */
     public static String[] getStrings(final Node node, final String propertyName, final String defaultValue[]) {
         if (node != null) {
             try {
                 if (node.hasProperty(propertyName)) {
                     final Property property = node.getProperty(propertyName);
                     if (property != null && !property.isMultiple()) {
-                        return null;
+                        return defaultValue;
                     }
                     if (property != null) {
                         List<String> values = new LinkedList<String>();
@@ -161,7 +214,7 @@ public class NodeUtils {
                     }
                 }
             } catch (RepositoryException e) {
-                return defaultValue;
+                throw new IllegalStateException(e);
             }
         }
         return defaultValue;

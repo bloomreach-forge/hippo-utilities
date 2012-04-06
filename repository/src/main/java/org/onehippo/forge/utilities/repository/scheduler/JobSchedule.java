@@ -19,6 +19,8 @@ package org.onehippo.forge.utilities.repository.scheduler;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
+import org.onehippo.forge.utilities.commons.NodeUtils;
+
 public class JobSchedule {
 
     private String cronExpression;

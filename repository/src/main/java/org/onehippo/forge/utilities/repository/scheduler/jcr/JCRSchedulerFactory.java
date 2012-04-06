@@ -27,10 +27,12 @@ import org.quartz.core.QuartzSchedulerResources;
 import org.quartz.impl.StdSchedulerFactory;
 
 /**
+ * Scheduler factory extending Quartz standard scheduler factory, creating a {@link JCRScheduler}.
  */
 public class JCRSchedulerFactory extends StdSchedulerFactory {
+
     private Properties properties;
-    private Session session;
+    private final Session session;
 
     public JCRSchedulerFactory(Session session) throws SchedulerException {
         this.session = session;
@@ -44,10 +46,16 @@ public class JCRSchedulerFactory extends StdSchedulerFactory {
 
     @Override
     protected Scheduler instantiate(QuartzSchedulerResources rsrcs, QuartzScheduler qs) {
-        JCRSchedulingContext schedCtxt = new JCRSchedulingContext(session);
+        final JCRSchedulingContext schedCtxt = new JCRSchedulingContext(session);
         schedCtxt.setInstanceId(rsrcs.getInstanceId());
-        schedCtxt.setSession(session);
         Scheduler scheduler = new JCRScheduler(qs, schedCtxt);
         return scheduler;
+    }
+
+    /**
+     * Get the configuration properties with which this factory was initialized.
+     */
+    public Properties getInitProperties() {
+        return properties;
     }
 }

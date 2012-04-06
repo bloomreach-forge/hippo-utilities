@@ -50,21 +50,21 @@ import org.quartz.impl.StdSchedulerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import org.onehippo.forge.utilities.commons.NodeUtils;
+
 /**
  * The scheduler daemon.
  */
 public class SchedulerDaemon implements DaemonModule, EventListener {
 
-    private static final String PROJECT_CONFIG = "project.config";
-    private static final String PROJECT_PROPERTY_SCHEDULER_ACTIVE = "scheduler.active";
+    private static final String SCHEDULER_PROPERTIES = "scheduler.properties";
+    private static final String SCHEDULER_PROPERTY_SCHEDULER_ACTIVE = SchedulerDaemon.class.getName() + ".active";
 
     private static final Logger logger = LoggerFactory.getLogger(SchedulerDaemon.class);
 
     private static final String SCHEDULER_QUERY = "//element(*, " + Namespace.NodeType.SCHEDULER + ")";
 
     private final DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd-HHmmss");
-
-    private PropertyResourceBundle projectProperties;
 
     protected Session session;
     protected SchedulerNode schedulerNode;
@@ -77,13 +77,16 @@ public class SchedulerDaemon implements DaemonModule, EventListener {
      * @throws javax.jcr.RepositoryException if registering the event listener on the configuration node in the repository fails.
      */
     public void initialize(final Session session) throws RepositoryException {
+
+        final PropertyResourceBundle projectProperties;
         try {
             projectProperties = getProjectProperties();
         } catch (IOException e) {
             logger.error("Error loading project properties for scheduler, scheduler deactivated.");
             return;
         }
-        final String schedulerActive = projectProperties.getString(PROJECT_PROPERTY_SCHEDULER_ACTIVE);
+
+        final String schedulerActive = projectProperties.getString(SCHEDULER_PROPERTY_SCHEDULER_ACTIVE);
         if (!Boolean.parseBoolean(schedulerActive)) {
             logger.info("Scheduler daemon is deactivated.");
             return;
@@ -251,7 +254,7 @@ public class SchedulerDaemon implements DaemonModule, EventListener {
 
             // prepare data for usage in jobs
             final JobDataMap dataMap = new JobDataMap();
-            dataMap.put(JobConfiguration.class.getSimpleName(), jobSchedule.getJobConfiguration());
+            dataMap.put(JobConfiguration.class.getName(), jobSchedule.getJobConfiguration());
 
             // immediate or cron
             // be aware that if runInstantly is on and and is active, with every change of the
@@ -340,7 +343,7 @@ public class SchedulerDaemon implements DaemonModule, EventListener {
 
     private PropertyResourceBundle getProjectProperties() throws IOException {
         InputStream propertiesStream;
-        final String projectPropertiesPath = System.getProperty(PROJECT_CONFIG);
+        final String projectPropertiesPath = System.getProperty(SCHEDULER_PROPERTIES);
         if (StringUtils.isNotBlank(projectPropertiesPath)) {
             logger.info("Loading project properties from file '" + projectPropertiesPath + "'");
             propertiesStream = new FileInputStream(projectPropertiesPath);

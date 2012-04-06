@@ -22,6 +22,9 @@ import javax.jcr.Node;
 import javax.jcr.Property;
 import javax.jcr.PropertyIterator;
 import javax.jcr.RepositoryException;
+import javax.jcr.Value;
+
+import org.onehippo.forge.utilities.commons.NodeUtils;
 
 /**
  * Configuration object for a job implementation.
@@ -46,16 +49,32 @@ public class JobConfiguration {
         return NodeUtils.getBoolean(node, propertyName);
     }
 
+    public Boolean getBoolean(final String propertyName, final Boolean defaultValue) {
+        return NodeUtils.getBoolean(node, propertyName, defaultValue);
+    }
+
     public Date getDate(final String propertyName) {
         return NodeUtils.getDate(node, propertyName);
+    }
+
+    public Date getDate(final String propertyName, final Date defaultValue) {
+        return NodeUtils.getDate(node, propertyName, defaultValue);
     }
 
     public Double getDouble(final String propertyName) {
         return NodeUtils.getDouble(node, propertyName);
     }
 
+    public Double getDouble(final String propertyName, final Double defaultValue) {
+        return NodeUtils.getDouble(node, propertyName, defaultValue);
+    }
+
     public Long getLong(final String propertyName) {
         return NodeUtils.getLong(node, propertyName);
+    }
+
+    public Long getLong(final String propertyName, final Long defaultValue) {
+        return NodeUtils.getLong(node, propertyName, defaultValue);
     }
 
     public String getString(final String propertyName) {
@@ -64,6 +83,10 @@ public class JobConfiguration {
 
     public String getString(final String propertyName, final String defaultValue) {
         return NodeUtils.getString(node, propertyName, defaultValue);
+    }
+
+    public String[] getStrings(final String propertyName) {
+        return NodeUtils.getStrings(node, propertyName);
     }
 
     public String[] getStrings(final String propertyName, final String[] defaultValues) {
@@ -84,7 +107,20 @@ public class JobConfiguration {
                     final Property property = it.nextProperty();
                     builder.append(property.getDefinition().getName());
                     builder.append("=");
-                    builder.append(property.getValue());
+                    if (property.isMultiple()) {
+                        builder.append("[");
+                        Value[] values = property.getValues();
+                        for (int i = 0;  i < values.length; i++) {
+                            builder.append(values[i].getString());
+                            if (i < values.length - 1) {
+                                builder.append(", ");
+                            }
+                        }
+                        builder.append("]");
+                    }
+                    else {
+                        builder.append(property.getString());
+                    }
                     if (it.hasNext()) {
                         builder.append(", ");
                     }

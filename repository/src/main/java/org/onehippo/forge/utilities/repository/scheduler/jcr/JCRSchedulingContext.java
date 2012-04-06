@@ -20,20 +20,23 @@ import javax.jcr.Session;
 
 import org.quartz.core.SchedulingContext;
 
+/**
+ * Scheduling context extending Quartz standard scheduling context, which has a JCR Session for retrieval by jobs.
+ */
 public class JCRSchedulingContext extends SchedulingContext {
     @SuppressWarnings("unused")
 
-    private Session session;
+    private final Session session;
 
     public JCRSchedulingContext(Session session) {
         super();
         this.session = session;
     }
 
-    public void setSession(Session session) {
-        this.session = session;
-    }
-
+    /**
+     * Get the JCR session
+     * @return the JCR session
+     */
     public Session getSession() {
         return session;
     }

@@ -20,6 +20,10 @@ import org.quartz.Scheduler;
 import org.quartz.core.QuartzScheduler;
 import org.quartz.impl.StdScheduler;
 
+/**
+ * Scheduler extending Quartz standard scheduler, adding a specific scheduling context from which a JCR session can be
+ * retrieved.
+ */
 public class JCRScheduler extends StdScheduler implements Scheduler {
 
     private final JCRSchedulingContext context;

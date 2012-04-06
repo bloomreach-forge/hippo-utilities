@@ -22,6 +22,14 @@
   </properties>
   <body>
     <section name="Release Notes">
+      <subsection name="1.01.01">
+        <ul>
+          <li>Scheduler Daemon: added a mandatory properties file with activation flag
+            'org.onehippo.forge.utilities.repository.scheduler.SchedulerDaemon.active', on behalf of clustered setup</li>
+          <li>Scheduler Daemon: added BaseJob class providing access to JCR session and job configuration</li>
+          <li>NodeUtils: moved from repository module (scheduler) to commons module</li>
+        </ul>
+      </subsection>
       <subsection name="1.01.00">
         <ul>
           <li>Initial release as a restructured version of PSUtils forge project,

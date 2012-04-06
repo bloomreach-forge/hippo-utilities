@@ -23,6 +23,8 @@ import javax.jcr.Node;
 import javax.jcr.NodeIterator;
 import javax.jcr.RepositoryException;
 
+import org.onehippo.forge.utilities.commons.NodeUtils;
+
 /**
  * Object representing a scheduler:scheduler node.
  */
