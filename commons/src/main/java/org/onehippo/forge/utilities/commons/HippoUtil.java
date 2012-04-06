@@ -37,6 +37,12 @@ public final class HippoUtil {
     @SuppressWarnings("unused")
     private static Logger log = LoggerFactory.getLogger(HippoUtil.class);
 
+    /**
+     * Private constructor preventing instantiation.
+     */
+    private HippoUtil() {
+    }
+
     public static final Map<String, String> mimeTypeToExtensionMap =
         new HashMap<String , String>() {
             private static final long serialVersionUID = -3566373789286953339L;

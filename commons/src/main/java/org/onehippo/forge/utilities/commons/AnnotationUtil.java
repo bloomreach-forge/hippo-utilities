@@ -37,6 +37,11 @@ public final class AnnotationUtil {
 
     private static Logger log = LoggerFactory.getLogger(AnnotationUtil.class);
 
+    /**
+     * Private constructor preventing instantiation.
+     */
+    private AnnotationUtil() {
+    }
 
     /**
      * Get fields of an class which are annotated with specific
@@ -125,10 +130,6 @@ public final class AnnotationUtil {
             clazz = clazz.getSuperclass();
         }
         return returnValue.values();
-    }
-
-
-    private AnnotationUtil() {
     }
 }
 

@@ -32,6 +32,12 @@ import javax.jcr.Value;
 public class NodeUtils {
 
     /**
+     * Private constructor preventing instantiation.
+     */
+    private NodeUtils() {
+    }
+
+    /**
      * Get a boolean property from a node, returning false if not found
      */
     public static boolean getBoolean(final Node node, final String propertyName) {

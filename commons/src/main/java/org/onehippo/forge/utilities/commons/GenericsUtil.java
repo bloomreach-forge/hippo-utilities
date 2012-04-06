@@ -45,8 +45,10 @@ public final class GenericsUtil {
 
     private static final Logger logger = LoggerFactory.getLogger(GenericsUtil.class);
 
+    /**
+     * Private constructor preventing instantiation.
+     */
     private GenericsUtil() {
-        // private constructor
     }
 
     @SuppressWarnings(value = "unchecked")

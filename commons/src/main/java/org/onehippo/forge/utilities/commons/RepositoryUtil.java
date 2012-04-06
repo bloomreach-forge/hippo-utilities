@@ -52,8 +52,10 @@ public final class RepositoryUtil {
         DEFAULT_FOLDER_PROPERTIES.put("hippostd:foldertype", new String[]{"new-folder", "new-document"});
     }
 
+    /**
+     * Private constructor preventing instantiation.
+     */
     private RepositoryUtil() {
-        // private constructor
     }
 
     public static Session getSession(final String repoConnection, final String userName, final String password)
