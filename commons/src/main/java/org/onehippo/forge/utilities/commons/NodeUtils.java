@@ -197,7 +197,7 @@ public class NodeUtils {
     /**
     * Get a String property from a node, returning a default value if not found
     */
-    public static String[] getStrings(final Node node, final String propertyName, final String defaultValue[]) {
+    public static String[] getStrings(final Node node, final String propertyName, final String[] defaultValue) {
         if (node != null) {
             try {
                 if (node.hasProperty(propertyName)) {
