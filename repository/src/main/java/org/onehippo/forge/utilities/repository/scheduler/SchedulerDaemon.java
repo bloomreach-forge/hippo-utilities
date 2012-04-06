@@ -1,11 +1,15 @@
 package org.onehippo.forge.utilities.repository.scheduler;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Properties;
+import java.util.PropertyResourceBundle;
 
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
@@ -16,6 +20,7 @@ import javax.jcr.observation.EventListener;
 import javax.jcr.query.Query;
 import javax.jcr.query.QueryResult;
 
+import org.apache.commons.lang.StringUtils;
 import org.hippoecm.repository.ext.DaemonModule;
 import org.onehippo.forge.utilities.repository.scheduler.jcr.JCRSchedulerFactory;
 import org.quartz.CronTrigger;
@@ -34,11 +39,16 @@ import org.slf4j.LoggerFactory;
  */
 public class SchedulerDaemon implements DaemonModule, EventListener {
 
+    private static final String PROJECT_CONFIG = "project.config";
+    private static final String PROJECT_PROPERTY_SCHEDULER_ACTIVE = "scheduler.active";
+
     private static final Logger logger = LoggerFactory.getLogger(SchedulerDaemon.class);
 
     private static final String SCHEDULER_QUERY = "//element(*, " + Namespace.NodeType.SCHEDULER + ")";
 
     private final DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd-HHmmss");
+
+    private PropertyResourceBundle projectProperties;
 
     protected Session session;
     protected SchedulerNode schedulerNode;
@@ -51,6 +61,18 @@ public class SchedulerDaemon implements DaemonModule, EventListener {
      * @throws javax.jcr.RepositoryException if registering the event listener on the configuration node in the repository fails.
      */
     public void initialize(final Session session) throws RepositoryException {
+        try {
+            projectProperties = getProjectProperties();
+        } catch (IOException e) {
+            logger.error("Error loading project properties for scheduler, scheduler deactivated.");
+            return;
+        }
+        final String schedulerActive = projectProperties.getString(PROJECT_PROPERTY_SCHEDULER_ACTIVE);
+        if (!Boolean.parseBoolean(schedulerActive)) {
+            logger.info("Scheduler daemon is deactivated.");
+            return;
+        }
+
         this.session = session;
 
         // select one scheduler:scheduler node by query
@@ -297,5 +319,19 @@ public class SchedulerDaemon implements DaemonModule, EventListener {
     protected String getDateString() {
         Calendar now = Calendar.getInstance();
         return dateFormat.format(now.getTime());
+    }
+
+
+    private PropertyResourceBundle getProjectProperties() throws IOException {
+        InputStream propertiesStream;
+        final String projectPropertiesPath = System.getProperty(PROJECT_CONFIG);
+        if (StringUtils.isNotBlank(projectPropertiesPath)) {
+            logger.info("Loading project properties from file '" + projectPropertiesPath + "'");
+            propertiesStream = new FileInputStream(projectPropertiesPath);
+        } else {
+            logger.info("Loading project properties from resource '/project.properties'");
+            propertiesStream = SchedulerDaemon.class.getClassLoader().getResourceAsStream("/project.properties");
+        }
+        return new PropertyResourceBundle(propertiesStream);
     }
 }
