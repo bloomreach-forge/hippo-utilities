@@ -1,11 +1,11 @@
 /*
- * Copyright 2011 Hippo
+ * Copyright 2012 Hippo
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -25,6 +25,7 @@ import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 
 import org.hippoecm.hst.content.beans.ContentNodeBindingException;
+import org.onehippo.forge.utilities.commons.jcrmockup.JcrMockUp;
 import org.onehippo.forge.utilities.hst.simpleocm.build.NodeBuilder;
 import org.onehippo.forge.utilities.hst.simpleocm.build.NodeBuilderImpl;
 import org.onehippo.forge.utilities.hst.simpleocm.load.BeanLoader;
@@ -34,7 +35,6 @@ import org.onehippo.forge.utilities.hst.simpleocm.model.ExtraAgenda;
 import org.onehippo.forge.utilities.hst.simpleocm.model.HippoHtml;
 import org.onehippo.forge.utilities.hst.simpleocm.model.Preference;
 import org.onehippo.forge.utilities.hst.simpleocm.model.User;
-import org.onehippo.forge.utilities.commons.jcrmockup.JcrMockUp;
 import org.testng.annotations.Test;
 
 public class BuildLoadTest {
