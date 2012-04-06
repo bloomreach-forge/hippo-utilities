@@ -56,9 +56,9 @@
     </menu>
 
     <menu name="Repository module">
-      <item name="Scheduler Daemon" href="repository/scheduler-daemon.html"/>
+      <item name="Scheduler Daemon" href="repository/scheduler-deamon.html"/>
       <item name="Base Updater Module" href="repository/base-updater.html"/>
-      <item name="Annotation Base Updater Module" href="repository/annotation-updater.html"/>
+      <item name="Annotation Base Updater Module" href="repository/repository/annotation-updater.html"/>
     </menu>
 
     <menu ref="reports"/>

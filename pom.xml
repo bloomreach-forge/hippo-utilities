@@ -21,7 +21,6 @@
     <guava.version>r06</guava.version>
     <javax.activation.version>1.1</javax.activation.version>
     <javax.transaction.version>1.1</javax.transaction.version>
-    <commons-beanutils.version>1.8.3</commons-beanutils.version>
     <commons-net.version>2.0</commons-net.version>
     <jta.version>1.1</jta.version>
     <xstream.version>1.3.1</xstream.version>
@@ -61,7 +60,7 @@
 
   <issueManagement>
     <system>Hippo Forge</system>
-    <url>https://forge.onehippo.org/tracker/?group_id=87</url>
+    <url>https://forge.onehippo.org/gf/project/hippo-utilities/tracker/?tracker_id=609</url>
   </issueManagement>
 
   <licenses>
@@ -89,11 +88,6 @@
         <groupId>commons-net</groupId>
         <artifactId>commons-net</artifactId>
         <version>${commons-net.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>commons-beanutils</groupId>
-        <artifactId>commons-beanutils</artifactId>
-        <version>${commons-beanutils.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.guava</groupId>

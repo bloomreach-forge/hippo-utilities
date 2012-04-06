@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE document PUBLIC "-//Apache Software Foundation//DTD XDOC 1.0//EN" "http://maven.apache.org/dtd/xdoc_1_0.dtd">
+<!--
+  Copyright 2012 Hippo
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  -->
+<document>
+  <properties>
+    <title>HST CompUtil</title>
+  </properties>
+  <body>
+    <section name="CompUtil">
+      <subsection name="org.onehippo.forge.utilities.hst.CompUtil">
+        <p>Static utility class with following methods:</p>
+        <source><![CDATA[
+    HippoBean getBean(comp, request, path)
+
+    String getParameter(comp, request, paramName, defaultValue)
+    int getParameterInt(comp, request, paramName, defaultValue)
+    boolean getParameterBoolean(comp, request, paramName)
+    boolean getParameterBoolean(comp, request, paramName, defaultValue)
+    List<String> getParameterList(comp, request, paramName)
+
+    String getLocalParameter(comp, request, paramName, defaultValue)
+    int getLocalParameterInt(comp, request, paramName, defaultValue)
+    boolean getLocalParameterBoolean(comp, request, paramName, defaultValue)
+
+    int getRequestParameterInt(request, paramName, defaultValue)
+
+    String getPublicRequestParameter(comp, request, paramName, defaultValue)
+    int getPublicRequestParameterInt(comp, request, paramName, defaultValue)
+    String[] getPublicRequestParameters(comp, request, paramName)]]>
+        </source>
+      </subsection>
+    </section>
+  </body>
+</document>

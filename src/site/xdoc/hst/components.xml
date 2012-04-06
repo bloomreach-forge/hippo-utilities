@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE document PUBLIC "-//Apache Software Foundation//DTD XDOC 1.0//EN" "http://maven.apache.org/dtd/xdoc_1_0.dtd">
+<!--
+  Copyright 2012 Hippo
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  -->
+<document>
+  <properties>
+    <title>HST Base Components</title>
+  </properties>
+  <body>
+    <section name="HST Base Components">
+      <subsection name="org.onehippo.forge.utilities.hst.component.BaseComponent extends BaseHstComponent">
+        <p>BaseComponent gets local parameters 'cssclass' and 'id' from configuration
+          and sets any values on the request under the same attribute names.</p>
+      </subsection>
+      <subsection name="org.onehippo.forge.utilities.hst.component.Container extends BaseComponent">
+        <p>Container is used for dynamic rendering of HST component in your jsp.</p>
+        <p>HST version 2.04 and up has a hst:defineObjects tag to render all child components in the order they are
+          configured. Container supports rendering child components in a custom order.</p>
+        <p>It reads the child component names and sets the values on the request
+        under the attribute name 'includes', which is a list. </p>
+        <p>Beforehand, it sorts the component child names alphabetically. Derived classes
+          can adjust the sorting by configuring a 'sorting' parameter and implementing
+          a sort algotythm.</p>
+        <p>In the frontend, the child includes can be used in the &lt;hst:include&gt; tag as follows:</p>
+        <source><![CDATA[
+  <c:forEach var="include" items="${includes}">
+    <hst:include ref="${include}" />
+  </c:forEach>]]></source>
+      </subsection>
+    </section>
+  </body>
+</document>
