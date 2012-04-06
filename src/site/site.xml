@@ -35,14 +35,14 @@
     <menu name="Commons module">
       <item name="Annotation Utility"/>
       <item name="Generics Utility"/>
-      <item name="Hippo Utility"/>
+      <item name="Hippo Utility"  href="commons/hippoutil.html"/>
       <item name="Repository Utility" href="commons/repoutil.html"/>
+      <item name="Node Utility" href="commons/nodeutil.html"/>
       <item name="FTP Client"/>
       <item name="JCR Mockup"/>
     </menu>
 
     <menu name="HST module">
-      <item name="PsUtil" href="hst/psutil.html"/>
       <item name="CompUtil" href="hst/computil.html"/>
       <item name="Components" href="hst/components.html"/>
       <item name="Cookie Check" href="hst/cookie.html"/>

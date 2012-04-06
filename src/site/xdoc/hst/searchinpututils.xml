@@ -21,7 +21,7 @@
     <title>Search input util</title>
   </properties>
   <body>
-    <section name="What does it do">
+    <subsection name="org.onehippo.forge.utilities.hst.SearchInputUtils">
       <p>The search input util "cleans" up a free text search input string. What it does:</p>
       <ul>
         <li>Clean up whitespace characters "&#160;&#160;this&#160;&#160;&#160;is&#160;&#160;too&#160;much space&#160;&#160;&#160;&#160;" becomes "this is too much space" </li>
@@ -30,10 +30,10 @@
         <li>Removes special search words like "AND " and  "OR "</li>
         <li>Translates "NOT " into Lucene syntax "-"</li>
       </ul>
-    </section>
-    <section name="Usage">
+    </subsection>
+    <subsection name="Usage">
       In your HstComponent call
       <source>org.onehippo.forge.utilities.hst.SearchInputUtils#rewriteKeywords(String input)</source>
-    </section>
+    </subsection>
   </body>
 </document>

@@ -41,6 +41,16 @@
     <hst:include ref="${include}" />
   </c:forEach>]]></source>
       </subsection>
+      <subsection name="org.onehippo.forge.utilities.hst.component.ForwardComponent extends BaseHstComponent">
+        <p>Component that does a forward on the response base on the component configuration parameter named 'forward'.
+          The parameter should reflect a site map path starting with a "/" and is relative to the root of the HST sitemap.
+        </p>
+      </subsection>
+      <subsection name="org.onehippo.forge.utilities.hst.component.RedirectComponent extends BaseHstComponent">
+        <p>Component that does a redirect on the response or on the component, based on the component parameters 'type'
+          (value 'response' or 'component') and 'redirect' (site map path).
+        </p>
+      </subsection>
     </section>
   </body>
 </document>

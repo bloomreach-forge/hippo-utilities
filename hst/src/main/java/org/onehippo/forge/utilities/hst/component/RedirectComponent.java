@@ -23,6 +23,10 @@ import org.hippoecm.hst.core.component.HstComponentException;
 import org.hippoecm.hst.core.component.HstRequest;
 import org.hippoecm.hst.core.component.HstResponse;
 
+/**
+ * Component that does a redirect on the response or on the component, based on the component parameters 'type' and
+ * 'redirect'.
+ */
 public class RedirectComponent extends BaseHstComponent {
 
     public static final String REDIRECT_PARAM = "redirect";
@@ -34,13 +38,13 @@ public class RedirectComponent extends BaseHstComponent {
 
     @Override
     public void doBeforeRender(HstRequest request, HstResponse response) throws HstComponentException {
-        
+
         final String redirect = getParameter(REDIRECT_PARAM, request);
-        
+
         if (redirect == null || redirect.length() == 0) {
                 throw new HstComponentException("Parameter '" + REDIRECT_PARAM + "' is required for " + this.getClass().getName());
-        } 
-        
+        }
+
         final String typeStr = getParameter(TYPE_PARAM, request);
         if (typeStr != null) {
             final Type type = Type.valueOf(typeStr);
@@ -57,7 +61,7 @@ public class RedirectComponent extends BaseHstComponent {
                     this.sendRedirect(redirect, request, response);
             }
         }
-        
+
         this.sendRedirect(redirect, request, response);
     }
 }

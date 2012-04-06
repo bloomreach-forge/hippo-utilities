@@ -23,19 +23,24 @@ import org.hippoecm.hst.core.component.HstComponentException;
 import org.hippoecm.hst.core.component.HstRequest;
 import org.hippoecm.hst.core.component.HstResponse;
 
+/**
+ * Component that does a forward on the response base on the component parameter 'forward'.
+ *
+ * The parameter should reflect a site map path starting with a "/" and is relative to the root of the hst sitemap
+ */
 public class ForwardComponent extends BaseHstComponent {
 
     public static final String FORWARD_PARAM = "forward";
 
     @Override
     public void doBeforeRender(HstRequest request, HstResponse response) throws HstComponentException {
-        
+
         final String forward = getParameter(FORWARD_PARAM, request);
-        
+
         if (forward == null || forward.length() == 0) {
             throw new HstComponentException("Parameter '" + FORWARD_PARAM + "' is required for " + this.getClass().getName());
         }
-        
+
         try {
             response.forward(forward);
         }

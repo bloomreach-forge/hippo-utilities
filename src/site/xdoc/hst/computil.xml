@@ -21,7 +21,7 @@
     <title>HST CompUtil</title>
   </properties>
   <body>
-    <section name="CompUtil">
+    <section name="HST Component Utilility">
       <subsection name="org.onehippo.forge.utilities.hst.CompUtil">
         <p>Static utility class with following methods:</p>
         <source><![CDATA[
