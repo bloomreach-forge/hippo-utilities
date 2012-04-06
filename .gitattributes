@@ -56,3 +56,5 @@ hst/src/test/resources/content.xml -text
 hst/src/test/resources/log4j.dtd -text
 hst/src/test/resources/log4j.xml -text
 repository/src/main/resources/scheduler.cnd -text
+src/site/site.xml -text
+src/site/xdoc/index.xml -text
