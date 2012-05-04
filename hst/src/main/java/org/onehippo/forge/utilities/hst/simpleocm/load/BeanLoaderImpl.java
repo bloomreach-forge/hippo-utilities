@@ -35,7 +35,6 @@ import org.apache.commons.lang.StringUtils;
 import org.hippoecm.hst.content.beans.ContentNodeBindingException;
 import org.hippoecm.repository.api.NodeNameCodec;
 import org.onehippo.forge.utilities.commons.GenericsUtil;
-import org.onehippo.forge.utilities.commons.RepositoryUtil;
 import org.onehippo.forge.utilities.hst.simpleocm.JcrNodeType;
 import org.onehippo.forge.utilities.hst.simpleocm.JcrPath;
 import org.onehippo.forge.utilities.hst.simpleocm.util.Converter;
@@ -52,7 +51,7 @@ import org.slf4j.LoggerFactory;
  */
 public class BeanLoaderImpl implements BeanLoader, FieldSetter {
 
-    private static final Logger logger = LoggerFactory.getLogger(RepositoryUtil.class);
+    private static final Logger logger = LoggerFactory.getLogger(BeanLoaderImpl.class);
 
     /**
      * @see FieldSetter
