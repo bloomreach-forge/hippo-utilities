@@ -27,9 +27,7 @@ import org.testng.annotations.Test;
 import static org.testng.AssertJUnit.assertTrue;
 
 /**
- * AnnotationUtilsTest
- *
- * @version $Id: AnnotationUtilsTest.java 88131 2010-06-10 15:01:13Z mmilicevic $
+ * AnnotationUtilTest
  */
 public class AnnotationUtilTest {
     @SuppressWarnings("unused")

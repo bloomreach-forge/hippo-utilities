@@ -33,7 +33,7 @@
     </menu>
 
     <menu name="Commons module">
-      <item name="Annotation Utility"/>
+      <item name="Annotation Utility" href="commons/annotationutil.html"/>
       <item name="Generics Utility"/>
       <item name="Hippo Utility"  href="commons/hippoutil.html"/>
       <item name="Repository Utility" href="commons/repoutil.html"/>

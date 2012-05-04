@@ -29,9 +29,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Utility methods for parsing annotations and bean properties (fields/methods)
- *
- * @version $Id: AnnotationUtils.java 92541 2010-08-05 10:22:01Z mmilicevic $
+ * Static utility class for getting (annotated) fields and methods from classes, using reflection.
  */
 public final class AnnotationUtil {
 
@@ -44,33 +42,7 @@ public final class AnnotationUtil {
     }
 
     /**
-     * Get fields of an class which are annotated with specific
-     * annotation and set them accessible (if necessary)
-     *
-     * @param clazz           class we are scanning for annotated fields.
-     * @param annotationClass annotation we are interested in
-     * @return a collection containing (accessible) fields we have found (or an empty collection)
-     */
-    public static Collection<Field> getAnnotatedFields(final Class<?> clazz, final Class<? extends Annotation> annotationClass) {
-        Collection<Field> fields = getClassFields(clazz);
-        Iterator<Field> iterator = fields.iterator();
-        while (iterator.hasNext()) {
-            Field field = iterator.next();
-            if (!field.isAnnotationPresent(annotationClass)) {
-                iterator.remove();
-            } else if (!field.isAccessible()) {
-                try {
-                    field.setAccessible(true);
-                } catch (SecurityException se) {
-                    log.error("Security exception while setting accessible: " + se);
-                }
-            }
-        }
-        return fields;
-    }
-
-    /**
-     * Find a class for given name
+     * Find a class for given name, loaded from current thread's context class loader.
      *
      * @param name of the class
      * @return null if not found or Class if found
@@ -86,13 +58,70 @@ public final class AnnotationUtil {
     }
 
     /**
-     * Get fields for given class.
+     * Get fields of an class which are annotated with specific annotation and set them accessible
+     * (if necessary).
+     *
+     * @param clazz           class we are scanning for annotated fields.
+     * @param annotationClass annotation we are interested in
+     * @return a collection containing (accessible) Field objects (or an empty collection)
+     */
+    public static Collection<Field> getAnnotatedFields(final Class<?> clazz, final Class<? extends Annotation> annotationClass) {
+        final Collection<Field> fields = getFields(clazz);
+        final Iterator<Field> iterator = fields.iterator();
+
+        while (iterator.hasNext()) {
+            final Field field = iterator.next();
+            if (!field.isAnnotationPresent(annotationClass)) {
+                iterator.remove();
+            } else if (!field.isAccessible()) {
+                try {
+                    field.setAccessible(true);
+                } catch (SecurityException se) {
+                    log.error("Security exception while setting accessible: " + se);
+                }
+            }
+        }
+
+        return fields;
+    }
+
+    /**
+     * Get methods of an class which are annotated with specific annotation and set them accessible
+     * (if necessary).
+     *
+     * @param clazz           class we are scanning for annotated methods.
+     * @param annotationClass annotation we are interested in
+     * @return a collection containing (accessible) Field objects (or an empty collection)
+     */
+    public static Collection<Method> getAnnotatedMethods(final Class<?> clazz, final Class<? extends Annotation> annotationClass) {
+        final Collection<Method> methods = getMethods(clazz);
+        final Iterator<Method> iterator = methods.iterator();
+
+        while (iterator.hasNext()) {
+            final Method method = iterator.next();
+            if (!method.isAnnotationPresent(annotationClass)) {
+                iterator.remove();
+            } else if (!method.isAccessible()) {
+                try {
+                    method.setAccessible(true);
+                } catch (SecurityException se) {
+                    log.error("Security exception while setting accessible: " + se);
+                }
+            }
+        }
+
+        return methods;
+    }
+
+    /**
+     * Get the declared fields of a class, including all fields of it's super classes.
      *
      * @param clazz class to scan for fields
-     * @return collection of Fields
+     * @return collection of declared Field objects
      */
-    public static Collection<Field> getClassFields(Class<?> clazz) {
-        Map<String, Field> fields = new HashMap<String, Field>();
+    public static Collection<Field> getFields(Class<?> clazz) {
+        final Map<String, Field> fields = new HashMap<String, Field>();
+
         for (; clazz != null;) {
             for (Field field : clazz.getDeclaredFields()) {
                 if (!fields.containsKey(field.getName())) {
@@ -107,29 +136,31 @@ public final class AnnotationUtil {
 
 
     /**
-     * Scans class for declared methods
+     * Get the declared methods of a class, including all methods of it's super classes.
      *
-     * @param clazz class we are interested in
-     * @return collection of declared methods
+     * @param clazz class to scan for methods
+     * @return collection of declared Method objects
      */
     public static Collection<Method> getMethods(Class<?> clazz) {
-        Map<String, Method> returnValue = new HashMap<String, Method>();
+        final Map<String, Method> methods = new HashMap<String, Method>();
+
         for (; clazz != null;) {
             for (Method method : clazz.getDeclaredMethods()) {
                 boolean isOverridden = false;
-                for (Method overriddenMethod : returnValue.values()) {
+                for (Method overriddenMethod : methods.values()) {
                     if (overriddenMethod.getName().equals(method.getName()) && Arrays.deepEquals(method.getParameterTypes(), overriddenMethod.getParameterTypes())) {
                         isOverridden = true;
                         break;
                     }
                 }
                 if (!isOverridden) {
-                    returnValue.put(method.getName(), method);
+                    methods.put(method.getName(), method);
                 }
             }
             clazz = clazz.getSuperclass();
         }
-        return returnValue.values();
+
+        return methods.values();
     }
 }
 

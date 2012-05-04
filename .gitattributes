@@ -3,7 +3,6 @@
 /NOTICE -text
 cms/src/main/java/org/onehippo/forge/utilities/cms/gallery/GalleryProcessor.java -text
 cms/src/main/java/org/onehippo/forge/utilities/cms/gallery/GalleryProcessorPlugin.java -text
-commons/src/main/java/org/onehippo/forge/utilities/commons/AnnotationUtil.java -text
 commons/src/main/java/org/onehippo/forge/utilities/commons/GenericsUtil.java -text
 commons/src/main/java/org/onehippo/forge/utilities/commons/HippoUtil.java -text
 commons/src/main/java/org/onehippo/forge/utilities/commons/RepositoryUtil.java -text
@@ -16,7 +15,6 @@ commons/src/main/java/org/onehippo/forge/utilities/commons/jcrmockup/MockNode.ja
 commons/src/main/java/org/onehippo/forge/utilities/commons/jcrmockup/MockProperty.java -text
 commons/src/main/java/org/onehippo/forge/utilities/commons/jcrmockup/NodeIteratorAnswer.java -text
 commons/src/main/java/org/onehippo/forge/utilities/commons/jcrmockup/PropertyIteratorAnswer.java -text
-commons/src/test/java/org/onehippo/forge/utilities/AnnotationUtilTest.java -text
 commons/src/test/java/org/onehippo/forge/utilities/BaseRepositoryTest.java -text
 commons/src/test/java/org/onehippo/forge/utilities/commons/ftp/SimpleFtpClientTest.java -text
 commons/src/test/java/org/onehippo/forge/utilities/commons/jcrmockup/ISO8601Test.java -text

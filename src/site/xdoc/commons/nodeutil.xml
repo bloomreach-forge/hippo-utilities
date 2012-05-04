@@ -46,7 +46,7 @@
     String getString(Node node, String propertyName, String defaultValue)
 
     String[] getStrings(Node node, String propertyName)
-    String[] getStrings(Node node, String propertyName, String[] defaultValue)
+    String[] getStrings(Node node, String propertyName, String[] defaultValue)]]>
         </source>
       </subsection>
     </section>
