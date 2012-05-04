@@ -21,11 +21,19 @@
     <title>CMS Gallery Processor</title>
   </properties>
   <body>
-    <section name="CMS Gallery Processor PLugin">
+    <section name="CMS Gallery Processor Plugin">
       <subsection name="org.onehippo.forge.utilities.cms.gallery.GalleryProcessorPlugin">
-        <p>Configurable CMS Gallery Processor plugin in which you can specify the
-          number of thumbnails, and their sizes, to be created.</p>
-       </subsection>
+        <p>Configurable CMS Gallery Processor plugin in which you can specify the number of thumbnails,
+          and their sizes, to be created. This gallery processor is used in older CMS projects.
+          In the newer CMS versions there is support for multiple image processors by default. Therefore
+          this plugin can be treated as deprecated.
+        </p>
+        <p>Since CMS version 7.5 there is a gallery processor available in the CMS. On the wiki there is more
+          information about creating your own image types:
+          <a href="http://wiki.onehippo.com/display/CMS7/Create+a+custom+image+set">Create a custom image set</a>
+        </p>
+      </subsection>
+
     </section>
   </body>
 </document>
