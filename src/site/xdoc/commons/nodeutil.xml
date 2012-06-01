@@ -27,26 +27,75 @@
           It also supports default values for Boolean, Date, Decimal, Double, Long, String and String[].
           It has the following static methods:</p>
         <source><![CDATA[
-    Boolean getBoolean(Node node, String propertyName)
-    Boolean getBoolean(Node node, String propertyName, Boolean defaultValue)
+  /**
+   * Get a boolean property from a node, returning false if not found
+   */
+  Boolean getBoolean(Node node, String propertyName)
 
-    Date getDate(Node node, String propertyName)
-    Date getDate(Node node, String propertyName, Date defaultValue)
+  /**
+   * Get a boolean property from a node, returning a default value if not found
+   */
+  Boolean getBoolean(Node node, String propertyName, Boolean defaultValue)
 
-    Decimal getDecimal(Node node, String propertyName)
-    Decimal getDecimal(Node node, String propertyName, Decimal defaultValue)
+  /**
+   * Get a Date property from a node, returning null if not found
+   */
+  Date getDate(Node node, String propertyName)
 
-    Double getDouble(Node node, String propertyName)
-    Double getDouble(Node node, String propertyName, Double defaultValue)
+  /**
+   * Get a Date property from a node, returning a default value if not found
+   */
+  Date getDate(Node node, String propertyName, Date defaultValue)
 
-    Long getLong(Node node, String propertyName)
-    Long getLong(Node node, String propertyName, Long defaultValue)
+  /**
+   * Get a decimal property from a node, returning null if not found
+   */
+  Decimal getDecimal(Node node, String propertyName)
 
-    String getString(Node node, String propertyName)
-    String getString(Node node, String propertyName, String defaultValue)
+  /**
+   * Get a decimal property from a node, returning a default value if not found
+   */
+  Decimal getDecimal(Node node, String propertyName, Decimal defaultValue)
 
-    String[] getStrings(Node node, String propertyName)
-    String[] getStrings(Node node, String propertyName, String[] defaultValue)]]>
+  /**
+   * Get a double property from a node, returning null if not found
+   */
+  Double getDouble(Node node, String propertyName)
+
+  /**
+   * Get a double property from a node, returning a default value if not found
+   */
+  Double getDouble(Node node, String propertyName, Double defaultValue)
+
+  /**
+   * Get a long property from a node, returning null if not found
+   */
+  Long getLong(Node node, String propertyName)
+
+  /**
+   * Get a long property from a node, returning a default value if not found
+   */
+  Long getLong(Node node, String propertyName, Long defaultValue)
+
+  /**
+   * Get a String property from a node, returning null if not found
+   */
+  String getString(Node node, String propertyName)
+
+  /**
+   * Get a String property from a node, returning a default value if not found
+   */
+  String getString(Node node, String propertyName, String defaultValue)
+
+  /**
+   * Get a String property from a node, returning null if not found
+   */
+  String[] getStrings(Node node, String propertyName)
+
+  /**
+   * Get a String property from a node, returning a default value if not found
+   */
+  String[] getStrings(Node node, String propertyName, String[] defaultValue)]]>
         </source>
       </subsection>
     </section>
