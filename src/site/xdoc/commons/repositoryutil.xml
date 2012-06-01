@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!--
+  Copyright 2012 Hippo
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  -->
+
+<!DOCTYPE document PUBLIC "-//Apache Software Foundation//DTD XDOC 1.0//EN" "http://maven.apache.org/dtd/xdoc_1_0.dtd">
+<document>
+  <properties>
+    <title>HST PsUtil</title>
+  </properties>
+  <body>
+    <section name="Commons AnnotationUtil">
+      <subsection name="org.onehippo.forge.utilities.commons.RepositoryUtil">
+        <p>Static utility class containing repository related classes.
+          It has with following methods:</p>
+        <source><![CDATA[
+  /**
+   * Get a session from a new login into a HippoRepository.
+   */
+  Session getSession(String repoConnection, String userName, String password)
+
+  void removeNode(Session session, String fullPath)
+  Node getNodeByPath(Session session, String absPath)
+
+  Node ensureParent(Node parent, String relFolderPath)
+  Node ensureParent(Node parent, String relFolderPath, Map<String, Object> properties)
+  Node ensureParent(Node parent, String relFolderPath, String folderType, Map<String, Object> properties)
+
+  /**
+   * For given path, create a list of separate node names.
+   */
+  List<String> folderParts(String folderPath)
+
+  Node createFolder(Node parent, String type, String folderName, Map<String, Object> properties)
+  Node createHardHandle(Node parent, String name, boolean overwrite)
+  Node createDocumentNode(Node parent, String name, String type)
+
+  void setBinaryData(Node node, InputStream data, String mimeType)
+
+  void addWorkflow(Node node)
+
+  Node getDocumentVariant(Node handle, String primaryType, String hippoStdState)]]>
+        </source>
+      </subsection>
+    </section>
+  </body>
+</document>

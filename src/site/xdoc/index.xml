@@ -34,7 +34,7 @@
           <li><a href="commons/annotationutil.html">Annotation Utility</a></li>
           <li><a href="commons/genericsutil.html">Generics Utility</a></li>
           <li><a href="commons/hippoutil.html">Hippo Utility</a></li>
-          <li><a href="commons/repoutil.html">Repository Utility</a></li>
+          <li><a href="commons/repositoryutil.html">Repository Utility</a></li>
           <li>Simple FTP Client</li>
           <li>JCR Mockup to recreate a node structure based on system view XML</li>
         </ul>

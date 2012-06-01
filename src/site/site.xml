@@ -36,10 +36,10 @@
       <item name="Annotation Utility" href="commons/annotationutil.html"/>
       <item name="Generics Utility" href="commons/genericsutil.html"/>
       <item name="Hippo Utility"  href="commons/hippoutil.html"/>
-      <item name="Repository Utility" href="commons/repoutil.html"/>
+      <item name="Repository Utility" href="commons/repositoryutil.html"/>
       <item name="Node Utility" href="commons/nodeutil.html"/>
-      <item name="FTP Client"/>
-      <item name="JCR Mockup"/>
+      <item name="FTP Client" href="commons/ftpclient.html"/>
+      <item name="JCR Mockup" href="commons/jcrmockup.html"/>
     </menu>
 
     <menu name="HST module">

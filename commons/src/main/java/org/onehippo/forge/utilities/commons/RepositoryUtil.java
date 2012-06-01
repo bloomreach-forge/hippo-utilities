@@ -58,6 +58,9 @@ public final class RepositoryUtil {
     private RepositoryUtil() {
     }
 
+    /**
+     * Get a session from a new login into a HippoRepository.
+     */
     public static Session getSession(final String repoConnection, final String userName, final String password)
             throws RepositoryException {
         final HippoRepository repository = HippoRepositoryFactory.getHippoRepository(repoConnection);
@@ -99,7 +102,7 @@ public final class RepositoryUtil {
     }
 
     /**
-     * For given path, create
+     * For given path, create a list of separate node names.
      *
      * @param folderPath repository folder path, like {@code  /foo/bar/path/}
      * @return folder names, like {@code foo,bar,path}
