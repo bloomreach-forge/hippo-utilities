@@ -212,11 +212,4 @@ public final class GenericsUtil {
         }
         return actualTypeParameters.get(parameterIndex).getAnnotation(annotationClazz);
     }
-
-    public static <T> T getListItem(List<T> list, int index) {
-        if (list.size() > index) {
-            return list.get(index);
-        }
-        return null;
-    }
 }

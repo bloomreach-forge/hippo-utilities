@@ -59,7 +59,7 @@ public class NodeBuilderImpl implements NodeBuilder, PropertyBuilder {
     @SuppressWarnings("unchecked")
     private void buildProperty(final Node node, final String relPath, final Object value, final Class<?> type, final List<Class<?>> actualTypeParameters) throws RepositoryException, ContentNodeBindingException {
         final JcrNodeType nodeTypeAnnotation = type.getAnnotation(JcrNodeType.class);
-        Class<?> firstTypeParameter = GenericsUtil.getListItem(actualTypeParameters, 0);
+        Class<?> firstTypeParameter = getListItem(actualTypeParameters, 0);
         if (nodeTypeAnnotation != null) {
             build(node, relPath, value, nodeTypeAnnotation.sameNameSiblings());
         } else if ("*".equals(relPath) && Map.class.equals(type)) {
@@ -346,4 +346,10 @@ public class NodeBuilderImpl implements NodeBuilder, PropertyBuilder {
         }
     }
 
+    private <T> T getListItem(List<T> list, int index) {
+        if (list.size() > index) {
+            return list.get(index);
+        }
+        return null;
+    }
 }
