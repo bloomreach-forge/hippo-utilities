@@ -28,6 +28,4 @@ public enum SimpleFtpClientResult {
     FAILED_CREATE_DIR,
     ERROR,
     SUCCESS
-
-
 }

@@ -18,7 +18,7 @@
 <!DOCTYPE document PUBLIC "-//Apache Software Foundation//DTD XDOC 1.0//EN" "http://maven.apache.org/dtd/xdoc_1_0.dtd">
 <document>
   <properties>
-    <title>Base Updater Module</title>
+    <title>Hippo Utilities Repository - Base Updater Module</title>
   </properties>
   <body>
     <section name="Base Updater Module">

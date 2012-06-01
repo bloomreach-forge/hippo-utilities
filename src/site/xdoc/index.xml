@@ -35,8 +35,8 @@
           <li><a href="commons/genericsutil.html">Generics Utility</a></li>
           <li><a href="commons/hippoutil.html">Hippo Utility</a></li>
           <li><a href="commons/repositoryutil.html">Repository Utility</a></li>
-          <li>Simple FTP Client</li>
-          <li>JCR Mockup to recreate a node structure based on system view XML</li>
+          <li><a href="commons/ftpclient.html">Simple FTP Client</a></li>
+          <li><a href="commons/jcrmockup.html">JCR Mockup to create a node structure based on system view XML</a></li>
         </ul>
 
         <b>hippo-utilities-hst</b>

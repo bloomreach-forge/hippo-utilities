@@ -18,26 +18,22 @@
 <!DOCTYPE document PUBLIC "-//Apache Software Foundation//DTD XDOC 1.0//EN" "http://maven.apache.org/dtd/xdoc_1_0.dtd">
 <document>
   <properties>
-    <title>Hippo Utilities HST - XMLStripper</title>
+    <title>Hippo Utilities Commons - FTP Client</title>
   </properties>
   <body>
-    <section name="XMLStripper">
-      <subsection name="org.onehippo.forge.utilities.hst.xml.XMLStripper">
-        <p>Static utility class that converts HTML string to a text version of
-          it. It has following methods:</p>
+    <section name="Commons FTP Client">
+      <subsection name="org.onehippo.forge.utilities.commons.ftp.SimpleFtpClient">
+        <p>Utility wrapping <code>org.apache.commons.net.ftp.FTPClient</code>.
+          <br/>Basic usage:</p>
         <source><![CDATA[
-    /**
-     * Get HippoHTML content as text, i.e. parse it's inner HTML and add only
-     * the content of the elements.
-     */
-    String getHippoHTMLAsText(HippoHtml hippoHtml)
-
-    /**
-     * Get an XML property as text, i.e. parse it and add only the content of
-     * the elements.
-     */
-    String getXMLPropertyAsText(Property property)]]>
-        </source>
+  SimpleFtpClient client = new SimpleFtpClient(user, password, server, port);
+  SimpleFtpClientResult result = client.saveFile(stream, fileName, directory,
+                                                isBinary, overwrite, createDirectories);
+  if (result == SimpleFtpClientResult.CREATED) {
+    // succes!
+  }
+  client.close();]]></source>
+        <p>Please refer to the source code and test class <code>org.onehippo.forge.utilities.commons.ftp.SimpleFtpClientTest</code> for details.</p>
       </subsection>
     </section>
   </body>

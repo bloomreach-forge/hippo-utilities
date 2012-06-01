@@ -18,10 +18,10 @@
 <!DOCTYPE document PUBLIC "-//Apache Software Foundation//DTD XDOC 1.0//EN" "http://maven.apache.org/dtd/xdoc_1_0.dtd">
 <document>
   <properties>
-    <title>HST PsUtil</title>
+    <title>Hippo Utilities Commons - GenericsUtil</title>
   </properties>
   <body>
-    <section name="Commons HippoUtil">
+    <section name="Commons GenericsUtil">
       <subsection name="org.onehippo.forge.utilities.commons.GenericsUtil">
         <p>Static utility class to get and set generically typed JCR property values.
           It has the following methods:</p>

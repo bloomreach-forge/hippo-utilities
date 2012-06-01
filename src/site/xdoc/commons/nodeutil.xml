@@ -18,10 +18,10 @@
 <!DOCTYPE document PUBLIC "-//Apache Software Foundation//DTD XDOC 1.0//EN" "http://maven.apache.org/dtd/xdoc_1_0.dtd">
 <document>
   <properties>
-    <title>HST PsUtil</title>
+    <title>Hippo Utilities Commons - NodeUtils</title>
   </properties>
   <body>
-    <section name="Commons HippoUtil">
+    <section name="Commons NodeUtils">
       <subsection name="org.onehippo.forge.utilities.commons.NodeUtils">
         <p>Static utility class for accessing JCR node properties without having to check RepositoryException.
           It also supports default values for Boolean, Date, Decimal, Double, Long, String and String[].

@@ -46,7 +46,7 @@ public class SimpleFtpClient implements Closeable {
     private String homeDirectory;
 
     /**
-     * Constructor ff port is different than port 21
+     * Constructor if port is different than port 21
      *
      * @param userName login name
      * @param password login password
@@ -59,7 +59,6 @@ public class SimpleFtpClient implements Closeable {
         this.server = server;
         this.port = port;
         this.client = new FTPClient();
-
     }
 
     /**
@@ -70,11 +69,7 @@ public class SimpleFtpClient implements Closeable {
      * @param server   server address (name or ip address))
      */
     public SimpleFtpClient(final String userName, final String password, final String server) {
-        this.userName = userName;
-        this.password = password;
-        this.server = server;
-        this.port = 21;
-        this.client = new FTPClient();
+        this(userName, password, server, 21);
     }
 
 
@@ -134,7 +129,7 @@ public class SimpleFtpClient implements Closeable {
      * @param fileName          name of the file
      * @param directory         directory file should be saved to.
      *                          Note: directory is relative to user home directory, even when provided as absolute directory (e.g. /foo/bar is treated as foo/bar)
-     * @param binaryUpload      is this an binary upload
+     * @param binaryUpload      is this a binary upload
      * @param overwrite         overwrite existing file?
      * @param createDirectories create directories if not exist
      * @return SimpleFtpClientResult.CREATED if file created, SimpleFtpClientResult.FILE_OVERWRITTEN; if file overwritten, SimpleFtpClientResult.ERROR otherwise;
