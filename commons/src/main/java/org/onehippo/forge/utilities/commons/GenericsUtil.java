@@ -41,6 +41,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
+/**
+ * Static utility class to get and set generically typed JCR property values
+ */
 public final class GenericsUtil {
 
     private static final Logger logger = LoggerFactory.getLogger(GenericsUtil.class);
@@ -149,6 +152,15 @@ public final class GenericsUtil {
         }
     }
 
+    public static <T> void setPropertyValues(final Property property, final Collection<T> values) throws RepositoryException {
+        final Value[] newValues = new Value[values.size()];
+        int index = 0;
+        for (T object : values) {
+            newValues[index++] = createValue(object);
+        }
+        property.setValue(newValues);
+    }
+
     public static <T> void setPropertyValues(final Node node, final String relativePath, final Collection<T> values) throws RepositoryException {
         logger.debug("Setting property '{}' values from collection.", node.getPath()+"/"+relativePath);
         if (!node.isCheckedOut()) {
@@ -166,15 +178,6 @@ public final class GenericsUtil {
             }
             node.setProperty(relativePath, newValues.toArray(new Value[newValues.size()]));
         }
-    }
-
-    public static <T> void setValues(final Property property, final Collection<T> values) throws RepositoryException {
-        final Value[] newValues = new Value[values.size()];
-        int index = 0;
-        for (T object : values) {
-            newValues[index++] = createValue(object);
-        }
-        property.setValue(newValues);
     }
 
     public static Value createValue(Object object) {

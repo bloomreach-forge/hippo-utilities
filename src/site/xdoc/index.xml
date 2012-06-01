@@ -32,7 +32,7 @@
         <b>hippo-utilities-commons</b>
         <ul>
           <li><a href="commons/annotationutil.html">Annotation Utility</a></li>
-          <li>Generics Utility</li>
+          <li><a href="commons/genericsutil.html">Generics Utility</a></li>
           <li><a href="commons/hippoutil.html">Hippo Utility</a></li>
           <li><a href="commons/repoutil.html">Repository Utility</a></li>
           <li>Simple FTP Client</li>
