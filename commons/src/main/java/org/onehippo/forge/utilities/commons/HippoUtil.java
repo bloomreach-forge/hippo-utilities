@@ -43,7 +43,10 @@ public final class HippoUtil {
     private HippoUtil() {
     }
 
-    public static final Map<String, String> mimeTypeToExtensionMap =
+    /**
+     * Map from mime type to common file extension, e.g. "application/pdf" to "pdf".
+     */
+    public static final Map<String, String> MIME_TYPE_TO_EXTENSION_MAP =
         new HashMap<String , String>() {
             private static final long serialVersionUID = -3566373789286953339L;
         {
@@ -68,8 +71,12 @@ public final class HippoUtil {
             put("application/vnd.oasis.opendocument.text-master",  "odm");
         }};
 
-    public static final String DEFAULT_APPEND_TEXT = " ...";
+    /**
+     * A String array with length zero.
+     */
     public static final String[] EMPTY_STRING_ARRAY = new String[0];
+
+    private static final String DEFAULT_APPEND_TEXT = " ...";
 
     /**
      * Abbreviate a text to _approximately_ some number of characters, trying to
@@ -129,7 +136,7 @@ public final class HippoUtil {
 
     /**
      * Concatenates a collection of strings by concatenating the strings and inserting a separator in between
-     * each of them. Nulls are handled automatically and there is no separator at the end of sequence*
+     * each of them. Nulls are handled automatically and there is no separator at the end of sequence.
      *
      * @param strings   collection of strings (collection may contain null objects, those are ignored)
      * @param separator the separator
@@ -142,8 +149,8 @@ public final class HippoUtil {
     }
 
     /**
-     * concatenates an array of strings by concatenating the strings and inserting a separator in between
-     * each of them. Nulls are handled automatically and there is no separator at the end of sequence
+     * Concatenates an array of strings by concatenating the strings and inserting a separator in between
+     * each of them. Nulls are handled automatically and there is no separator at the end of sequence.
      *
      * @param strings   the strings
      * @param separator the separator
@@ -187,7 +194,7 @@ public final class HippoUtil {
     }
 
     /**
-     * Replaces <strong>{@code ${variableName}}</strong> variable with string replacement provided
+     * Replaces <strong>{@code ${variableName}}</strong> variable in a template with the replacement value provided.
      *
      * @param variableName     variable name
      * @param replacementValue replacement value
@@ -231,7 +238,7 @@ public final class HippoUtil {
     }
 
     /**
-     * Get an extension from a mime type
+     * Get an extension from a mime type.
      */
     public static String getExtensionFromMimeType(final String mimeType) {
 
@@ -239,7 +246,7 @@ public final class HippoUtil {
             return null;
         }
 
-        return mimeTypeToExtensionMap.get(mimeType);
+        return MIME_TYPE_TO_EXTENSION_MAP.get(mimeType);
     }
 
 }

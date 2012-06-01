@@ -23,15 +23,68 @@
   <body>
     <section name="Commons HippoUtil">
       <subsection name="org.onehippo.forge.utilities.commons.HippoUtil">
-        <p>Static utility class with following methods:</p>
+        <p>Static String related utility class. It has these public constants:</p>
         <source><![CDATA[
-    String abbreviateText(String text, int numberOfCharacters, String appendText)
-    String abbreviateText(String text, int numberOfCharacters)
-    String concat(Collection<String> strings, String separator)
-    String concat(String[] strings, String separator)
-    String replacePlaceHolders(String variableName, String replacementValue, String template)
-    String simplifyMimeType(String mimeType)
-    String getExtensionFromMimeType(String mimeType)]]>
+  /**
+   * Map from mime type to common file extension, e.g. "application/pdf" to "pdf".
+   */
+  Map<String, String> MIME_TYPE_TO_EXTENSION_MAP
+
+  /**
+   * A String array with length zero.
+   */
+  String[] EMPTY_STRING_ARRAY]]>
+        </source>
+        <p>There are the following methods:</p>
+        <source><![CDATA[
+  /**
+   * Abbreviate a text to _approximately_ some number of characters, trying to
+   * find a nice word end and then appending some string (defaulting to three dots).
+   */
+  String abbreviateText(String text, int numberOfCharacters, String appendText)
+
+  /**
+   * Abbreviate a text to _approximately_ some number of characters, trying to
+   * find a nice word end and then appending three dots.
+   */
+  String abbreviateText(String text, int numberOfCharacters)
+
+  /**
+   * Concatenates a collection of strings by concatenating the strings and inserting a separator in between
+   * each of them. Nulls are handled automatically and there is no separator at the end of sequence.
+   */
+  String concat(Collection<String> strings, String separator)
+
+  /**
+   * Concatenates an array of strings by concatenating the strings and inserting a separator in between
+   * each of them. Nulls are handled automatically and there is no separator at the end of sequence.
+   */
+  String concat(String[] strings, String separator)
+
+  /**
+   * Remove empty (length zero when trimmed) values from a list.
+   */
+  List<String> removeEmptyValues(List<String> values)
+
+  /**
+   * Remove empty (length zero when trimmed) values from an array.
+   */
+  String[] removeEmptyValues(String[] values)
+
+  /**
+   * Replaces a ${variableName} in a template with replacement value provided.
+   */
+  String replacePlaceHolders(String variableName, String replacementValue, String template)
+
+  /**
+   * Simplify a genuine mime type into a simple one like "pdf", "image" or an extension like "doc".
+   */
+  String simplifyMimeType(String mimeType)
+
+  /**
+   * Get an extension from a mime type.
+   */
+  String getExtensionFromMimeType(String mimeType)]]>
         </source>
       </subsection>
     </section>
