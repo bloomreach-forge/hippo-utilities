@@ -170,7 +170,7 @@ public final class RepositoryUtil {
     }
 
     public static void setBinaryData(Node node, InputStream data, String mimeType) throws RepositoryException {
-        node.setProperty("jcr:data", data);
+        node.setProperty("jcr:data", node.getSession().getValueFactory().createBinary(data));
         node.setProperty("jcr:mimeType", mimeType);
         node.setProperty("jcr:lastModified", Calendar.getInstance());
     }
