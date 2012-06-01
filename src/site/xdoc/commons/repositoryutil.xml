@@ -23,7 +23,7 @@
   <body>
     <section name="Commons AnnotationUtil">
       <subsection name="org.onehippo.forge.utilities.commons.RepositoryUtil">
-        <p>Static utility class containing repository related classes.
+        <p>Static utility class containing repository related methods.
           It has with following methods:</p>
         <source><![CDATA[
   /**
