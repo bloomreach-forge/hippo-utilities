@@ -27,7 +27,7 @@ import org.hippoecm.repository.ext.UpdaterItemVisitor;
 /**
  * Base CND Updater that:
  * <p/>
- * - reloads a projects cnd
+ * - reloads a project's namespace and cnd
  * - visits all document and compound types and set it's specific namespace and
  * - removes common initialize items for reloading doc type config
  */
@@ -43,8 +43,22 @@ public abstract class BaseCndUpdater extends BaseUpdater {
     }
 
     protected abstract String getProjectNS();
-    protected abstract String getProjectCND();
     protected abstract String getNewProjectNS();
+    protected abstract String getProjectCND();
+
+    /**
+     * Get the name of the initialize node that loads the project's namespace.
+     */
+    protected String getProjectNSInitializeNodeName() {
+        return getProjectNS();
+    }
+
+    /**
+     * Get the name of the initialize node that loads the project's cnd.
+     */
+    protected String getProjectCNDInitializeNodeName() {
+        return getProjectNS() + "-namespace";
+    }
 
     protected final String getProjectPrefix() {
         return getProjectNS() + ':';
@@ -65,9 +79,9 @@ public abstract class BaseCndUpdater extends BaseUpdater {
     protected void updateInitializeNode(final UpdaterContext context, final Node node) throws RepositoryException {
 
         // remove both initializeitems that load the CND and the namespace node
-        // (NB override this method if the names do not match!)
-        removeSubNode(node, getProjectNS());
-        removeSubNode(node, getProjectNS() + "-namespace");
+        // (NB override these methods if the names do not match!)
+        removeSubNode(node, getProjectNSInitializeNodeName());
+        removeSubNode(node, getProjectCNDInitializeNodeName());
     }
 
     /**
