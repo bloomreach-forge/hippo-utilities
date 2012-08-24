@@ -149,16 +149,18 @@ public class SchedulerDaemon implements DaemonModule, EventListener {
     }
 
     /**
-     * Get the configuration for the quartz scheduler.
+     * Get the configuration for the quartz scheduler, configured in the top scheduler node.
      *
      * @return the configuration properties for the quartz scheduler
      */
     protected Properties getQuartzSchedulerConfiguration(Node node) throws RepositoryException {
         Properties properties = new Properties();
         properties.put("org.quartz.scheduler.instanceName",
-                NodeUtils.getString(node, "org.quartz.scheduler.instanceName", "Job Scheduler"));
+                NodeUtils.getString(node, "org.quartz.scheduler.instanceName", "Hippo Utilities Quartz Job Scheduler"));
         properties.put("org.quartz.scheduler.instanceId",
                 NodeUtils.getString(node, "org.quartz.scheduler.instanceId", "AUTO"));
+        properties.put("org.quartz.scheduler.skipUpdateCheck",
+                NodeUtils.getString(node, "org.quartz.scheduler.skipUpdateCheck", "true"));
         properties.put("org.quartz.threadPool.class",
                 NodeUtils.getString(node, "org.quartz.threadPool.class", "org.quartz.simpl.SimpleThreadPool"));
         properties.put("org.quartz.threadPool.threadCount",
@@ -174,8 +176,8 @@ public class SchedulerDaemon implements DaemonModule, EventListener {
 
     /**
      * Create an scheduler node object
-     * @param node
-     * @return
+     * @param node JCR node
+     * @return SchedulerNode object
      * @throws RepositoryException
      */
     protected SchedulerNode createSchedulerNode(final Node node) throws RepositoryException {
