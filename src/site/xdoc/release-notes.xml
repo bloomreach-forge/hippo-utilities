@@ -22,6 +22,11 @@
   </properties>
   <body>
     <section name="Release Notes">
+      <subsection name="1.01.02-SNAPSHOT">
+        <ul>
+          <li>HIPPLUG-338: skip terracotta autoupdate by setting a property in the Scheduler Daemon:</li>
+        </ul>
+      </subsection>
       <subsection name="1.01.01">
         <ul>
           <li>Scheduler Daemon: added a mandatory properties file with activation flag
