@@ -25,7 +25,65 @@
       <subsection name="SchedulerDaemon implements DaemonModule">
         <p>With the SchedulerDaemon you are able to implement Quartz jobs in your project
             and schedule them in the repository by configuration.</p>
-       </subsection>
+        <h5>Step 1: add the SchedulerDaemon to the content module</h5>
+        <p>In manifestEntries of the maven-jar-plugin in the content jar's pom, add the SchedulerDaemon as Hippo Module:</p>
+        <source><![CDATA[
+  <manifestEntries>
+    <hippo-modules>org.onehippo.forge.utilities.repository.scheduler.SchedulerDaemon</hippo-modules>
+  </manifestEntries>]]></source>
+        <p>A full example is available from the demo project at <a href="https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities-demo/trunk/content/pom.xml">forge.onehippo.org/svn/hippo-utilities/hippo-utilities-demo/trunk/content/pom.xml</a></p>
+        <h5>Step 2: add SchedulerDaemon configuration to the repository</h5>
+        <p>Scheduler configuration is present as a node of type <code>scheduler:scheduler</code> in the repository. Add such node
+        in your content module as xml, with of course the accompanying reference in hippoecm-extension.xml</p>
+          <source><![CDATA[
+<sv:node xmlns:sv="http://www.jcp.org/jcr/sv/1.0" sv:name="demoScheduler">
+  <sv:property sv:name="jcr:primaryType" sv:type="Name">
+    <sv:value>scheduler:scheduler</sv:value>
+  </sv:property>
+  <sv:property sv:name="scheduler:active" sv:type="Boolean">
+    <sv:value>true</sv:value>
+  </sv:property>
+  <sv:node sv:name="demoJobSchedulerGroup">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>scheduler:jobScheduleGroup</sv:value>
+    </sv:property>
+    <sv:property sv:name="scheduler:active" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:node sv:name="demoJobSchedule">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>scheduler:jobSchedule</sv:value>
+      </sv:property>
+      <sv:property sv:name="scheduler:active" sv:type="Boolean">
+        <sv:value>true</sv:value>
+      </sv:property>
+      <sv:property sv:name="scheduler:jobClassName" sv:type="String">
+        <sv:value>org.onehippo.forge.utilities.repository.scheduler.tester.TesterJob</sv:value>
+      </sv:property>
+      <sv:property sv:name="scheduler:runInstantly" sv:type="Boolean">
+        <sv:value>false</sv:value>
+      </sv:property>
+      <sv:property sv:name="scheduler:cronExpression" sv:type="String">
+        <sv:value>0 0/1 * 1/1 * ? *</sv:value>
+      </sv:property>
+      <sv:node sv:name="scheduler:jobConfiguration">..[see example xml]..</sv:node>
+    </sv:node>
+  </sv:node>
+</sv:node>]]></source>
+          <p>A full example is available from the demo project at <a href="https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities-demo/trunk/content/src/main/resources/demoScheduler.xml">forge.onehippo.org/svn/hippo-utilities/hippo-utilities-demo/trunk/content/src/main/resources/demoScheduler.xml</a></p>
+        <h5>Step 3: activate the scheduler in properties</h5>
+        <p>On behalf of clustered setup, the scheduler reads from a properties file to activate or not. You can specify
+        a properties file with a system property <code>-Dscheduler.properties</code> or by adding a file <code>project.properties</code> in the CMS's resources directory.
+        Add the following property:</p>
+        <source><![CDATA[
+  # alternative to having this built-in resource file is to provide it by means
+  # of the following system property: -Dscheduler.properties
+  org.onehippo.forge.utilities.repository.scheduler.SchedulerDaemon.active=true]]></source>
+        <h5>Step 4: write and configure your own job.</h5>
+        <p>The example configuration configures the TesterJob. It does nothing but read and log it's configuration. Once you see
+        it up and running, you are ready to write your own job, extending from <code>org.onehippo.forge.utilities.repository.scheduler.BaseJob</code></p>
+        <p>See the TesterJob at <a href="https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities/trunk/repository/src/main/java/org/onehippo/forge/utilities/repository/scheduler/tester/TesterJob.java">forge.onehippo.org/svn/hippo-utilities/hippo-utilities/trunk/repository/src/main/java/org/onehippo/forge/utilities/repository/scheduler/tester/TesterJob.java</a></p>
+      </subsection>
     </section>
   </body>
 </document>

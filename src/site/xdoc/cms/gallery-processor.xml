@@ -28,9 +28,9 @@
           In the newer CMS versions there is support for multiple image processors by default. Therefore
           this plugin can be treated as deprecated.
         </p>
-        <p>Since CMS version 7.5 there is a gallery processor available in the CMS. On the wiki there is more
-          information about creating your own image types:
-          <a href="http://wiki.onehippo.com/display/CMS7/Create+a+custom+image+set">Create a custom image set</a>
+        <p>Since CMS version 7.5 there is a gallery processor available in the CMS. On onehippo.org there is more
+          information about creating your own image types. See
+          <a href="http://www.onehippo.org/7_7/library/concepts/images-and-assets/create-a-custom-image-set.html">Create a custom image set</a>
         </p>
       </subsection>
 

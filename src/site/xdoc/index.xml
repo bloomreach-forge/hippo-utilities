@@ -67,7 +67,7 @@
 
       </subsection>
       <subsection name="Project status">
-        <p>Hippo Utilities is currently at version 1.01.00 running on Hippo 7.6 and 7.7. </p>
+        <p>Hippo Utilities is currently at version 1.01.02 running on Hippo 7.6 and 7.7. </p>
         <table border="1" cellpadding="0" cellspacing="5">
           <tbody>
             <tr>
@@ -78,11 +78,11 @@
               <th>HST</th>
             </tr>
             <tr>
-              <td>1.01.00</td>
-              <td>7.6 (and 7.7)</td>
-              <td>2.20.00+</td>
-              <td>2.20.01+</td>
-              <td>2.22.02+</td>
+              <td>1.01.00 - 1.01.02</td>
+              <td>7.6 and 7.7</td>
+              <td>2.20.00+, 2.22.xx</td>
+              <td>2.20.01+, 2.22.xx</td>
+              <td>2.22.02+, 2.24.xx</td>
             </tr>
           </tbody>
         </table>

@@ -22,9 +22,9 @@
   </properties>
   <body>
     <section name="Release Notes">
-      <subsection name="1.01.02-SNAPSHOT">
+      <subsection name="1.01.02">
         <ul>
-          <li>HIPPLUG-338: skip terracotta autoupdate by setting a property in the Scheduler Daemon:</li>
+          <li>HIPPLUG-338: skip terracotta autoupdate by setting a property in the Scheduler Daemon</li>
         </ul>
       </subsection>
       <subsection name="1.01.01">
