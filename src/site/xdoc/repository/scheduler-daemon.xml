@@ -72,9 +72,10 @@
 </sv:node>]]></source>
           <p>A full example is available from the demo project at <a href="https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities-demo/trunk/content/src/main/resources/demoScheduler.xml">forge.onehippo.org/svn/hippo-utilities/hippo-utilities-demo/trunk/content/src/main/resources/demoScheduler.xml</a></p>
         <h5>Step 3: activate the scheduler in properties</h5>
-        <p>On behalf of clustered setup, the scheduler reads from a properties file to activate or not. You can specify
-        a properties file with a system property <code>-Dscheduler.properties</code> or by adding a file <code>project.properties</code> in the CMS's resources directory.
-        Add the following property:</p>
+        <p>On behalf of clustered setup, the scheduler reads from a properties file to activate or not.
+          You can specify a properties file with a system property <br/><code>-Dscheduler.properties</code> or by adding a file <code>project.properties</code>
+          to the classpath, e.g. in the CMS's resources directory. Note that if the property file is not found, the scheduler is
+          deactivated. In the file, add the following property:</p>
         <source><![CDATA[
   # alternative to having this built-in resource file is to provide it by means
   # of the following system property: -Dscheduler.properties
