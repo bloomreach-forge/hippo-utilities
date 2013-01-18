@@ -199,3 +199,18 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+
+========================================================================================================================
+
+Hippo Forge Hippo Utilities Addon Project includes a number of sub-components with separate copyright notices
+and license terms. Your use of the code for the these sub-components is subject
+to the terms and conditions of the following licenses.
+
+
+========================================================================================================================
+The following components they are licensed under the Apache License version 2.0
+========================================================================================================================
+
+    commons/src/main/java/org/onehippo/forge/utilities/commons/jcrmockup/ISO8601.java
+
+        See the text of the Apache License version 2.0 above

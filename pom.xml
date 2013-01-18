@@ -1,5 +1,5 @@
 <!--
-  Copyright 2012-2013 Hippo B.V. (http://www.onehippo.com)
+  Copyright 2011-2013 Hippo B.V. (http://www.onehippo.com)
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -23,11 +23,14 @@
     <version>16</version>
   </parent>
 
-  <name>Hippo Utilities Parent pom</name>
+  <name>Hippo Forge Hippo Utilities Addon Project</name>
+  <description>Hippo Forge Hippo Utilities Addon Project</description>
   <groupId>org.onehippo.forge.utilities</groupId>
   <artifactId>hippo-utilities</artifactId>
   <version>1.01.03-SNAPSHOT</version>
   <packaging>pom</packaging>
+
+  <inceptionYear>2011</inceptionYear>
 
   <properties>
     <hippo.cms.version>2.20.00</hippo.cms.version>
