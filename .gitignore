@@ -1,6 +1,5 @@
 /*.iml
 /.idea
-/.target
 cms/.classpath
 cms/.project
 cms/.settings
@@ -17,3 +16,4 @@ repository/.classpath
 repository/.project
 repository/.settings
 repository/target
+/target
