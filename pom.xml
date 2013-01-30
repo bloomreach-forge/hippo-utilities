@@ -20,11 +20,11 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-project</artifactId>
-    <version>18</version>
+    <version>19</version>
   </parent>
 
-  <name>Hippo Forge Hippo Utilities Addon Project</name>
-  <description>Hippo Forge Hippo Utilities Addon Project</description>
+  <name>Hippo Forge Hippo Utilities</name>
+  <description>Hippo Forge Hippo Utilities</description>
   <groupId>org.onehippo.forge.utilities</groupId>
   <artifactId>hippo-utilities</artifactId>
   <version>1.01.03-SNAPSHOT</version>
@@ -33,6 +33,9 @@
   <inceptionYear>2011</inceptionYear>
 
   <properties>
+    <!-- use root project name for all project modules NOTICE files, should be the same as in the root NOTICE file -->
+    <notice.project.name>Hippo Forge Hippo Utilities</notice.project.name>
+
     <hippo.cms.version>2.20.00</hippo.cms.version>
     <hippo.repository.version>2.20.01</hippo.repository.version>
     <hippo.hst.version>2.22.02</hippo.hst.version>
