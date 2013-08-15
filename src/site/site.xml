@@ -16,11 +16,19 @@
   -->
 <project name="Hippo Forge Utilities plugin">
 
-  <publishDate format="d MMMM yyyy"/>
+  <skin>
+    <groupId>org.onehippo.forge.mavenskin</groupId>
+    <artifactId>forge-maven-skin</artifactId>
+    <version>1.01.01</version>
+  </skin>
 
-  <bannerLeft>
-    <name>Hippo Forge Utilities</name>
-  </bannerLeft>
+  <publishDate format="d MMMM yyyy" />
+
+  <custom>
+    <hippoSkin>
+      <sourceLineNumbersEnabled>true</sourceLineNumbersEnabled>
+    </hippoSkin>
+  </custom>
 
   <body>
 
