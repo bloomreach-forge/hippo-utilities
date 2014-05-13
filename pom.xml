@@ -27,7 +27,7 @@
   <description>Hippo Forge Hippo Utilities</description>
   <groupId>org.onehippo.forge.utilities</groupId>
   <artifactId>hippo-utilities</artifactId>
-  <version>1.01.03-SNAPSHOT</version>
+  <version>1.01.03</version>
   <packaging>pom</packaging>
 
   <inceptionYear>2011</inceptionYear>
@@ -67,9 +67,9 @@
   </properties>
 
   <scm>
-    <connection>scm:svn:https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities/trunk</connection>
-    <developerConnection>scm:svn:https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities/trunk</developerConnection>
-    <url>https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities/trunk</url>
+    <connection>scm:svn:https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities/tags/hippo-utilities-1.01.03</connection>
+    <developerConnection>scm:svn:https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities/tags/hippo-utilities-1.01.03</developerConnection>
+    <url>https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities/tags/hippo-utilities-1.01.03</url>
   </scm>
 
   <distributionManagement>
