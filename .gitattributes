@@ -55,3 +55,4 @@ hst/src/test/resources/log4j.dtd -text
 hst/src/test/resources/log4j.xml -text
 src/site/site.xml -text
 src/site/xdoc/index.xml -text
+src/site/xdoc/repository/scheduler-daemon.xml -text

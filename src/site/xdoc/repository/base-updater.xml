@@ -21,7 +21,7 @@
     <title>Hippo Utilities Repository - Base Updater Module</title>
   </properties>
   <body>
-    <p>
+    <p style="color:red">
       <strong>Updater modules have been deprecated in the repository, use
         <a href="http://www.onehippo.org/library/concepts/update/using-the-updater-editor.html">Updater scripts</a>
         instead.
