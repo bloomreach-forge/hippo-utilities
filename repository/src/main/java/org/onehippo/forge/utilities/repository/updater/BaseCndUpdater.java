@@ -30,7 +30,9 @@ import org.hippoecm.repository.ext.UpdaterItemVisitor;
  * - reloads a project's namespace and cnd
  * - visits all document and compound types and set it's specific namespace and
  * - removes common initialize items for reloading doc type config
+ * @deprecated Updater modules are deprecated in Hippo 7.9, use updater scripts instead.
  */
+@Deprecated
 public abstract class BaseCndUpdater extends BaseUpdater {
 
     public void register(final UpdaterContext context) {

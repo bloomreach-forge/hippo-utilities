@@ -35,7 +35,7 @@ public class ForwardComponent extends BaseHstComponent {
     @Override
     public void doBeforeRender(HstRequest request, HstResponse response) throws HstComponentException {
 
-        final String forward = getParameter(FORWARD_PARAM, request);
+        final String forward = getComponentParameter(FORWARD_PARAM);
 
         if (forward == null || forward.length() == 0) {
             throw new HstComponentException("Parameter '" + FORWARD_PARAM + "' is required for " + this.getClass().getName());

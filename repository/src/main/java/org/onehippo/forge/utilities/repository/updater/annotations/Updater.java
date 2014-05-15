@@ -26,7 +26,9 @@ import java.lang.annotation.Target;
 /**
  * Updater annotation
  * @author Woonsan Ko
+ * @deprecated Updater modules are deprecated in Hippo 7.9, use updater scripts instead.
  */
+@Deprecated
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.TYPE })

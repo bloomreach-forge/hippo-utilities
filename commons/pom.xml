@@ -20,7 +20,7 @@
   <parent>
     <groupId>org.onehippo.forge.utilities</groupId>
     <artifactId>hippo-utilities</artifactId>
-    <version>1.01.04-SNAPSHOT</version>
+    <version>1.02.00-SNAPSHOT</version>
   </parent>
 
   <artifactId>hippo-utilities-commons</artifactId>
@@ -43,9 +43,10 @@
     <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
-      <classifier>jdk15</classifier>
-      <version>${testng.version}</version>
-      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
     </dependency>
     <dependency>
       <groupId>javax.jcr</groupId>

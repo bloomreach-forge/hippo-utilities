@@ -70,13 +70,13 @@ public class SearchInputUtilsTest {
 
     @Test
     public void testRemoveTextIfLengtExceedsMaxLength() throws Exception {
-        String morethentwohundredfiftychars = "test *test and some more test *test and some* more test *test and some " +
+        String morethantwohundredfiftychars = "test *test and some more test *test and some* more test *test and some " +
                 "more test *test and some more test *test and some more test *test and some more test *test and some " +
                 "more test *test and some more test *test and some more test *test and some more test documents";
         String expected = "test test and some more test test and some* more test test and some more test test and some " +
                 "more test test and some more test test and some more test test and some more test test and some more " +
                 "test test and some more test test and some more test docu";
-        assertEquals(expected, SearchInputUtils.rewriteKeywords(morethentwohundredfiftychars));
+        assertEquals(expected, SearchInputUtils.rewriteKeywords(morethantwohundredfiftychars));
     }
 
     @Test

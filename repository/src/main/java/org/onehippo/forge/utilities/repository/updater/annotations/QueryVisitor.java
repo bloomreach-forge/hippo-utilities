@@ -27,7 +27,9 @@ import javax.jcr.query.Query;
  * QueryVisitor annotation
  *
  * @author Woonsan Ko
+ * @deprecated Updater modules are deprecated in Hippo 7.9, use updater scripts instead.
  */
+@Deprecated
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.METHOD })
 public @interface QueryVisitor {

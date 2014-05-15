@@ -78,7 +78,9 @@ import org.slf4j.LoggerFactory;
  *
  * @author Woonsan Ko
  * @version $Id$
+ * @deprecated Updater modules are deprecated in Hippo 7.9, use updater scripts instead.
  */
+@Deprecated
 public class AnnotationBaseUpdater implements UpdaterModule {
 
     private static Logger log = LoggerFactory.getLogger(AnnotationBaseUpdater.class);

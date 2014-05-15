@@ -20,7 +20,7 @@
   <parent>
     <groupId>org.onehippo.forge.utilities</groupId>
     <artifactId>hippo-utilities</artifactId>
-    <version>1.01.04-SNAPSHOT</version>
+    <version>1.02.00-SNAPSHOT</version>
   </parent>
 
   <artifactId>hippo-utilities-repository</artifactId>
@@ -32,22 +32,14 @@
       <groupId>org.onehippo.forge.utilities</groupId>
       <artifactId>hippo-utilities-commons</artifactId>
       <version>${project.version}</version>
-      <type>jar</type>
     </dependency>
     <dependency>
-      <groupId>org.onehippo.cms7</groupId>
-      <artifactId>hippo-repository-engine</artifactId>
-      <scope>provided</scope>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
     </dependency>
     <dependency>
       <groupId>org.onehippo.cms7</groupId>
       <artifactId>hippo-repository-api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.quartz-scheduler</groupId>
-      <artifactId>quartz</artifactId>
-      <scope>provided</scope>
     </dependency>
   </dependencies>
 </project>

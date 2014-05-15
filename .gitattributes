@@ -1,8 +1,6 @@
 * text=auto !eol
 /LICENSE -text
 /NOTICE -text
-cms/src/main/java/org/onehippo/forge/utilities/cms/gallery/GalleryProcessor.java -text
-cms/src/main/java/org/onehippo/forge/utilities/cms/gallery/GalleryProcessorPlugin.java -text
 commons/src/main/java/org/onehippo/forge/utilities/commons/GenericsUtil.java -text
 commons/src/main/java/org/onehippo/forge/utilities/commons/HippoUtil.java -text
 commons/src/main/java/org/onehippo/forge/utilities/commons/RepositoryUtil.java -text

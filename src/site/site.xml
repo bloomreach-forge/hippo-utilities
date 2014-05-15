@@ -59,12 +59,7 @@
       <item name="XMLStripper" href="hst/xmlstripper.html"/>
     </menu>
 
-    <menu name="CMS module">
-      <item name="Gallery Processor" href="cms/gallery-processor.html"/>
-    </menu>
-
     <menu name="Repository module">
-      <item name="Scheduler Daemon" href="repository/scheduler-daemon.html"/>
       <item name="Base Updater Module" href="repository/base-updater.html"/>
       <item name="Annotation Base Updater Module" href="repository/annotation-updater.html"/>
     </menu>

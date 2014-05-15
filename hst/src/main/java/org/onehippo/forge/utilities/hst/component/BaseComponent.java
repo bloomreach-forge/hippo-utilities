@@ -30,12 +30,12 @@ public class BaseComponent extends BaseHstComponent {
     public void doBeforeRender(HstRequest request, HstResponse response) throws HstComponentException {
         super.doBeforeRender(request, response);
 
-        final String cssClass = this.getLocalParameter(CSSCLASS, request);
+        final String cssClass = this.getComponentLocalParameter(CSSCLASS);
         if (cssClass != null) {
             request.setAttribute(CSSCLASS, cssClass);
         }
         
-        final String id = this.getLocalParameter(ID, request);
+        final String id = this.getComponentLocalParameter(ID);
         if (id != null) {
             request.setAttribute(ID, id);
         }

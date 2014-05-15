@@ -47,38 +47,6 @@
   <groupId>org.onehippo.forge.utilities</groupId>
   <artifactId>hippo-utilities-hst</artifactId>
 </dependency>]]></source>
-          <p>The following artifact should be provided also: </p>
-          <source><![CDATA[
-<dependency>
-  <groupId>com.google.guava</groupId>
-  <artifactId>guava</artifactId>
-  <version>r06</version> <!-- or higher -->
-</dependency>]]></source>
-
-      </subsection>
-      <subsection name="Installation of repository module">
-          <p>Assuming that the version is managed in the parent pom, add this dependency to the pom.xml of the repository (content) module:</p>
-          <source><![CDATA[
-<dependency>
-  <groupId>org.onehippo.forge.utilities</groupId>
-  <artifactId>hippo-utilities-repository</artifactId>
-</dependency>]]></source>
-          <p>If you are using the <a href="repository/scheduler-daemon.html">SchedulerDaemon</a>, also include a quartz dependency. Use the same quartz version as the repository already has,
-            which is 1.8.4 in CMS 7.7. It is recommended to manage this version in the parent pom.</p>
-          <source><![CDATA[
-<dependency>
-  <groupId>org.quartz-scheduler</groupId>
-  <artifactId>quartz</artifactId>
-  <version>1.8.4</version>
-</dependency>]]></source>
-      </subsection>
-      <subsection name="Installation of CMS module">
-          <p>Assuming that the version is managed in the parent pom, add this dependency to the pom.xml of your CMS module:</p>
-          <source><![CDATA[
-<dependency>
-  <groupId>org.onehippo.forge.utilities</groupId>
-  <artifactId>hippo-utilities-cms</artifactId>
-</dependency>]]></source>
       </subsection>
     </section>
   </body>

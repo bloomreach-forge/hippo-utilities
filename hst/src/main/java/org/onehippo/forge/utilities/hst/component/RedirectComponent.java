@@ -39,13 +39,13 @@ public class RedirectComponent extends BaseHstComponent {
     @Override
     public void doBeforeRender(HstRequest request, HstResponse response) throws HstComponentException {
 
-        final String redirect = getParameter(REDIRECT_PARAM, request);
+        final String redirect = getComponentParameter(REDIRECT_PARAM);
 
         if (redirect == null || redirect.length() == 0) {
                 throw new HstComponentException("Parameter '" + REDIRECT_PARAM + "' is required for " + this.getClass().getName());
         }
 
-        final String typeStr = getParameter(TYPE_PARAM, request);
+        final String typeStr = getComponentParameter(TYPE_PARAM);
         if (typeStr != null) {
             final Type type = Type.valueOf(typeStr);
             switch (type) {
