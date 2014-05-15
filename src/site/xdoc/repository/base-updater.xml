@@ -21,6 +21,12 @@
     <title>Hippo Utilities Repository - Base Updater Module</title>
   </properties>
   <body>
+    <p>
+      <strong>Updater modules have been deprecated in the repository, use
+        <a href="http://www.onehippo.org/library/concepts/update/using-the-updater-editor.html">Updater scripts</a>
+        instead.
+      </strong>
+    </p>
     <section name="Base Updater Module">
       <subsection name="BaseUpdater implements UpdaterModule">
         <p>The BaseUpdater visits:<br/>
@@ -103,7 +109,6 @@
       </subsection>
         <subsection name="References">
             <ul>
-                <li><a href="https://wiki.onehippo.com/display/CMS7/Upgrading+and+updating">Upgrading and updating</a></li>
                 <li><a href="http://blog.jeroenreijn.com/2010/06/introduction-to-hippo-cms-7-updater.html">An introduction to Hippo CMS 7 updater modules</a></li>
             </ul>
         </subsection>
