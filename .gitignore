@@ -1,9 +1,5 @@
 /*.iml
 /.idea
-cms/.classpath
-cms/.project
-cms/.settings
-cms/target
 commons/.classpath
 commons/.project
 commons/.settings
