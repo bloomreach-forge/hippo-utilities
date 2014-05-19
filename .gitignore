@@ -1,13 +1,16 @@
 /*.iml
 /.idea
+commons/*.iml
 commons/.classpath
 commons/.project
 commons/.settings
 commons/target
+hst/*.iml
 hst/.classpath
 hst/.project
 hst/.settings
 hst/target
+repository/*.iml
 repository/.classpath
 repository/.project
 repository/.settings
