@@ -61,7 +61,7 @@
     <repository>
       <uniqueVersion>false</uniqueVersion>
       <id>hippo-utilities-maven-repo</id>
-      <url>scm:https://forge.onehippo.org/svn/hippo-utilities/maven2/</url>
+      <url>svn:https://forge.onehippo.org/svn/hippo-utilities/maven2/</url>
     </repository>
   </distributionManagement>
 
