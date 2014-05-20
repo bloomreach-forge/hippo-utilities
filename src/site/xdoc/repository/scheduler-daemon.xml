@@ -35,7 +35,6 @@
   <manifestEntries>
     <hippo-modules>org.onehippo.forge.utilities.repository.scheduler.SchedulerDaemon</hippo-modules>
   </manifestEntries>]]></source>
-        <p>A full example is available from the demo project at <a href="https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities-demo/trunk/content/pom.xml">forge.onehippo.org/svn/hippo-utilities/hippo-utilities-demo/trunk/content/pom.xml</a></p>
         <h5>Step 2: add SchedulerDaemon configuration to the repository</h5>
         <p>Scheduler configuration is present as a node of type <code>scheduler:scheduler</code> in the repository. Add such node
         in your content module as xml, with of course the accompanying reference in hippoecm-extension.xml</p>
@@ -74,7 +73,6 @@
     </sv:node>
   </sv:node>
 </sv:node>]]></source>
-          <p>A full example is available from the demo project at <a href="https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities-demo/trunk/content/src/main/resources/demoScheduler.xml">forge.onehippo.org/svn/hippo-utilities/hippo-utilities-demo/trunk/content/src/main/resources/demoScheduler.xml</a></p>
         <h5>Step 3: activate the scheduler in properties</h5>
         <p>On behalf of clustered setup, the scheduler reads from a properties file to activate or not.
           You can specify a properties file with a system property <br/><code>-Dscheduler.properties</code> or by adding a file <code>project.properties</code>
@@ -87,7 +85,8 @@
         <h5>Step 4: write and configure your own job.</h5>
         <p>The example configuration configures the TesterJob. It does nothing but read and log it's configuration. Once you see
         it up and running, you are ready to write your own job, extending from <code>org.onehippo.forge.utilities.repository.scheduler.BaseJob</code></p>
-        <p>See the TesterJob at <a href="https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities/trunk/repository/src/main/java/org/onehippo/forge/utilities/repository/scheduler/tester/TesterJob.java">forge.onehippo.org/svn/hippo-utilities/hippo-utilities/trunk/repository/src/main/java/org/onehippo/forge/utilities/repository/scheduler/tester/TesterJob.java</a></p>
+        <p>See the TesterJob at <a href="https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities/tags/hippo-utilities-1.01.01/repository/src/main/java/org/onehippo/forge/utilities/repository/scheduler/tester/TesterJob.java">
+          forge.onehippo.org/svn/hippo-utilities/hippo-utilities/tags/hippo-utilities-1.01.01/repository/src/main/java/org/onehippo/forge/utilities/repository/scheduler/tester/TesterJob.java</a></p>
       </subsection>
     </section>
   </body>
