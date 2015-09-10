@@ -19,16 +19,8 @@
   <skin>
     <groupId>org.onehippo.forge.mavenskin</groupId>
     <artifactId>forge-maven-skin</artifactId>
-    <version>1.01.01</version>
+    <version>1.02.02</version>
   </skin>
-
-  <publishDate format="d MMMM yyyy" />
-
-  <custom>
-    <hippoSkin>
-      <sourceLineNumbersEnabled>true</sourceLineNumbersEnabled>
-    </hippoSkin>
-  </custom>
 
   <body>
 

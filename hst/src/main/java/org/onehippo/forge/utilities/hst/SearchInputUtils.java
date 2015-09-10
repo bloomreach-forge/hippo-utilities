@@ -77,7 +77,7 @@ public final class SearchInputUtils {
      * Checks to see if the provided keywords only exist of a single wildcard term (i.e * or ?).
      *
      * @param keywords the user provided search query
-     * @return if the keywords only exist of <em>*</em> or <em>?</em> <code>true</code> is returned, <code>false<code>
+     * @return if the keywords only exist of <em>*</em> or <em>?</em> <code>true</code> is returned, <code>false</code>
      *         otherwise
      */
     public static boolean doKeywordsExistOfOnlyInvalidSearchOperators(String keywords) {
@@ -204,7 +204,7 @@ public final class SearchInputUtils {
 
     /**
      * Escapes characters that expects to be escaped by a preceding '{@code \}' or for quote like characters by the
-     * character itself. <p/> According to 6.6.4.9 of the * JCR-170 specification, the apostrophe (') and quotation
+     * character itself. According to 6.6.4.9 of the * JCR-170 specification, the apostrophe (') and quotation
      * mark(") must be escaped according to the standard rules of XPath with regard to string literals: If the literal
      * is delimited by apostrophes, two adjacent apostrophes within the literal are interpreted as a single apostrophe.
      * Similarly, if the literal is delimited by quotation marks, two adjacent quotation marks within the literal are

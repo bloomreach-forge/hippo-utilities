@@ -86,7 +86,7 @@ public class UpdaterUtils {
 
     /**
      * Gets the UUID of the given {@link javax.jcr.Node}
-     * <p/>
+     *
      * <strong>Note: the usage of this method is discouraged, because the uuid is unstable during the update process.
      * Only use it if you know that the UUID is not going to change.</strong>
      * @param node the Node from which to get the UUI

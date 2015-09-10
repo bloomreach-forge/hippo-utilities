@@ -199,7 +199,7 @@ public final class HippoUtil {
      * @param variableName     variable name
      * @param replacementValue replacement value
      * @param template         string which contains variable e.g
-     *                         <p /><strong>{@code My name is ${username} and my login is ${login}}</strong>
+     *                         <strong>{@code My name is ${username} and my login is ${login}}</strong>
      * @return string (template with string replacements)
      */
     public static String replacePlaceHolders(final String variableName, final String replacementValue,

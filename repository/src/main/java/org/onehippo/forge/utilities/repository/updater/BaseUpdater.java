@@ -33,7 +33,6 @@ import org.slf4j.LoggerFactory;
  *  /hippo:configuration/hippo:initialize
  *  /hst:configuration/hst:configuration
  *  /content/documents
- * <p/>
  * ..and provides protected methods to implement changes on above visitors
  *
  * @author jhoffman
@@ -113,7 +112,7 @@ public abstract class BaseUpdater implements UpdaterModule {
     }
 
     /**
-     * Use this to register the <i>start</i> and <i>end<i> tag for which the updater module should execute.
+     * Use this to register the <i>start</i> and <i>end</i> tag for which the updater module should execute.
      * @param context the {@link org.hippoecm.repository.ext.UpdaterContext} on which the start and end tag will be set.
      */
     protected abstract void registerTags(UpdaterContext context);
@@ -164,7 +163,6 @@ public abstract class BaseUpdater implements UpdaterModule {
 
     /**
      * Gets the UUID of the given {@link javax.jcr.Node}
-     * <p/>
      * <strong>Note: the usage of this method is discouraged, because the uuid is unstable during the update process.
      * Only use it if you know that the UUID is not going to change.</strong>
      * @param node the Node from which to get the UUI

@@ -31,15 +31,15 @@ import org.slf4j.LoggerFactory;
  * The <code>ISO8601</code> utility class provides helper methods
  * to deal with date/time formatting using a specific ISO8601-compliant
  * format (see <a href="http://www.w3.org/TR/NOTE-datetime">ISO 8601</a>).
- * <p/>
+ *
  * The currently supported format is:
  * <pre>
  *   &plusmn;YYYY-MM-DDThh:mm:ss.SSSTZD
  * </pre>
  * where:
  * <pre>
- *   &plusmn;YYYY = four-digit year with optional sign where values <= 0 are
- *           denoting years BCE and values > 0 are denoting years CE,
+ *   YYYY = four-digit year with optional sign where values &le; 0 are
+ *           denoting years BCE and values &gt; 0 are denoting years CE,
  *           e.g. -0001 denotes the year 2 BCE, 0000 denotes the year 1 BCE,
  *           0001 denotes the year 1 CE, and so on...
  *   MM    = two-digit month (01=January, etc.)
@@ -82,7 +82,7 @@ public final class ISO8601 {
      * Parses an ISO8601-compliant date/time string.
      *
      * note that we cannot use java.text.SimpleDateFormat for
-     * parsing because it cannot handle years <= 0 and TZD's
+     * parsing because it cannot handle years &le; 0 and TZD's
      *
      * @param text the date/time string to be parsed
      * @return a <code>Calendar</code>, or <code>null</code> if the input could

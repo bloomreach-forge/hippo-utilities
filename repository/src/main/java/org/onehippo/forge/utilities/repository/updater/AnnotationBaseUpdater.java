@@ -38,13 +38,14 @@ import org.slf4j.LoggerFactory;
  * <P>You may define {@link PathVisitor} or/and {@link QueryVisitor} in any methods
  * which should be public and have only one parameter of {@link javax.jcr.Node} type.</P>
  * <P>Here is a simple example:</P>
- * <PRE>
- * @Updater(name = "Updater-demosite-2.05.00",
+ * <pre>
+ * {@code
+ *   Updater(name = "Updater-demosite-2.05.00",
  *         start = { "demosite-2.04.00" },
  *         end = { "demosite-2.05.00" })
- * public class Updater_2_05_00 extends AnnotationBaseUpdater {
+ *   public class Updater_2_05_00 extends AnnotationBaseUpdater {
  *
- *     @PathVisitor(
+ *     PathVisitor(
  *             paths={
  *                     "/hippo:configuration/hippo:initialize/hippo-namespaces-demosite-comment",
  *                     "/hippo:configuration/hippo:initialize/demosite-sitemap"
@@ -52,15 +53,17 @@ import org.slf4j.LoggerFactory;
  *             )
  *     public void deleteInitializeNodes(Node node) throws RepositoryException { node.remove(); }
  *
- *     @PathVisitor(
+ *     PathVisitor(
  *             paths={
  *                     "/hippo:namespaces/demosite/comment",
  *                     "/hst:hst/hst:configurations/demosite/hst:sitemap"
  *                 }
  *             )
  *     public void deleteNamespaceConfigurationNodes(Node node) throws RepositoryException { node.remove(); }
+ *     }
  * }
- * </PRE>
+ * }
+ * </pre>
  * <P>
  * In the example above, the updater class defines its name and start/end version tags.
  * So, the updater will run on the system having 'demosite-2.04.00' value in '/hippo:configuration/hippo:initialize' node.

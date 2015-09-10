@@ -26,7 +26,6 @@ import org.hippoecm.repository.ext.UpdaterItemVisitor;
 
 /**
  * Base CND Updater that:
- * <p/>
  * - reloads a project's namespace and cnd
  * - visits all document and compound types and set it's specific namespace and
  * - removes common initialize items for reloading doc type config

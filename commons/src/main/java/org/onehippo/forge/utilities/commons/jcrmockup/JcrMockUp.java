@@ -34,7 +34,6 @@ import org.slf4j.LoggerFactory;
  * Howto:
  * Export a branch / node / tree from the hippo cms console as xml and mock it up as a root node / with session.
  * </p>
- * <p>
  * Limitations:
  * <ul>
  *  <li>No support of patterns for getProperty and getNode</li>
@@ -44,7 +43,6 @@ import org.slf4j.LoggerFactory;
  *  <li>workspaces are not supported</li>
  *  <li>session.copy is not supported</li>
  * </ul>
- * </p>
  * @version $id$
  */
 public final class JcrMockUp {
