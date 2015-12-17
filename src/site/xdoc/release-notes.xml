@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-  Copyright 2012-2013 Hippo B.V. (http://www.onehippo.com)
+  Copyright 2012-2015 Hippo B.V. (http://www.onehippo.com)
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@
   </properties>
   <body>
     <section name="Release Notes">
-      <subsection name="1.02.00">
+      <subsection name="1.02.00 (19-05-2014)">
         <ul>
           <li>HIPPLUG-836: Upgrade to 7.9.</li>
           <li>Remove <a href="repository/scheduler-daemon.html">Scheduler Daemon</a>: similar functionality is
@@ -31,12 +31,17 @@
           <li>Upgrade and clean up dependencies.</li>
         </ul>
       </subsection>
-      <subsection name="1.01.02">
+      <subsection name="1.01.03 (13-05-2014)">
+        <ul>
+          <li>HIPPLUG-571: administrative cleanup</li>
+        </ul>
+      </subsection>
+      <subsection name="1.01.02 (05-09-2012)">
         <ul>
           <li>HIPPLUG-338: skip terracotta autoupdate by setting a property in the Scheduler Daemon</li>
         </ul>
       </subsection>
-      <subsection name="1.01.01">
+      <subsection name="1.01.01 (06-04-2012)">
         <ul>
           <li>Scheduler Daemon: added a mandatory properties file with activation flag
             'org.onehippo.forge.utilities.repository.scheduler.SchedulerDaemon.active', on behalf of clustered setup</li>
@@ -44,7 +49,7 @@
           <li>NodeUtils: moved from repository module (scheduler) to commons module</li>
         </ul>
       </subsection>
-      <subsection name="1.01.00">
+      <subsection name="1.01.00 (09-03-2012)">
         <ul>
           <li>Initial release as a restructured version of PSUtils forge project,
             <a href="http://psutils.forge.onehippo.org/release-notes.html">see PSUtils release notes</a></li>
