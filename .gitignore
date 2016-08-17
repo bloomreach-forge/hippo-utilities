@@ -10,9 +10,4 @@ hst/.classpath
 hst/.project
 hst/.settings
 hst/target
-repository/*.iml
-repository/.classpath
-repository/.project
-repository/.settings
-repository/target
 /target

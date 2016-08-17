@@ -71,6 +71,20 @@
               <th>HST</th>
             </tr>
             <tr>
+              <td>2.0.0</td>
+              <td>10 and 11</td>
+              <td>3.x - 4.x</td>
+              <td>3.x - 4.x</td>
+              <td>3.x - 4.x</td>
+            </tr>
+            <tr>
+              <td>1.02.00 - 1.02.01</td>
+              <td>7.8 and 7.9</td>
+              <td>2.24.xx, 2.26.xx</td>
+              <td>2.24.xx, 2.26.xx</td>
+              <td>2.26.xx, 2.28.xx</td>
+            </tr>
+            <tr>
               <td>1.01.00 - 1.01.03</td>
               <td>7.6, 7.7, and 7.8</td>
               <td>2.20.xx, 2.22.xx, 2.24.xx</td>
