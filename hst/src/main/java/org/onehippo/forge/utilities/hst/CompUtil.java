@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2013 Hippo B.V. (http://www.onehippo.com)
+ * Copyright 2012-2016 Hippo B.V. (http://www.onehippo.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,14 +36,14 @@ public class CompUtil {
     public static HippoBean getBean(final BaseHstComponent comp, final HstRequest request, final String path) {
 
         if (path == null) {
-            return comp.getContentBean(request);
+            return request.getRequestContext().getContentBean();
         }
 
         if (path.startsWith("/")) {
-            return comp.getSiteContentBaseBean(request).getBean(path.substring(1));
+            return request.getRequestContext().getSiteContentBaseBean().getBean(path.substring(1));
         }
 
-        HippoBean currentBean = comp.getContentBean(request);
+        HippoBean currentBean = request.getRequestContext().getContentBean();
         if (currentBean != null) {
             return currentBean.getBean(path);
         }
@@ -57,7 +57,7 @@ public class CompUtil {
      */
     public static String getParameter(final BaseHstComponent comp, final HstRequest request, final String paramName, final String defaultValue) {
 
-        final String value = comp.getParameter(paramName, request);
+        final String value = comp.getComponentParameter(paramName);
         return (value != null) ?  value.trim() : defaultValue;
     }
 
@@ -66,7 +66,7 @@ public class CompUtil {
      */
     public static List<String> getParameterList(final BaseHstComponent comp, final HstRequest request, final String paramName) {
 
-        String commaSepValues = comp.getParameter(paramName, request);
+        String commaSepValues = comp.getComponentParameter(paramName);
 
         if (commaSepValues == null) {
             return Collections.emptyList();
@@ -87,7 +87,7 @@ public class CompUtil {
      */
     public static int getParameterInt(final BaseHstComponent comp, final HstRequest request, final String paramName, final int defaultValue) {
 
-        final String paramValue = comp.getParameter(paramName, request);
+        final String paramValue = comp.getComponentParameter(paramName);
         if (paramValue != null) {
             try {
                 return Integer.parseInt(paramValue.trim());
@@ -113,7 +113,7 @@ public class CompUtil {
      * if the parameter is not there, and false if the parsing fails.
      */
     public static boolean getParameterBoolean(final BaseHstComponent comp, HstRequest request, String paramName, boolean defaultValue) {
-        final String paramValue = comp.getParameter(paramName, request);
+        final String paramValue = comp.getComponentParameter(paramName);
         if (paramValue != null) {
             return Boolean.valueOf(paramValue.trim()).booleanValue();
         }
@@ -127,7 +127,7 @@ public class CompUtil {
     public static String getLocalParameter(final BaseHstComponent comp, final HstRequest request,
                 final String paramName, final String defaultValue) {
 
-        final String value = comp.getLocalParameter(paramName, request);
+        final String value = comp.getComponentLocalParameter(paramName);
         return (value != null) ? value.trim() : defaultValue;
     }
 
@@ -139,7 +139,7 @@ public class CompUtil {
     public static int getLocalParameterInt(final BaseHstComponent comp, final HstRequest request,
             final String paramName, final int defaultValue) {
 
-        final String value = comp.getLocalParameter(paramName, request);
+        final String value = comp.getComponentLocalParameter(paramName);
         if (value != null) {
             try {
                 return Integer.parseInt(value.trim());
@@ -159,7 +159,7 @@ public class CompUtil {
      */
     public static boolean getLocalParameterBoolean(final BaseHstComponent comp, final HstRequest request,
             final String paramName, final boolean defaultValue) {
-        final String paramValue = comp.getLocalParameter(paramName, request);
+        final String paramValue = comp.getComponentLocalParameter(paramName);
         if (paramValue != null) {
             return Boolean.valueOf(paramValue.trim()).booleanValue();
         }

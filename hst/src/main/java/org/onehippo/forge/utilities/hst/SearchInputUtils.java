@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2013 Hippo B.V. (http://www.onehippo.com)
+ * Copyright 2012-2016 Hippo B.V. (http://www.onehippo.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,9 @@ import org.apache.commons.lang.StringUtils;
  * @author Jeroen Reijn
  * @author Adolfo Benedetti
  * @author Rob van der Linden Vooren
+ * @deprecated since 1.02.01 use org.hippoecm.hst.util.SearchInputParsingUtils from org.onehippo.cms7.hst:hst-content-beans instead
  */
+@Deprecated
 public final class SearchInputUtils {
 
     public static final int MAX_KEYWORDS_LENGTH = 250;
