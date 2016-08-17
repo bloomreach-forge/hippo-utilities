@@ -52,9 +52,9 @@
   </properties>
 
   <scm>
-    <connection>scm:svn:https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities/trunk</connection>
-    <developerConnection>scm:svn:https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities/trunk</developerConnection>
-    <url>https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities/trunk</url>
+    <connection>scm:svn:https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities/branches/utilities-1.02.xx</connection>
+    <developerConnection>scm:svn:https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities/branches/utilities-1.02.xx</developerConnection>
+    <url>https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities/branches/utilities-1.02.xx</url>
   </scm>
 
   <distributionManagement>
