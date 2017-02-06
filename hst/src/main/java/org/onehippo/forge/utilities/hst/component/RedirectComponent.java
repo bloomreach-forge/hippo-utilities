@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2013 Hippo B.V. (http://www.onehippo.com)
+ * Copyright 2012-2017 Hippo B.V. (http://www.onehippo.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,7 @@ public class RedirectComponent extends BaseHstComponent {
         final String redirect = getComponentParameter(REDIRECT_PARAM);
 
         if (redirect == null || redirect.length() == 0) {
-                throw new HstComponentException("Parameter '" + REDIRECT_PARAM + "' is required for " + this.getClass().getName());
+            throw new HstComponentException("Parameter '" + REDIRECT_PARAM + "' is required for " + this.getClass().getName());
         }
 
         final String typeStr = getComponentParameter(TYPE_PARAM);
@@ -52,16 +52,16 @@ public class RedirectComponent extends BaseHstComponent {
                 case response:
                     try {
                         response.sendRedirect(redirect);
-                    }
-                    catch (IOException e) {
+                    } catch (IOException e) {
                         throw new HstComponentException("Failed to redirect to " + redirect, e);
                     }
                     break;
                 case component:
                     this.sendRedirect(redirect, request, response);
             }
+        } else {
+            this.sendRedirect(redirect, request, response);
         }
 
-        this.sendRedirect(redirect, request, response);
     }
 }
