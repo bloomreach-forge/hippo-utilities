@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-  Copyright 2012-2015 Hippo B.V. (http://www.onehippo.com)
+  Copyright 2012-2017 Hippo B.V. (http://www.onehippo.com)
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -22,17 +22,29 @@
   </properties>
   <body>
     <section name="Release Notes">
-      <subsection name="2.0.0 (17-08-2016)">
+      <subsection name="2.0.1">
+        <p class="smallinfo">Release Date: 13 Februari 2017</p>
         <ul>
-          <li>HIPPLUG-1367: Upgrade Utilities to CMS 10 and CMS 11 compatible version</li>
+          <li><a href="https://issues.onehippo.com/browse/HIPPLUG-1435">HIPPLUG-1435</a><br/>
+            Fix <a href="hst/components.html">RedirectComponent</a> to not redirect twice.</li>
         </ul>
       </subsection>
-      <subsection name="1.02.01 (17-08-2016)">
+      <subsection name="2.0.0">
+        <p class="smallinfo">Release Date: 17 August 2016</p>
+        <ul>
+          <li><a href="https://issues.onehippo.com/browse/HIPPLUG-1367">HIPPLUG-1367</a><br/>
+            Upgrade Utilities to CMS 10 and CMS 11 compatible version</li>
+        </ul>
+      </subsection>
+      <subsection name="1.02.01">
+        <p class="smallinfo">Release Date: 17 August 2016</p>
       <ul>
-        <li>HIPPLUG-1365: Replace all deprecated methods and/or make parts deprecated that are not needed any more</li>
+        <li><a href="https://issues.onehippo.com/browse/HIPPLUG-1365">HIPPLUG-1365</a><br/>
+          Replace all deprecated methods and/or make parts deprecated that are not needed any more</li>
       </ul>
     </subsection>
-      <subsection name="1.02.00 (19-05-2014)">
+      <subsection name="1.02.00">
+        <p class="smallinfo">Release Date: 19 May 2014</p>
         <ul>
           <li>HIPPLUG-836: Upgrade to 7.9.</li>
           <li>Remove <a href="repository/scheduler-daemon.html">Scheduler Daemon</a>: similar functionality is
@@ -41,17 +53,20 @@
           <li>Upgrade and clean up dependencies.</li>
         </ul>
       </subsection>
-      <subsection name="1.01.03 (13-05-2014)">
+      <subsection name="1.01.03">
+        <p class="smallinfo">Release Date: 13 May 2014</p>
         <ul>
           <li>HIPPLUG-571: administrative cleanup</li>
         </ul>
       </subsection>
-      <subsection name="1.01.02 (05-09-2012)">
+      <subsection name="1.01.02">
+        <p class="smallinfo">Release Date: 5 September 2012</p>
         <ul>
           <li>HIPPLUG-338: skip terracotta autoupdate by setting a property in the Scheduler Daemon</li>
         </ul>
       </subsection>
-      <subsection name="1.01.01 (06-04-2012)">
+      <subsection name="1.01.01">
+        <p class="smallinfo">Release Date: 6 April 2012</p>
         <ul>
           <li>Scheduler Daemon: added a mandatory properties file with activation flag
             'org.onehippo.forge.utilities.repository.scheduler.SchedulerDaemon.active', on behalf of clustered setup</li>
@@ -59,7 +74,8 @@
           <li>NodeUtils: moved from repository module (scheduler) to commons module</li>
         </ul>
       </subsection>
-      <subsection name="1.01.00 (09-03-2012)">
+      <subsection name="1.01.00">
+        <p class="smallinfo">Release Date: 9 March 2012</p>
         <ul>
           <li>Initial release as a restructured version of PSUtils forge project,
             <a href="http://psutils.forge.onehippo.org/release-notes.html">see PSUtils release notes</a></li>

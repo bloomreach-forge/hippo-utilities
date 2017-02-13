@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-  Copyright 2012-2013 Hippo B.V. (http://www.onehippo.com)
+  Copyright 2012-2017 Hippo B.V. (http://www.onehippo.com)
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -19,8 +19,10 @@
   <skin>
     <groupId>org.onehippo.forge.mavenskin</groupId>
     <artifactId>forge-maven-skin</artifactId>
-    <version>1.02.02</version>
+    <version>1.04.00</version>
   </skin>
+
+  <publishDate format="d MMM yyyy" />
 
   <body>
 
@@ -47,7 +49,6 @@
       <item name="Components" href="hst/components.html"/>
       <item name="Cookie Check" href="hst/cookie.html"/>
       <item name="Paging" href="hst/paging.html"/>
-      <item name="Search Input Util" href="hst/searchinpututils.html"/>
       <item name="XMLStripper" href="hst/xmlstripper.html"/>
     </menu>
 
