@@ -77,8 +77,7 @@
       <subsection name="1.01.00">
         <p class="smallinfo">Release Date: 9 March 2012</p>
         <ul>
-          <li>Initial release as a restructured version of PSUtils forge project,
-            <a href="http://psutils.forge.onehippo.org/release-notes.html">see PSUtils release notes</a></li>
+          <li>Initial release as a restructured version of old PSUtils forge project</li>
         </ul>
       </subsection>
     </section>

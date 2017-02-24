@@ -30,8 +30,6 @@
       <item name="Home" href="index.html"/>
       <item name="Release Notes" href="release-notes.html"/>
       <item name="Installation" href="install.html"/>
-      <item name="Build from source" href="build-from-source.html"/>
-      <item name="Hippo Forge project page" href="https://forge.onehippo.org/gf/project/hippo-utilities/"/>
     </menu>
 
     <menu name="Commons module">

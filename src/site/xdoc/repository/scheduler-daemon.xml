@@ -85,8 +85,6 @@
         <h5>Step 4: write and configure your own job.</h5>
         <p>The example configuration configures the TesterJob. It does nothing but read and log it's configuration. Once you see
         it up and running, you are ready to write your own job, extending from <code>org.onehippo.forge.utilities.repository.scheduler.BaseJob</code></p>
-        <p>See the TesterJob at <a href="https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities/tags/hippo-utilities-1.01.01/repository/src/main/java/org/onehippo/forge/utilities/repository/scheduler/tester/TesterJob.java">
-          forge.onehippo.org/svn/hippo-utilities/hippo-utilities/tags/hippo-utilities-1.01.01/repository/src/main/java/org/onehippo/forge/utilities/repository/scheduler/tester/TesterJob.java</a></p>
       </subsection>
     </section>
   </body>

@@ -48,25 +48,28 @@
     <fakeftp.version>2.2</fakeftp.version>
     <junit.version>4.8</junit.version>
 
+    <maven-site-plugin.version>3.3</maven-site-plugin.version>
   </properties>
 
   <scm>
-    <connection>scm:svn:https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities/trunk</connection>
-    <developerConnection>scm:svn:https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities/trunk</developerConnection>
-    <url>https://forge.onehippo.org/svn/hippo-utilities/hippo-utilities/trunk</url>
+    <connection>scm:git:git@github.com:onehippo-forge/hippo-utilities.git</connection>
+    <developerConnection>scm:git:git@github.com:onehippo-forge/hippo-utilities.git</developerConnection>
+    <url>https://github.com/onehippo-forge/hippo-utilities.git</url>
+    <tag>HEAD</tag>
   </scm>
 
   <distributionManagement>
     <repository>
+      <name>Hippo Maven 2 Repository</name>
+      <id>hippo-maven2</id>
+      <url>https://maven.onehippo.com/content/repositories/maven2/</url>
       <uniqueVersion>false</uniqueVersion>
-      <id>hippo-utilities-maven-repo</id>
-      <url>svn:https://forge.onehippo.org/svn/hippo-utilities/maven2/</url>
     </repository>
   </distributionManagement>
 
   <issueManagement>
-    <system>Hippo Forge</system>
-    <url>https://forge.onehippo.org/gf/project/hippo-utilities/tracker/?tracker_id=609</url>
+    <system>Hippo JIRA</system>
+    <url>https://issues.onehippo.com/browse/HIPFORGE</url>
   </issueManagement>
 
   <licenses>
@@ -172,6 +175,11 @@
         <version>${mockito.version}</version>
       </dependency>
 
+      <dependency>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>${maven-site-plugin.version}</version>
+      </dependency>
     </dependencies>
 
   </dependencyManagement>
@@ -206,37 +214,12 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
+        <configuration>
+          <outputDirectory>docs</outputDirectory>
+        </configuration>
       </plugin>
     </plugins>
-    <extensions>
-      <extension>
-        <groupId>org.jvnet.wagon-svn</groupId>
-        <artifactId>wagon-svn</artifactId>
-        <version>1.9</version>
-      </extension>
-    </extensions>
   </build>
-
-  <profiles>
-    <profile>
-      <id>pedantic</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.rat</groupId>
-            <artifactId>apache-rat-plugin</artifactId>
-            <inherited>false</inherited>
-            <configuration>
-              <excludes combine.children="append">
-                <!-- forked from Apache Jackrabbit -->
-                <exclude>commons/src/main/java/org/onehippo/forge/utilities/commons/jcrmockup/ISO8601.java</exclude>
-              </excludes>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
 
   <reporting>
     <outputDirectory>target/site</outputDirectory>
