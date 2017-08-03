@@ -22,6 +22,12 @@
   </properties>
   <body>
     <section name="Release Notes">
+      <subsection name="3.0.0">
+        <p class="smallinfo">Release Date: 3 August 2017</p>
+        <ul>
+          <li>Upgrade from log4j to log4j2 to be compatible with CMS 12.</li>
+        </ul>
+      </subsection>
       <subsection name="2.0.1">
         <p class="smallinfo">Release Date: 13 Februari 2017</p>
         <ul>

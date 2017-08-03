@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/onehippo-forge/hippo-utilities.svg?branch=develop)](https://travis-ci.org/onehippo-forge/hippo-utilities)
 
 # Hippo Utilities
 
