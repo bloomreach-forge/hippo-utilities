@@ -20,7 +20,7 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-project</artifactId>
-    <version>28.1</version>
+    <version>29</version>
   </parent>
 
   <name>Hippo Forge Hippo Utilities</name>
@@ -36,8 +36,8 @@
     <!-- use root project name for all project modules NOTICE files, should be the same as in the root NOTICE file -->
     <notice.project.name>Hippo Forge Hippo Utilities</notice.project.name>
 
-    <hippo.repository.version>4.0.1</hippo.repository.version>
-    <hippo.hst.version>4.0.1</hippo.hst.version>
+    <hippo.repository.version>5.0.0</hippo.repository.version>
+    <hippo.hst.version>5.0.0</hippo.hst.version>
 
     <commons-net.version>2.0</commons-net.version>
     <commons-lang.version>2.6</commons-lang.version>
@@ -45,7 +45,7 @@
     <!-- test releated -->
     <testng.version>6.8.8</testng.version>
     <mockito.version>1.8.5</mockito.version>
-    <fakeftp.version>2.2</fakeftp.version>
+    <fakeftp.version>2.6</fakeftp.version>
     <junit.version>4.8</junit.version>
 
     <maven-site-plugin.version>3.3</maven-site-plugin.version>
