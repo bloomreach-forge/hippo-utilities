@@ -24,7 +24,7 @@
   <body>
     <section name="How to install the Hippo Utilities modules">
       <subsection name="Maven 2 Forge Repository">
-        <p>Add this repository to your root pom.xml (if not already present in a parent pom):</p>
+        <p>Add this repository to your root pom.xml:</p>
         <source><![CDATA[
   <repository>
     <id>hippo-forge</id>
@@ -40,12 +40,23 @@
   </repository>]]></source>
       </subsection>
 
+      <subsection name="Add version property to the project pom">
+        <p>In the main <code>pom.xml</code> of the project, in the properties section, add this property. For the correct version number, check the <a href="release-notes.html">Release Notes</a> page.</p>
+        <div class="brush: xml">
+          <source><![CDATA[
+    <forge.utilities.version>version.number</forge.utilities.version>
+        ]]></source>
+        </div>
+      </subsection>
+
+
       <subsection name="Installation of HST module">
-          <p>Assuming that the version is managed in the parent pom, add this dependency to the pom.xml of your site module:</p>
+          <p>Add this dependency to the pom.xml of your site module:</p>
           <source><![CDATA[
 <dependency>
   <groupId>org.onehippo.forge.utilities</groupId>
   <artifactId>hippo-utilities-hst</artifactId>
+  <version>${forge.utilities.version}</version>
 </dependency>]]></source>
       </subsection>
     </section>
