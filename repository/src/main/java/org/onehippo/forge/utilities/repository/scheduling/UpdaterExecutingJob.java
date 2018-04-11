@@ -79,7 +79,7 @@ public class UpdaterExecutingJob implements RepositoryJob {
             final Node registryNode = session.getNode(UPDATE_REGISTRY_PATH);
 
             if (!registryNode.hasNode(updaterName)) {
-                log.error("Skipping updater executing job because the updater node doesn't exist at {}.",
+                log.error("Skipping updater script execution because the configured updater node doesn't exist at {}/{}.",
                         UPDATE_REGISTRY_PATH, updaterName);
                 return;
             }
