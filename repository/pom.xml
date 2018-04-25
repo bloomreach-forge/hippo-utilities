@@ -1,5 +1,5 @@
 <!--
-  Copyright 2012-2018 Hippo B.V. (http://www.onehippo.com)
+  Copyright 2018 Hippo B.V. (http://www.onehippo.com)
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -23,56 +23,36 @@
     <version>3.1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>hippo-utilities-hst</artifactId>
-  <name>Hippo Utilities HST</name>
+  <artifactId>hippo-utilities-repository</artifactId>
+  <name>Hippo Utilities Repository</name>
   <packaging>jar</packaging>
 
   <dependencies>
+
     <dependency>
-      <groupId>org.onehippo.forge.utilities</groupId>
-      <artifactId>hippo-utilities-commons</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.onehippo.cms7.hst</groupId>
-      <artifactId>hst-api</artifactId>
+      <groupId>javax.jcr</groupId>
+      <artifactId>jcr</artifactId>
       <scope>provided</scope>
     </dependency>
-    <dependency>
-      <groupId>org.onehippo.cms7.hst</groupId>
-      <artifactId>hst-client</artifactId>
-      <scope>provided</scope>
-      <exclusions>
-        <exclusion>
-          <artifactId>jdom</artifactId>
-          <groupId>jdom</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.onehippo.cms7.hst</groupId>
-      <artifactId>hst-content-beans</artifactId>
-      <scope>provided</scope>
-    </dependency>
+
     <dependency>
       <groupId>org.onehippo.cms7</groupId>
       <artifactId>hippo-repository-api</artifactId>
       <scope>provided</scope>
     </dependency>
+
     <dependency>
-      <groupId>org.onehippo.cms7</groupId>
-      <artifactId>hippo-repository-engine</artifactId>
-      <scope>test</scope>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <scope>provided</scope>
     </dependency>
-    <dependency>
-      <groupId>org.testng</groupId>
-      <artifactId>testng</artifactId>
-    </dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <scope>test</scope>
     </dependency>
+
   </dependencies>
 
   <build>
@@ -87,4 +67,5 @@
       </plugin>
     </plugins>
   </build>
+
 </project>
