@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!--
+  Copyright 2012-2018 Hippo B.V. (http://www.onehippo.com)
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  -->
+
+<!DOCTYPE document PUBLIC "-//Apache Software Foundation//DTD XDOC 1.0//EN" "http://maven.apache.org/dtd/xdoc_1_0.dtd">
+<document>
+  <properties>
+    <title>Hippo Utilities Repository - Groovy Updater Execution Scheduler Job Module</title>
+  </properties>
+  <body>
+
+    <p style="color:green">
+      <strong>Available since 3.1.0.</strong>
+    </p>
+
+    <section name="Groovy Updater Execution Scheduler Job Module">
+
+      <subsection name="Introduction">
+        <p>
+          Sometimes you write a
+          <a href="https://www.onehippo.org/library/concepts/update/using-the-updater-editor.html">Groovy Updater Script</a>
+          to do a batch job.
+          Perhaps you also have wondered if it is possible to execute your Groovy Updater Script at midnight for example
+          just by configuring
+          a <a href="https://www.onehippo.org/library/concepts/hippo-services/repository-scheduler.html">Repository Scheduler Job</a>.
+        </p>
+        <p>
+          Unfortunately, there has been no easy way for that until you find this module!
+          This <strong>Groovy Updater Execution Scheduler Job Module</strong> allows you to configure a Repository Scheduler Job
+          to execute a Groovy Updater script based on your scheduler configuration.
+        </p>
+      </subsection>
+
+      <subsection name="Configuring a Groovy Updater Execution Scheduler Job">
+        <p>
+          Suppose you want to execute a Groovy Updater script called "My Daily Documents Updater"
+          at 04:00 am every day.
+        </p>
+        <p>
+          Then you can add a Repository Scheduler Job named "MyDailyDocumentsUpdaterJob" like the following example:
+        </p>
+        <div class="brush: plain">
+        <source><![CDATA[
+/hippo:configuration/hippo:modules/scheduler/hippo:moduleconfig:
+  /myjobgroup:
+    jcr:primaryType: hipposched:jobgroup
+    /MyDailyDocumentsUpdaterJob:
+      jcr:primaryType: hipposched:repositoryjob
+      hipposched:attributeNames: [updatername]
+      hipposched:attributeValues: [My Daily Documents Updater]
+      hipposched:enabled: true
+      hipposched:repositoryJobClass: org.onehippo.forge.utilities.repository.scheduling.UpdaterExecutingJob
+      /hipposched:triggers:
+        jcr:primaryType: hipposched:triggers
+        /minutely:
+          jcr:primaryType: hipposched:crontrigger
+          jcr:mixinTypes: ['hippo:lockable', 'mix:lockable']
+          hipposched:cronExpression: '0 0 4 * * ?'
+          hipposched:enabled: true
+        ]]></source>
+        </div>
+        <p>
+          In the above example, the Repository Scheduler Job named "MyDailyDocumentsUpdaterJob" was added in a custom job group
+          named "myjobgroup", instead of adding the job into the default "system" job group for clear separation.
+        </p>
+        <p>
+          Parameters can be passed to <code>org.onehippo.forge.utilities.repository.scheduling.UpdaterExecutingJob</code>
+          by configuring <code>hipposched:attributeNames</code> and <code>hipposched:attributeValues</code>,
+          each value of which properties must coupled with each other as name-value pair.
+        </p>
+        <p>
+          <code>org.onehippo.forge.utilities.repository.scheduling.UpdaterExecutingJob</code> requires
+          <code>updatername</code> attribute which is associated with the name of the Groovy Updater Script to execute.
+        </p>
+      </subsection>
+
+    </section>
+  </body>
+</document>
