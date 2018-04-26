@@ -59,8 +59,6 @@
 
     <menu name="Repository module">
       <item name="Groovy Updater Execution Scheduler Job Module" href="repository/updater-exec-sched-job.html"/>
-      <item name="Base Updater Module" href="repository/base-updater.html"/>
-      <item name="Annotation Base Updater Module" href="repository/annotation-updater.html"/>
     </menu>
 
     <menu ref="reports"/>

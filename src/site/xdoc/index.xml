@@ -57,8 +57,6 @@
         <b>hippo-utilities-repository</b>
         <ul>
           <li><a href="repository/updater-exec-sched-job.html">Groovy Updater Execution Scheduler Job</a></li>
-          <li><a href="repository/base-updater.html">Base Updater Module</a></li>
-          <li><a href="repository/annotation-updater.html">Annotation Base Updater Module</a></li>
         </ul>
 
       </subsection>
