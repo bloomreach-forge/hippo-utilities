@@ -64,7 +64,6 @@
     <plugin.release.version>2.5</plugin.release.version>
     <plugin.resources.version>2.6</plugin.resources.version>
     <plugin.site.version>3.6</plugin.site.version>
-    <plugin.source.version>2.2.1</plugin.source.version>
     <plugin.surefire.version>2.17</plugin.surefire.version>
     <plugin.surefire-report.version>2.17</plugin.surefire-report.version>
 
@@ -326,20 +325,6 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
         <version>${plugin.site.version}</version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-        <version>${plugin.source.version}</version>
-        <executions>
-          <execution>
-            <id>attach-sources</id>
-            <phase>verify</phase>
-            <goals>
-              <goal>jar-no-fork</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
 
