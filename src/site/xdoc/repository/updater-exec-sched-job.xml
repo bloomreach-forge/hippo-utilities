@@ -23,7 +23,7 @@
   <body>
 
     <p style="color:green">
-      <strong>Available since 3.1.0.</strong>
+      <strong>Available since 3.1.1.</strong>
     </p>
 
     <section name="Groovy Updater Execution Scheduler Job Module">
