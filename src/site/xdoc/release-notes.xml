@@ -48,8 +48,7 @@
       </table>
     </section>
     <section name="Release Notes">
-      <subsection name="3.1.0">
-        <p class="smallinfo">Release Date: Coming soon...</p>
+      <subsection name="3.1.1">
         <h4>New Feature</h4>
         <ul>
           <li>[<a href='https://issues.onehippo.com/browse/HIPFORGE-131'>HIPFORGE-131</a>] -         Simple generic scheduler job to execute a Groovy script
