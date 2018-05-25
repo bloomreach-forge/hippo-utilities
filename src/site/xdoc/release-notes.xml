@@ -49,7 +49,12 @@
     </section>
     <section name="Release Notes">
       <subsection name="3.1.1">
-        <h4>New Feature</h4>
+        <h5>Bug Fix</h5>
+        <ul>
+          <li>[<a href='https://issues.onehippo.com/browse/HIPFORGE-163'>HIPFORGE-163</a>] -         [Utilities] Failed to deploy source jar due to duplicate maven-source-plugin effective
+          </li>
+        </ul>
+        <h5>New Feature</h5>
         <ul>
           <li>[<a href='https://issues.onehippo.com/browse/HIPFORGE-131'>HIPFORGE-131</a>] -         Simple generic scheduler job to execute a Groovy script
           </li>
