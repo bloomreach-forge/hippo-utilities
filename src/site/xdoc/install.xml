@@ -59,6 +59,17 @@
   <version>${forge.utilities.version}</version>
 </dependency>]]></source>
       </subsection>
+
+      <subsection name="Installation of Repository module (since v3.1.0)">
+          <p>Add this dependency to the pom.xml of your cms module:</p>
+          <source><![CDATA[
+<dependency>
+  <groupId>org.onehippo.forge.utilities</groupId>
+  <artifactId>hippo-utilities-repository</artifactId>
+  <version>${forge.utilities.version}</version>
+</dependency>]]></source>
+      </subsection>
+
     </section>
   </body>
 </document>
