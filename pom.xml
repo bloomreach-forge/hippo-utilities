@@ -23,8 +23,8 @@
     <version>29</version>
   </parent>
 
-  <name>Hippo Forge Hippo Utilities</name>
-  <description>Hippo Forge Hippo Utilities</description>
+  <name>Bloomreach Forge Hippo Utilities</name>
+  <description>Bloomreach Forge Hippo Utilities</description>
   <groupId>org.onehippo.forge.utilities</groupId>
   <artifactId>hippo-utilities</artifactId>
   <version>3.1.1</version>
@@ -38,7 +38,7 @@
     <project.build.javaVersion>1.8</project.build.javaVersion>
 
     <!-- use root project name for all project modules NOTICE files, should be the same as in the root NOTICE file -->
-    <notice.project.name>Hippo Forge Hippo Utilities</notice.project.name>
+    <notice.project.name>Bloomreach Forge Hippo Utilities</notice.project.name>
 
     <hippo.repository.version>5.0.0</hippo.repository.version>
     <hippo.hst.version>5.0.0</hippo.hst.version>
@@ -76,9 +76,9 @@
   </properties>
 
   <scm>
-    <connection>scm:git:git@github.com:onehippo-forge/hippo-utilities.git</connection>
-    <developerConnection>scm:git:git@github.com:onehippo-forge/hippo-utilities.git</developerConnection>
-    <url>https://github.com/onehippo-forge/hippo-utilities.git</url>
+    <connection>scm:git:git@github.com:bloomreach-forge/hippo-utilities.git</connection>
+    <developerConnection>scm:git:git@github.com:bloomreach-forge/hippo-utilities.git</developerConnection>
+    <url>https://github.com/bloomreach-forge/hippo-utilities.git</url>
     <tag>HEAD</tag>
   </scm>
 
