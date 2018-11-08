@@ -1,13 +1,3 @@
-/*.iml
+*.iml
 /.idea
-commons/*.iml
-commons/.classpath
-commons/.project
-commons/.settings
-commons/target
-hst/*.iml
-hst/.classpath
-hst/.project
-hst/.settings
-hst/target
 /target
