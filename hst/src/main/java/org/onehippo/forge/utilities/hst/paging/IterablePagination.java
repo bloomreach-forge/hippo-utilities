@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2013 Hippo B.V. (http://www.onehippo.com)
+ * Copyright 2012-2019 Hippo B.V. (http://www.onehippo.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,7 +63,6 @@ public class IterablePagination<T extends HippoBean> extends Pageable {
      * Constructor to be used when the paging is not done beforehand (for example in HST query), but has to be done by
      * this class, for instance paging on facet navigation results.
      */
-    @SuppressWarnings({"unchecked"})
     public IterablePagination(final HippoBeanIterator beans, final int currentPage) {
         super(beans.getSize(), currentPage);
         processOffset(beans);
@@ -235,6 +234,7 @@ public class IterablePagination<T extends HippoBean> extends Pageable {
         }
     }
 
+    @SuppressWarnings("unchecked")
     protected void processOffset(HippoBeanIterator beans) {
         items = new ArrayList<T>();
         int startAt = getStartOffset();
@@ -260,6 +260,7 @@ public class IterablePagination<T extends HippoBean> extends Pageable {
     protected void processItems(HippoBeanIterator beans) {
         items = new ArrayList<T>();
         while (beans.hasNext()) {
+            @SuppressWarnings("unchecked")
             T bean = (T) beans.nextHippoBean();
             if (bean != null) {
                 items.add(bean);
