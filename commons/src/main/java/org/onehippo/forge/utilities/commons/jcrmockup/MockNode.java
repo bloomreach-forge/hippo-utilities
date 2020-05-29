@@ -30,7 +30,9 @@ import javax.jcr.NodeIterator;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import javax.jcr.Value;
+import javax.jcr.Workspace;
 import javax.jcr.nodetype.NodeType;
+import javax.jcr.version.VersionManager;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -348,6 +350,10 @@ public class MockNode {
             session = Mockito.mock(Session.class);
             Mockito.when(session.getItem(Matchers.anyString())).thenAnswer(itemAnswer);
             Mockito.when(session.getRootNode()).thenAnswer(itemAnswer);
+            final Workspace mockWorkspace = Mockito.mock(Workspace.class);
+            final VersionManager versionManager = Mockito.mock(VersionManager.class);
+            Mockito.when(session.getWorkspace()).thenReturn(mockWorkspace);
+            Mockito.when(mockWorkspace.getVersionManager()).thenReturn(versionManager);
             Mockito.when(session.itemExists(Matchers.anyString())).thenAnswer(new Answer<Boolean>() {
                 public Boolean answer(final InvocationOnMock invocationOnMock) throws RepositoryException {
                     return itemAnswer.getItem(invocationOnMock.getArguments()) != null;
