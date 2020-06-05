@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2013 Hippo B.V. (http://www.onehippo.com)
+ * Copyright 2012-2019 Hippo B.V. (http://www.onehippo.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,7 +82,7 @@ public class TestJcrMockup {
     public void testSession() throws RepositoryException {
         Session session = JcrMockUp.mockJcrSession("/content.xml");
         Node node = session.getRootNode();
-        assert "98267ef6-37c9-4842-b8d5-4bcab85e06eb".equals(node.getUUID());
+        assert "98267ef6-37c9-4842-b8d5-4bcab85e06eb".equals(node.getIdentifier());
     }
 
     @Test
@@ -305,7 +305,7 @@ public class TestJcrMockup {
     public void testGetUuid() throws RepositoryException {
         Session session = JcrMockUp.mockJcrSession("/content.xml");
         Node node = (Node) session.getItem("/14-9-wie-denk-je-wel-dat-je-bent/14-9-wie-denk-je-wel-dat-je-bent");
-        assert "3b2c1d74-46cb-4b3f-ab05-b505095bcf43".equals(node.getUUID());
+        assert "3b2c1d74-46cb-4b3f-ab05-b505095bcf43".equals(node.getIdentifier());
     }
 
     @Test

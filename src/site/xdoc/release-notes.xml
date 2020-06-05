@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-  Copyright 2012-2018 Hippo B.V. (http://www.onehippo.com)
+  Copyright 2012-2020 Hippo B.V. (http://www.onehippo.com)
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -29,8 +29,12 @@
             <th>Hippo Version</th>
           </tr>
           <tr>
+            <td>4.x</td>
+            <td>13.x</td>
+          </tr>
+          <tr>
             <td>3.x</td>
-            <td>12</td>
+            <td>12.x</td>
           </tr>
           <tr>
             <td>2.0.0</td>
@@ -48,15 +52,22 @@
       </table>
     </section>
     <section name="Release Notes">
-      <subsection name="3.1.1">
-        <h5>Bug Fix</h5>
+      <subsection name="4.0.0">
+        <p class="smallinfo">Release Date: 5 June 2020</p>
         <ul>
-          <li>[<a href='https://issues.onehippo.com/browse/HIPFORGE-163'>HIPFORGE-163</a>] -         [Utilities] Failed to deploy source jar due to duplicate maven-source-plugin effective
+          <li><a href='https://issues.onehippo.com/browse/HIPFORGE-250'>HIPFORGE-250</a><br/>
+            Upgrade to 13.4 and replace deprecated methods.
           </li>
         </ul>
-        <h5>New Feature</h5>
+      </subsection>
+      <subsection name="3.1.1">
+        <p class="smallinfo">Release Date: 25 May 2018</p>
         <ul>
-          <li>[<a href='https://issues.onehippo.com/browse/HIPFORGE-131'>HIPFORGE-131</a>] -         Simple generic scheduler job to execute a Groovy script
+          <li><a href='https://issues.onehippo.com/browse/HIPFORGE-131'>HIPFORGE-131</a><br/>
+            New feature: a simple generic scheduler job to execute a Groovy script.
+          </li>
+          <li><a href='https://issues.onehippo.com/browse/HIPFORGE-163'>HIPFORGE-163</a><br/>
+            Fix for failed to deploy source jar due to duplicate maven-source-plugin effective
           </li>
         </ul>
       </subsection>

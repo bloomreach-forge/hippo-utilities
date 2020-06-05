@@ -191,7 +191,7 @@ public class NodeBuilderImpl implements NodeBuilder, PropertyBuilder {
         final String nodeName = NodeNameCodec.encode(name);
         try {
             if (!parent.isCheckedOut()) {
-                parent.checkout();
+                parent.getSession().getWorkspace().getVersionManager().checkout(parent.getPath());
             }
             if (!sameNameSiblings && parent.hasNode(nodeName)) {
                 return parent.getNode(nodeName);

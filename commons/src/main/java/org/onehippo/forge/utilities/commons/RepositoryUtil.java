@@ -71,7 +71,7 @@ public final class RepositoryUtil {
         HippoNode node = (HippoNode) session.getItem(fullPath);
         Node parent = node.getParent();
         node.remove();
-        parent.save();
+        parent.getSession().save();
     }
 
     public static Node getNodeByPath(Session session, String absPath) throws RepositoryException {
@@ -139,7 +139,7 @@ public final class RepositoryUtil {
         }
 
         node.addMixin("hippo:harddocument");
-        parent.save();
+        parent.getSession().save();
 
         return node;
     }

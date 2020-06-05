@@ -127,7 +127,7 @@ public final class GenericsUtil {
     public static void setProperty(final Node node, final String relativePath, final Object object) throws RepositoryException {
         logger.debug("Setting property '{}' to value '{}'", new Object[] {node.getPath()+"/"+relativePath, object});
         if (!node.isCheckedOut()) {
-            node.checkout();
+            node.getSession().getWorkspace().getVersionManager().checkout(node.getPath());
         }
         if (object == null) {
             if (node.hasProperty(relativePath)) {
@@ -164,7 +164,7 @@ public final class GenericsUtil {
     public static <T> void setPropertyValues(final Node node, final String relativePath, final Collection<T> values) throws RepositoryException {
         logger.debug("Setting property '{}' values from collection.", node.getPath()+"/"+relativePath);
         if (!node.isCheckedOut()) {
-            node.checkout();
+            node.getSession().getWorkspace().getVersionManager().checkout(node.getPath());
         }
         if (values == null) {
             if (node.hasProperty(relativePath)) {

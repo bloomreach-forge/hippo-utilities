@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2013 Hippo B.V. (http://www.onehippo.com)
+ * Copyright 2012-2019 Hippo B.V. (http://www.onehippo.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package org.onehippo.forge.utilities.commons.ftp;
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.Charset;
 
 import com.google.common.base.Splitter;
 
@@ -175,7 +176,7 @@ public class SimpleFtpClient implements Closeable {
 
 
         } catch (IOException e) {
-            log.error("Error saving file to FTP server: " + server, e);
+            log.error("Error saving file to FTP server: {}", server, e);
             return SimpleFtpClientResult.ERROR;
         }
 
@@ -196,7 +197,7 @@ public class SimpleFtpClient implements Closeable {
             return client.retrieveFileStream(fileName);
 
         } catch (IOException e) {
-            log.error("Error retrieving file from FTP server: " + server, e);
+            log.error("Error retrieving file from FTP server: {}", server, e);
         }
         return null;
     }
@@ -208,12 +209,12 @@ public class SimpleFtpClient implements Closeable {
             connectClient();
             changeToDir(directory);
             inputStream = client.retrieveFileStream(fileName);
-            String result = IOUtils.toString(inputStream);
+            String result = IOUtils.toString(inputStream, Charset.defaultCharset());
             client.completePendingCommand();
             return result;
 
         } catch (IOException e) {
-            log.error("Error retrieving file from FTP server: " + server, e);
+            log.error("Error retrieving file from FTP server: {}", server, e);
         } finally {
             if (inputStream != null) {
                 try {

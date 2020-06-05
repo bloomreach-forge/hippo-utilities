@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2016 Hippo B.V. (http://www.onehippo.com)
+ * Copyright 2012-2019 Hippo B.V. (http://www.onehippo.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,12 @@ import org.slf4j.LoggerFactory;
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 
-public class XMLStripper {
+public final class XMLStripper {
 
   private static Logger log = LoggerFactory.getLogger(XMLStripper.class);
+
+  private XMLStripper() {
+  }
 
   /**
    * Get HippoHtml content as text, i.e. parse it's inner HTML and add only
@@ -46,7 +49,7 @@ public class XMLStripper {
 
     try {
       if (!hippoHtml.getNode().hasProperty("hippostd:content")) {
-        log.error("hippoHtml does not have property hippostd:content, path=" + hippoHtml.getPath());
+        log.error("hippoHtml does not have property hippostd:content, path={}", hippoHtml.getPath());
         return null;
       }
 
@@ -83,9 +86,9 @@ public class XMLStripper {
       text = stripXmlHandler.getString();
     } catch (Exception e) {
       try {
-        log.error("Could not parse xml property as text, path=" + property.getPath(), e);
+        log.error("Could not parse xml property as text, path={}", property.getPath(), e);
       } catch (RepositoryException e1) {
-        log.error("Exception occured while parsing xml property as text (plus RepositoryException getting path)", e);
+        log.error("Exception occurred while parsing xml property as text (plus RepositoryException getting path)", e);
       }
     }
 
