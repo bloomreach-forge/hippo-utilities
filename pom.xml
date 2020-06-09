@@ -20,7 +20,7 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-project</artifactId>
-    <version>30.4.3</version>
+    <version>31.1.0</version>
   </parent>
 
   <name>Bloomreach Forge Hippo Utilities</name>
@@ -40,8 +40,8 @@
     <!-- use root project name for all project modules NOTICE files, should be the same as in the root NOTICE file -->
     <notice.project.name>Bloomreach Forge Hippo Utilities</notice.project.name>
 
-    <hippo.repository.version>13.4.3</hippo.repository.version>
-    <hippo.hst.version>13.4.3</hippo.hst.version>
+    <hippo.repository.version>14.1.0</hippo.repository.version>
+    <hippo.hst.version>14.1.0</hippo.hst.version>
 
     <commons-net.version>3.6</commons-net.version>
     <commons-lang.version>3.9</commons-lang.version>

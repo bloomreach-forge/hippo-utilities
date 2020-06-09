@@ -29,6 +29,10 @@
             <th>Hippo Version</th>
           </tr>
           <tr>
+            <td>5.x</td>
+            <td>14.x</td>
+          </tr>
+          <tr>
             <td>4.x</td>
             <td>13.x</td>
           </tr>
@@ -52,6 +56,14 @@
       </table>
     </section>
     <section name="Release Notes">
+      <subsection name="5.0.0">
+        <p class="smallinfo">Release Date: 9 June 2020</p>
+        <ul>
+          <li><a href='https://issues.onehippo.com/browse/HIPFORGE-252'>HIPFORGE-252</a><br/>
+            Upgrade Hippo Utilities to 14.1
+          </li>
+        </ul>
+      </subsection>
       <subsection name="4.0.0">
         <p class="smallinfo">Release Date: 5 June 2020</p>
         <ul>
