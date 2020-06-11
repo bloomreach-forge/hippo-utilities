@@ -80,7 +80,7 @@ public class NodeBuilderImpl implements NodeBuilder, PropertyBuilder {
      *
      * @param parent     the parent node to append the new child nodes to
      * @param relPath    the relative path of the new child nodes (sameNameSiblings should be true @see
-     *                   rg.onehippo.forge.psutils.simpleocm.JcrNodeType)
+     *                   rg.onehippo.forge.utilities.hst.simpleocm.JcrNodeType)
      * @param collection the collection
      * @throws ContentNodeBindingException   if building the child nodes fails
      * @throws javax.jcr.RepositoryException if removing old child nodes with fails
@@ -204,12 +204,12 @@ public class NodeBuilderImpl implements NodeBuilder, PropertyBuilder {
     }
 
     /**
-     * Bind all @see org.onehippo.forge.psutils.simpleocm.JcrPath annotated fields to the passed node. Also takes care of
+     * Bind all @see org.onehippo.forge.utilities.hst.simpleocm.JcrPath annotated fields to the passed node. Also takes care of
      * inheritance and loops up, to check the fields of the super classes.
      * The session, or node needs to be saved to persist the changes.
      *
      * @param node   the node to populate
-     * @param object the @see org.onehippo.forge.psutils.simpleocm.JcrNodeType annotated object
+     * @param object the @see org.onehippo.forge.utilities.hst.simpleocm.JcrNodeType annotated object
      * @throws org.hippoecm.hst.content.beans.ContentNodeBindingException
      *          also @see org.hippoecm.hst.content.beans.ContentNodeBinder#bind
      */
