@@ -27,7 +27,7 @@
   <description>Bloomreach Forge Hippo Utilities</description>
   <groupId>org.onehippo.forge.utilities</groupId>
   <artifactId>hippo-utilities</artifactId>
-  <version>4.0.1-SNAPSHOT</version>
+  <version>5.0.0</version>
   <packaging>pom</packaging>
 
   <inceptionYear>2011</inceptionYear>
