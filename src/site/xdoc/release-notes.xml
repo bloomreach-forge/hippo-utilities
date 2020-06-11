@@ -57,10 +57,10 @@
     </section>
     <section name="Release Notes">
       <subsection name="5.0.0">
-        <p class="smallinfo">Release Date: 9 June 2020</p>
+        <p class="smallinfo">Release Date: 11 June 2020</p>
         <ul>
           <li><a href='https://issues.onehippo.com/browse/HIPFORGE-252'>HIPFORGE-252</a><br/>
-            Upgrade Hippo Utilities to 14.1
+            Upgrade Hippo Utilities to 14.
           </li>
         </ul>
       </subsection>
