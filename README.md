@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/bloomreach-forge/hippo-utilities.svg?branch=develop)](https://travis-ci.org/bloomreach-forge/hippo-utilities)
-
 # Hippo Utilities
 
 The Hippo Utilities forge project contains generic code for reusage, in order to avoid code being copied from project 

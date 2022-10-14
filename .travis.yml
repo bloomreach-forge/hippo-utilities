@@ -1,8 +1,0 @@
-language: java
-jdk: oraclejdk8
-sudo: false # faster builds, default for repositories enabled in 2015 or later
-
-cache:
-  directories:
-  - $HOME/.m2
-
