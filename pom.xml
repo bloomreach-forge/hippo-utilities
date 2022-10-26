@@ -1,5 +1,5 @@
 <!--
-  Copyright 2011-2020 Hippo B.V. (http://www.onehippo.com)
+  Copyright 2011-2022 Bloomreach
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -33,42 +33,20 @@
   <inceptionYear>2011</inceptionYear>
 
   <properties>
+    <hippo.repository.version>${hippo.release.version}</hippo.repository.version>
+    <hippo.hst.version>${hippo.release.version}</hippo.hst.version>
 
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.build.javaVersion>1.8</project.build.javaVersion>
+    <commons-net.version>3.8.0</commons-net.version>
+    <mockito.version>1.10.19</mockito.version>
 
-    <!-- use root project name for all project modules NOTICE files, should be the same as in the root NOTICE file -->
-    <notice.project.name>Bloomreach Forge Hippo Utilities</notice.project.name>
-
-    <hippo.repository.version>15.0.0</hippo.repository.version>
-    <hippo.hst.version>15.0.0</hippo.hst.version>
-
-    <commons-net.version>3.6</commons-net.version>
-
-    <!-- test releated -->
+    <!-- test related -->
     <testng.version>6.14.3</testng.version>
-    <mockito.version>1.8.5</mockito.version>
-    <fakeftp.version>2.6</fakeftp.version>
-    <junit.version>4.8</junit.version>
+    <mockftp.version>3.1.0</mockftp.version>
+    <junit.version>4.13.2</junit.version>
 
-    <plugin.compiler.version>3.8.0</plugin.compiler.version>
-    <plugin.clean.version>3.1.0</plugin.clean.version>
-    <plugin.deploy.version>2.8.2</plugin.deploy.version>
-    <plugin.install.version>2.5.2</plugin.install.version>
-    <plugin.jar.version>3.1.0</plugin.jar.version>
-    <plugin.javadoc.version>3.0.1</plugin.javadoc.version>
-    <plugin.jxr.version>3.0.0</plugin.jxr.version>
-    <plugin.pmd.version>3.13.0</plugin.pmd.version>
-    <plugin.project-info-reports.version>3.1.0</plugin.project-info-reports.version>
-    <plugin.release.version>2.5.3</plugin.release.version>
-    <plugin.resources.version>3.1.0</plugin.resources.version>
-    <plugin.site.version>3.7.1</plugin.site.version>
-    <plugin.surefire.version>3.0.0-M1</plugin.surefire.version>
-    <plugin.surefire-report.version>3.0.0-M1</plugin.surefire-report.version>
-
-    <plugin.checkstyle.version>2.6</plugin.checkstyle.version>
-    <plugin.cobertura.version>2.4</plugin.cobertura.version>
-    <plugin.findbugs.version>2.3.2</plugin.findbugs.version>
+    <!-- build related -->
+    <maven.plugin.jxr.version>3.3.0</maven.plugin.jxr.version>
+    <maven.plugin.pmd.version>3.19.0</maven.plugin.pmd.version>
 
   </properties>
 
@@ -81,9 +59,9 @@
 
   <distributionManagement>
     <repository>
-      <name>Hippo Maven 2 Forge Repository</name>
-      <id>hippo-maven2-forge</id>
-      <url>https://maven.onehippo.com/content/repositories/forge-releases/</url>
+      <name>Bloomreach Maven 2 Forge Repository</name>
+      <id>bloomreach-maven2-forge</id>
+      <url>https://maven.bloomreach.com/content/repositories/forge-releases</url>
       <uniqueVersion>false</uniqueVersion>
     </repository>
   </distributionManagement>
@@ -105,29 +83,21 @@
     <dependencies>
 
       <dependency>
-        <groupId>org.mockftpserver</groupId>
-        <artifactId>MockFtpServer</artifactId>
-        <version>${fakeftp.version}</version>
-      </dependency>
-      <dependency>
         <groupId>commons-net</groupId>
         <artifactId>commons-net</artifactId>
         <version>${commons-net.version}</version>
       </dependency>
       <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-all</artifactId>
+        <version>${mockito.version}</version>
+      </dependency>
+
+      <dependency>
         <groupId>org.onehippo.cms7.hst</groupId>
         <artifactId>hst-api</artifactId>
         <version>${hippo.hst.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.onehippo.cms7.hst.components</groupId>
-        <artifactId>hst-core</artifactId>
-        <version>${hippo.hst.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.onehippo.cms7.hst</groupId>
-        <artifactId>hst-commons</artifactId>
-        <version>${hippo.hst.version}</version>
+        <scope>provided</scope>
       </dependency>
       <dependency>
         <groupId>org.onehippo.cms7.hst</groupId>
@@ -145,20 +115,9 @@
         <groupId>org.onehippo.cms7.hst</groupId>
         <artifactId>hst-content-beans</artifactId>
         <version>${hippo.hst.version}</version>
+        <scope>provided</scope>
       </dependency>
 
-      <dependency>
-        <groupId>org.onehippo.cms7</groupId>
-        <artifactId>hippo-repository-builtin</artifactId>
-        <version>${hippo.repository.version}</version>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.onehippo.cms7</groupId>
-        <artifactId>hippo-repository-connector</artifactId>
-        <version>${hippo.repository.version}</version>
-        <scope>provided</scope>
-      </dependency>
       <dependency>
         <groupId>org.onehippo.cms7</groupId>
         <artifactId>hippo-repository-api</artifactId>
@@ -185,10 +144,11 @@
         <version>${junit.version}</version>
         <scope>test</scope>
       </dependency>
-        <dependency>
-        <groupId>org.mockito</groupId>
-        <artifactId>mockito-all</artifactId>
-        <version>${mockito.version}</version>
+      <dependency>
+        <groupId>org.mockftpserver</groupId>
+        <artifactId>MockFtpServer</artifactId>
+        <version>${mockftp.version}</version>
+        <scope>test</scope>
       </dependency>
 
     </dependencies>
@@ -197,20 +157,14 @@
 
   <repositories>
     <repository>
-      <id>hippo</id>
-      <name>Hippo Maven 2 repository</name>
-      <url>https://maven.onehippo.com/maven2/</url>
+      <id>bloomreach-maven2</id>
+      <name>Bloomreach Maven 2 Rrepository</name>
+      <url>https://maven.bloomreach.com/repository/maven2</url>
       <snapshots />
       <releases>
         <updatePolicy>never</updatePolicy>
       </releases>
       <layout>default</layout>
-    </repository>
-    <repository>
-      <id>hippo-maven2-forge</id>
-      <name>Hippo Maven 2 Forge repository</name>
-      <url>https://maven.onehippo.com/maven2-forge/</url>
-      <snapshots />
     </repository>
   </repositories>
 
@@ -224,28 +178,23 @@
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>${plugin.project-info-reports.version}</version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jxr-plugin</artifactId>
-        <version>${plugin.jxr.version}</version>
+        <version>${maven.plugin.jxr.version}</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-pmd-plugin</artifactId>
-        <version>${plugin.pmd.version}</version>
+        <version>${maven.plugin.pmd.version}</version>
         <configuration>
           <linkXref>true</linkXref>
           <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
-          <targetJdk>${project.build.javaVersion}</targetJdk>
+          <targetJdk>${java.version}</targetJdk>
         </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>${plugin.javadoc.version}</version>
+        <version>${maven.plugin.javadoc.version}</version>
         <configuration>
           <encoding>${project.build.sourceEncoding}</encoding>
           <skip>false</skip>
@@ -260,65 +209,11 @@
           </reportSet>
         </reportSets>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-report-plugin</artifactId>
-        <version>${plugin.surefire-report.version}</version>
-      </plugin>
     </plugins>
   </reporting>
 
   <build>
-
     <defaultGoal>package</defaultGoal>
-
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>${plugin.compiler.version}</version>
-        <configuration>
-          <source>${project.build.javaVersion}</source>
-          <target>${project.build.javaVersion}</target>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-clean-plugin</artifactId>
-        <version>${plugin.clean.version}</version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-install-plugin</artifactId>
-        <version>${plugin.install.version}</version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-deploy-plugin</artifactId>
-        <version>${plugin.deploy.version}</version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>${plugin.jar.version}</version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>${plugin.surefire.version}</version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-resources-plugin</artifactId>
-        <version>${plugin.resources.version}</version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-site-plugin</artifactId>
-        <version>${plugin.site.version}</version>
-      </plugin>
-    </plugins>
-
   </build>
 
   <profiles>
@@ -330,7 +225,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-site-plugin</artifactId>
-            <version>${plugin.site.version}</version>
+            <version>${maven.plugin.site.version}</version>
             <configuration>
               <outputDirectory>docs</outputDirectory>
             </configuration>

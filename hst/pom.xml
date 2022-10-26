@@ -1,5 +1,5 @@
 <!--
-  Copyright 2012-2020 Hippo B.V. (http://www.onehippo.com)
+  Copyright 2012-2022 Bloomreach
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@
       <artifactId>hippo-utilities-commons</artifactId>
       <version>${project.version}</version>
     </dependency>
+
     <dependency>
       <groupId>org.onehippo.cms7.hst</groupId>
       <artifactId>hst-api</artifactId>
@@ -54,11 +55,13 @@
       <artifactId>hst-content-beans</artifactId>
       <scope>provided</scope>
     </dependency>
+
     <dependency>
       <groupId>org.onehippo.cms7</groupId>
       <artifactId>hippo-repository-api</artifactId>
       <scope>provided</scope>
     </dependency>
+
     <dependency>
       <groupId>org.onehippo.cms7</groupId>
       <artifactId>hippo-repository-engine</artifactId>
@@ -67,6 +70,7 @@
     <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>junit</groupId>

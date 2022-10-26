@@ -1,5 +1,5 @@
 <!--
-  Copyright 2018-2020 Hippo B.V. (http://www.onehippo.com)
+  Copyright 2018-2022 Bloomreach
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -28,12 +28,6 @@
   <packaging>jar</packaging>
 
   <dependencies>
-
-    <dependency>
-      <groupId>javax.jcr</groupId>
-      <artifactId>jcr</artifactId>
-      <scope>provided</scope>
-    </dependency>
 
     <dependency>
       <groupId>org.onehippo.cms7</groupId>
