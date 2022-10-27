@@ -1,6 +1,6 @@
-# Hippo Utilities
+# Bloomreach XM Utilities
 
-The Hippo Utilities forge project contains generic code for re-usage, in order to avoid code being copied from project 
+The Bloomreach XM Utilities forge project contains generic code for re-usage, in order to avoid code being copied from project 
 to project.
 
 # Documentation (Local)

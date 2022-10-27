@@ -24,7 +24,7 @@
   </parent>
 
   <artifactId>hippo-utilities-hst</artifactId>
-  <name>Bloomreach Forge Hippo Utilities HST</name>
+  <name>Bloomreach XM Utilities HST</name>
   <packaging>jar</packaging>
 
   <dependencies>

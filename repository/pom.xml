@@ -24,7 +24,7 @@
   </parent>
 
   <artifactId>hippo-utilities-repository</artifactId>
-  <name>Bloomreach Forge Hippo Utilities Repository</name>
+  <name>Bloomreach XM Utilities Repository</name>
   <packaging>jar</packaging>
 
   <dependencies>
