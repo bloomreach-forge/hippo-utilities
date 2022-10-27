@@ -18,11 +18,11 @@
 <!DOCTYPE document PUBLIC "-//Apache Software Foundation//DTD XDOC 1.0//EN" "http://maven.apache.org/dtd/xdoc_1_0.dtd">
 <document>
   <properties>
-    <title>How to install Hippo Utilities</title>
+    <title>How to install XM Utilities</title>
   </properties>
 
   <body>
-    <section name="How to install the Hippo Utilities modules">
+    <section name="How to install the XM Utilities modules">
       <subsection name="Maven 2 Forge Repository">
         <p>Add this repository to your root pom.xml:</p>
         <source><![CDATA[

@@ -31,11 +31,11 @@
       <subsection name="Introduction">
         <p>
           Sometimes you write a
-          <a href="https://www.onehippo.org/library/concepts/update/using-the-updater-editor.html">Groovy Updater Script</a>
+          <a href="https://xmdocumentation.bloomreach.com/library/concepts/update/using-the-updater-editor.html">Groovy Updater Script</a>
           to do a batch job.
           Perhaps you also have wondered if it is possible to execute your Groovy Updater Script at midnight for example
           just by configuring
-          a <a href="https://www.onehippo.org/library/concepts/hippo-services/repository-scheduler.html">Repository Scheduler Job</a>.
+          a <a href="https://xmdocumentation.bloomreach.com/library/concepts/hippo-services/repository-scheduler.html">Repository Scheduler Job</a>.
         </p>
         <p>
           Unfortunately, there has been no easy way for that until you find this module!
