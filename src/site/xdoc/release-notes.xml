@@ -18,7 +18,7 @@
 <!DOCTYPE document PUBLIC "-//Apache Software Foundation//DTD XDOC 1.0//EN" "http://maven.apache.org/dtd/xdoc_1_0.dtd">
 <document>
   <properties>
-    <title>Hippo Utilities Release Notes</title>
+    <title>XM Utilities Release Notes</title>
   </properties>
   <body>
     <section name="Compatibility">
@@ -26,7 +26,7 @@
         <tbody>
           <tr>
             <th>Version</th>
-            <th>Hippo Version</th>
+            <th>Bloomreach XM Version</th>
           </tr>
           <tr>
             <td>5.x</td>
