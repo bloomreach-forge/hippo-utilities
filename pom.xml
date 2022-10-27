@@ -188,7 +188,6 @@
         <configuration>
           <linkXref>true</linkXref>
           <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
-          <targetJdk>${java.version}</targetJdk>
         </configuration>
       </plugin>
       <plugin>
