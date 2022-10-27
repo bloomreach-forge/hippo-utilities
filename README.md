@@ -1,13 +1,11 @@
-[![Build Status](https://travis-ci.org/bloomreach-forge/hippo-utilities.svg?branch=develop)](https://travis-ci.org/bloomreach-forge/hippo-utilities)
+# Bloomreach XM Utilities
 
-# Hippo Utilities
-
-The Hippo Utilities forge project contains generic code for reusage, in order to avoid code being copied from project 
+The Bloomreach XM Utilities forge project contains generic code for re-usage, in order to avoid code being copied from project 
 to project.
 
 # Documentation (Local)
 
-The documentation can generated locally by this command:
+The documentation can be generated locally by this command:
 
 ```bash
 $ mvn clean install

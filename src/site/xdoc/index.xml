@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Copyright 2012-2018 Hippo B.V. (http://www.onehippo.com)
+  Copyright 2012-2022 Bloomreach
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -23,8 +23,8 @@
   </properties>
   <body>
     <section name="Introduction">
-      <subsection name="What is Hippo Utilities forge project">
-        <p> The Hippo Utilities forge project contains generic code for reusage, in order to avoid code being copied from project to project. </p>
+      <subsection name="What is Bloomreach XM Utilities forge project">
+        <p> The  Bloomreach XM Utilities forge project contains generic code for reusage, in order to avoid code being copied from project to project. </p>
       </subsection>
       <subsection name="Code base on GitHub">
         <p>The code is on GitHub at <a href="https://github.com/bloomreach-forge/hippo-utilities/">https://github.com/bloomreach-forge/hippo-utilities/</a>.</p>

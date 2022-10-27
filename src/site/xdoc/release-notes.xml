@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-  Copyright 2012-2020 Hippo B.V. (http://www.onehippo.com)
+  Copyright 2012-2022 Bloomreach
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@
 <!DOCTYPE document PUBLIC "-//Apache Software Foundation//DTD XDOC 1.0//EN" "http://maven.apache.org/dtd/xdoc_1_0.dtd">
 <document>
   <properties>
-    <title>Hippo Utilities Release Notes</title>
+    <title>XM Utilities Release Notes</title>
   </properties>
   <body>
     <section name="Compatibility">
@@ -26,7 +26,7 @@
         <tbody>
           <tr>
             <th>Version</th>
-            <th>Hippo Version</th>
+            <th>Bloomreach XM Version</th>
           </tr>
           <tr>
             <td>5.x</td>
@@ -56,6 +56,16 @@
       </table>
     </section>
     <section name="Release Notes">
+      <subsection name="6.0.0">
+        <p class="smallinfo">Release Date: 27 October 2022</p>
+        <ul>
+          <li><a href='https://issues.onehippo.com/browse/HIPFORGE-436'>HIPFORGE-436</a><br/>
+            Upgrade to Bloomreach Experience Manager 15, build on Java 11.
+          </li>
+          <li>Rename to Bloomreach XM Utilities (not renaming artifacts).</li>
+          <li>Optimize the Maven dependency tree.</li>
+        </ul>
+      </subsection>
       <subsection name="5.0.0">
         <p class="smallinfo">Release Date: 11 June 2020</p>
         <ul>
@@ -115,7 +125,7 @@
         <ul>
           <li>HIPPLUG-836: Upgrade to 7.9.</li>
           <li>Remove <a href="repository/scheduler-daemon.html">Scheduler Daemon</a>: similar functionality is
-            <a href="http://www.onehippo.org/library/concepts/hippo-services/repository-scheduler.html">now available in Hippo Repository</a>.</li>
+            <a href="http://xmdocumentation.bloomreach.com/library/concepts/hippo-services/repository-scheduler.html">now available in Hippo Repository</a>.</li>
           <li>Remove Gallery Processor: the functionality is now available in Hippo CMS core.</li>
           <li>Upgrade and clean up dependencies.</li>
         </ul>

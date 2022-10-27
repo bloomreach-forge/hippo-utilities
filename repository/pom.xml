@@ -1,5 +1,5 @@
 <!--
-  Copyright 2018-2020 Hippo B.V. (http://www.onehippo.com)
+  Copyright 2018-2022 Bloomreach
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -20,20 +20,14 @@
   <parent>
     <groupId>org.onehippo.forge.utilities</groupId>
     <artifactId>hippo-utilities</artifactId>
-    <version>5.0.0</version>
+    <version>6.0.0</version>
   </parent>
 
   <artifactId>hippo-utilities-repository</artifactId>
-  <name>Bloomreach Forge Hippo Utilities Repository</name>
+  <name>Bloomreach XM Utilities Repository</name>
   <packaging>jar</packaging>
 
   <dependencies>
-
-    <dependency>
-      <groupId>javax.jcr</groupId>
-      <artifactId>jcr</artifactId>
-      <scope>provided</scope>
-    </dependency>
 
     <dependency>
       <groupId>org.onehippo.cms7</groupId>
