@@ -36,7 +36,7 @@
     <hippo.repository.version>${hippo.release.version}</hippo.repository.version>
     <hippo.hst.version>${hippo.release.version}</hippo.hst.version>
 
-    <commons-net.version>3.8.0</commons-net.version>
+    <commons-net.version>3.9.0</commons-net.version>
     <mockito.version>1.10.19</mockito.version>
 
     <!-- test related -->
