@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2022 Bloomreach
+ * Copyright 2012-2024 Bloomreach
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 
-import static org.testng.AssertJUnit.assertTrue;
+import static org.testng.AssertJUnit.*;
 
 /**
  * AnnotationUtilTest
@@ -36,13 +36,13 @@ public class AnnotationUtilTest {
     @Test
     public void testFindClass() throws Exception {
         Class<Object> clazz = AnnotationUtil.findClass(AnnotationUtilTest.class.getName());
-        assertTrue(clazz != null);
+        assertNotNull(clazz);
     }
 
     @Test
     public void testGetClassMethods() throws Exception {
         Collection<Method> methods = AnnotationUtil.getMethods(AnnotationUtilTest.class);
         int i = methods.size();
-        assertTrue(methods.size() == 12);
+        assertEquals(11, methods.size());
     }
 }

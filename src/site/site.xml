@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-  Copyright 2012-2022 Bloomreach
+  Copyright 2012-2024 Bloomreach
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@
   <skin>
     <groupId>org.bloomreach.forge.mavenskin</groupId>
     <artifactId>forge-maven-skin</artifactId>
-    <version>3.2.0</version>
+    <version>3.2.1</version>
   </skin>
 
   <custom>

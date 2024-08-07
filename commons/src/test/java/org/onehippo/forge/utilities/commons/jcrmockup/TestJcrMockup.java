@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2022 Bloomreach
+ * Copyright 2012-2024 Bloomreach
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,7 +53,7 @@ public class TestJcrMockup {
 
         assert "foobar".equals(node.getProperty("string").getString());
         assert node.getProperty("boolean").getBoolean();
-        assert new Long(1234).equals(node.getProperty("long").getLong());
+        assert Long.valueOf(1234).equals(node.getProperty("long").getLong());
         assert 123.2 == node.getProperty("double").getDouble();
         assert node.getProperty("date").getDate().getTime().equals(calendar.getTime());
 

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!--
-  Copyright 2012-2022 Bloomreach
+  Copyright 2012-2024 Bloomreach
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -27,6 +27,10 @@
           <tr>
             <th>Version</th>
             <th>Bloomreach XM Version</th>
+          </tr>
+          <tr>
+            <td>7.x</td>
+            <td>16.x</td>
           </tr>
           <tr>
             <td>6.x</td>
@@ -60,6 +64,15 @@
       </table>
     </section>
     <section name="Release Notes">
+      <subsection name="7.0.0">
+        <p class="smallinfo">Release Date:  7 August 2024</p>
+        <ul>
+          <li><a href='https://issues.onehippo.com/browse/FORGE-536'>FORGE-536</a><br/>
+            Upgrade to Bloomreach Experience Manager 16, JDK 17.
+          </li>
+          <li>Dependencies sync with project versions</li>
+        </ul>
+      </subsection>
       <subsection name="6.0.0">
         <p class="smallinfo">Release Date: 27 October 2022</p>
         <ul>
@@ -119,11 +132,11 @@
       </subsection>
       <subsection name="1.02.01">
         <p class="smallinfo">Release Date: 17 August 2016</p>
-      <ul>
-        <li><a href="https://issues.onehippo.com/browse/HIPPLUG-1365">HIPPLUG-1365</a><br/>
-          Replace all deprecated methods and/or make parts deprecated that are not needed any more</li>
-      </ul>
-    </subsection>
+        <ul>
+          <li><a href="https://issues.onehippo.com/browse/HIPPLUG-1365">HIPPLUG-1365</a><br/>
+            Replace all deprecated methods and/or make parts deprecated that are not needed any more</li>
+        </ul>
+      </subsection>
       <subsection name="1.02.00">
         <p class="smallinfo">Release Date: 19 May 2014</p>
         <ul>

@@ -16,7 +16,7 @@ The output is in the ```target/site/``` directory by default. You can open ```ta
 
 # Documentation (GitHub Pages)
 
-Documentation is available at [https://bloomreach-forge.github.io/content-export-import/](https://bloomreach-forge.github.io/content-export-import/).
+Documentation is available at [https://bloomreach-forge.github.io/hippo-utilities/](https://bloomreach-forge.github.io/hippo-utilities/).
 
 You can generate the GitHub pages only from ```master``` branch by this command:
 
