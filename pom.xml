@@ -1,5 +1,5 @@
 <!--
-  Copyright 2011-2022 Bloomreach
+  Copyright 2011-2024 Bloomreach
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-project</artifactId>
-    <version>15.0.0</version>
+    <version>16.0.0</version>
   </parent>
 
   <name>Bloomreach XM Utilities</name>
@@ -33,20 +33,15 @@
   <inceptionYear>2011</inceptionYear>
 
   <properties>
-    <hippo.repository.version>${hippo.release.version}</hippo.repository.version>
-    <hippo.hst.version>${hippo.release.version}</hippo.hst.version>
-
-    <commons-net.version>3.8.0</commons-net.version>
-    <mockito.version>1.10.19</mockito.version>
 
     <!-- test related -->
-    <testng.version>6.14.3</testng.version>
-    <mockftp.version>3.1.0</mockftp.version>
-    <junit.version>4.13.2</junit.version>
+    <testng.version>7.10.0</testng.version>
+    <mockftp.version>3.2.0</mockftp.version>
+    <mockito.version>1.10.19</mockito.version>
 
     <!-- build related -->
-    <maven.plugin.jxr.version>3.3.0</maven.plugin.jxr.version>
-    <maven.plugin.pmd.version>3.19.0</maven.plugin.pmd.version>
+    <maven.plugin.jxr.version>3.4.0</maven.plugin.jxr.version>
+    <maven.plugin.pmd.version>3.23.0</maven.plugin.pmd.version>
 
   </properties>
 
@@ -96,13 +91,13 @@
       <dependency>
         <groupId>org.onehippo.cms7.hst</groupId>
         <artifactId>hst-api</artifactId>
-        <version>${hippo.hst.version}</version>
+        <version>${hippo.release.version}</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
         <groupId>org.onehippo.cms7.hst</groupId>
         <artifactId>hst-client</artifactId>
-        <version>${hippo.hst.version}</version>
+        <version>${hippo.release.version}</version>
         <scope>provided</scope>
         <exclusions>
           <exclusion>
@@ -114,20 +109,20 @@
       <dependency>
         <groupId>org.onehippo.cms7.hst</groupId>
         <artifactId>hst-content-beans</artifactId>
-        <version>${hippo.hst.version}</version>
+        <version>${hippo.release.version}</version>
         <scope>provided</scope>
       </dependency>
 
       <dependency>
         <groupId>org.onehippo.cms7</groupId>
         <artifactId>hippo-repository-api</artifactId>
-        <version>${hippo.repository.version}</version>
+        <version>${hippo.release.version}</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
         <groupId>org.onehippo.cms7</groupId>
         <artifactId>hippo-repository-engine</artifactId>
-        <version>${hippo.repository.version}</version>
+        <version>${hippo.release.version}</version>
         <scope>provided</scope>
       </dependency>
 
