@@ -20,7 +20,7 @@
   <parent>
     <groupId>org.onehippo.forge.utilities</groupId>
     <artifactId>hippo-utilities</artifactId>
-    <version>7.0.0</version>
+    <version>7.0.1-SNAPSHOT</version>
   </parent>
 
   <artifactId>hippo-utilities-hst</artifactId>
