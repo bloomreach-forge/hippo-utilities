@@ -132,11 +132,11 @@
       </subsection>
       <subsection name="1.02.01">
         <p class="smallinfo">Release Date: 17 August 2016</p>
-      <ul>
-        <li><a href="https://issues.onehippo.com/browse/HIPPLUG-1365">HIPPLUG-1365</a><br/>
-          Replace all deprecated methods and/or make parts deprecated that are not needed any more</li>
-      </ul>
-    </subsection>
+        <ul>
+          <li><a href="https://issues.onehippo.com/browse/HIPPLUG-1365">HIPPLUG-1365</a><br/>
+            Replace all deprecated methods and/or make parts deprecated that are not needed any more</li>
+        </ul>
+      </subsection>
       <subsection name="1.02.00">
         <p class="smallinfo">Release Date: 19 May 2014</p>
         <ul>
