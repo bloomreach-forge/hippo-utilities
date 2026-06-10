@@ -31,7 +31,7 @@ import javax.jcr.NodeIterator;
 import javax.jcr.Property;
 import javax.jcr.RepositoryException;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.hippoecm.hst.content.beans.ContentNodeBindingException;
 import org.hippoecm.repository.api.NodeNameCodec;
 import org.onehippo.forge.utilities.commons.GenericsUtil;

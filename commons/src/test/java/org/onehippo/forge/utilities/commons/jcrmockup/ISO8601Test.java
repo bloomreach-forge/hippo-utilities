@@ -20,7 +20,7 @@ import java.util.Calendar;
 
 import org.testng.annotations.Test;
 
-import static junit.framework.Assert.assertEquals;
+import static org.testng.Assert.assertEquals;
 
 /**
  * Test for {@link ISO8601}
