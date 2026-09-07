@@ -38,7 +38,7 @@ import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlTransient;
 
-import org.mockito.Matchers;
+import org.mockito.ArgumentMatchers;
 import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
@@ -279,24 +279,24 @@ public class MockNode {
         mockMixins(mockNode, jcrNode);
 
         final Answer<NodeIterator> nodeIteratorAnswer = new NodeIteratorAnswer(mockNode);
-        Mockito.when(jcrNode.getNodes(Matchers.anyString())).thenAnswer(nodeIteratorAnswer);
+        Mockito.when(jcrNode.getNodes(ArgumentMatchers.anyString())).thenAnswer(nodeIteratorAnswer);
         Mockito.when(jcrNode.getNodes()).thenAnswer(nodeIteratorAnswer);
 
         Mockito.when(jcrNode.getProperties()).thenAnswer(new PropertyIteratorAnswer(mockNode));
 
         final ItemAnswer itemAnswer = new ItemAnswer(mockNode);
-        Mockito.when(jcrNode.getNode(Matchers.anyString())).thenAnswer(itemAnswer);
-        Mockito.when(jcrNode.getProperty(Matchers.anyString())).thenAnswer(itemAnswer);
-        Mockito.when(jcrNode.setProperty(Matchers.anyString(), Matchers.anyLong())).thenAnswer(itemAnswer);
-        Mockito.when(jcrNode.setProperty(Matchers.anyString(), Matchers.anyDouble())).thenAnswer(itemAnswer);
-        Mockito.when(jcrNode.setProperty(Matchers.anyString(), Matchers.anyString())).thenAnswer(itemAnswer);
-        Mockito.when(jcrNode.setProperty(Matchers.anyString(), Matchers.anyBoolean())).thenAnswer(itemAnswer);
-        Mockito.when(jcrNode.setProperty(Matchers.anyString(), Matchers.any(String[].class))).thenAnswer(itemAnswer);
-        Mockito.when(jcrNode.setProperty(Matchers.anyString(), Matchers.any(Calendar.class))).thenAnswer(itemAnswer);
-        Mockito.when(jcrNode.setProperty(Matchers.anyString(), Matchers.any(Value.class))).thenAnswer(itemAnswer);
-        Mockito.when(jcrNode.setProperty(Matchers.anyString(), Matchers.any(Value[].class))).thenAnswer(itemAnswer);
-        Mockito.when(jcrNode.addNode(Matchers.anyString())).thenAnswer(itemAnswer);
-        Mockito.when(jcrNode.addNode(Matchers.anyString(), Matchers.anyString())).thenAnswer(itemAnswer);
+        Mockito.when(jcrNode.getNode(ArgumentMatchers.anyString())).thenAnswer(itemAnswer);
+        Mockito.when(jcrNode.getProperty(ArgumentMatchers.anyString())).thenAnswer(itemAnswer);
+        Mockito.when(jcrNode.setProperty(ArgumentMatchers.anyString(), ArgumentMatchers.anyLong())).thenAnswer(itemAnswer);
+        Mockito.when(jcrNode.setProperty(ArgumentMatchers.anyString(), ArgumentMatchers.anyDouble())).thenAnswer(itemAnswer);
+        Mockito.when(jcrNode.setProperty(ArgumentMatchers.anyString(), ArgumentMatchers.anyString())).thenAnswer(itemAnswer);
+        Mockito.when(jcrNode.setProperty(ArgumentMatchers.anyString(), ArgumentMatchers.anyBoolean())).thenAnswer(itemAnswer);
+        Mockito.when(jcrNode.setProperty(ArgumentMatchers.anyString(), ArgumentMatchers.any(String[].class))).thenAnswer(itemAnswer);
+        Mockito.when(jcrNode.setProperty(ArgumentMatchers.anyString(), ArgumentMatchers.any(Calendar.class))).thenAnswer(itemAnswer);
+        Mockito.when(jcrNode.setProperty(ArgumentMatchers.anyString(), ArgumentMatchers.any(Value.class))).thenAnswer(itemAnswer);
+        Mockito.when(jcrNode.setProperty(ArgumentMatchers.anyString(), ArgumentMatchers.any(Value[].class))).thenAnswer(itemAnswer);
+        Mockito.when(jcrNode.addNode(ArgumentMatchers.anyString())).thenAnswer(itemAnswer);
+        Mockito.when(jcrNode.addNode(ArgumentMatchers.anyString(), ArgumentMatchers.anyString())).thenAnswer(itemAnswer);
         Mockito.when(jcrNode.getParent()).thenAnswer(itemAnswer);
         Mockito.doAnswer(new Answer() {
             public Object answer(final InvocationOnMock invocationOnMock) {
@@ -312,10 +312,10 @@ public class MockNode {
         });
 
         final UnsupportedOperationException unsupportedOperation = new UnsupportedOperationException("The method getProperties(pattern) is not supported yet.");
-        Mockito.doThrow(unsupportedOperation).when(jcrNode).getProperties(Matchers.anyString());
+        Mockito.doThrow(unsupportedOperation).when(jcrNode).getProperties(ArgumentMatchers.anyString());
 
         final MockProperty primaryTypeProperty = mockNode.getMockProperty("jcr:primaryType");
-        Mockito.when(jcrNode.isNodeType(Matchers.anyString())).thenAnswer(new Answer<Boolean>() {
+        Mockito.when(jcrNode.isNodeType(ArgumentMatchers.anyString())).thenAnswer(new Answer<Boolean>() {
             public Boolean answer(InvocationOnMock invocationOnMock) {
                 final Object args[] = invocationOnMock.getArguments();
                 return primaryTypeProperty != null && args[0] instanceof String && (args[0]).equals(primaryTypeProperty.getMockValues().get(0));
@@ -326,13 +326,13 @@ public class MockNode {
         Mockito.when(primaryNodeType.getName()).thenReturn(primaryTypeProperty.getMockValues().get(0));
         Mockito.when(jcrNode.getPrimaryNodeType()).thenReturn(primaryNodeType);
 
-        Mockito.when(jcrNode.hasProperty(Matchers.anyString())).thenAnswer(new Answer<Boolean>() {
+        Mockito.when(jcrNode.hasProperty(ArgumentMatchers.anyString())).thenAnswer(new Answer<Boolean>() {
             public Boolean answer(InvocationOnMock invocationOnMock) {
                 final Object args[] = invocationOnMock.getArguments();
                 return mockNode.getMockProperty((String) args[0]) != null;
             }
         });
-        Mockito.when(jcrNode.hasNode(Matchers.anyString())).thenAnswer(new Answer<Boolean>() {
+        Mockito.when(jcrNode.hasNode(ArgumentMatchers.anyString())).thenAnswer(new Answer<Boolean>() {
             public Boolean answer(InvocationOnMock invocationOnMock) {
                 final Object args[] = invocationOnMock.getArguments();
                 return mockNode.getMockChildNode((String) args[0]) != null;
@@ -348,13 +348,13 @@ public class MockNode {
             // initialize with the first node mock
             rootMockNode = mockNode;
             session = Mockito.mock(Session.class);
-            Mockito.when(session.getItem(Matchers.anyString())).thenAnswer(itemAnswer);
+            Mockito.when(session.getItem(ArgumentMatchers.anyString())).thenAnswer(itemAnswer);
             Mockito.when(session.getRootNode()).thenAnswer(itemAnswer);
             final Workspace mockWorkspace = Mockito.mock(Workspace.class);
             final VersionManager versionManager = Mockito.mock(VersionManager.class);
             Mockito.when(session.getWorkspace()).thenReturn(mockWorkspace);
             Mockito.when(mockWorkspace.getVersionManager()).thenReturn(versionManager);
-            Mockito.when(session.itemExists(Matchers.anyString())).thenAnswer(new Answer<Boolean>() {
+            Mockito.when(session.itemExists(ArgumentMatchers.anyString())).thenAnswer(new Answer<Boolean>() {
                 public Boolean answer(final InvocationOnMock invocationOnMock) throws RepositoryException {
                     return itemAnswer.getItem(invocationOnMock.getArguments()) != null;
                 }

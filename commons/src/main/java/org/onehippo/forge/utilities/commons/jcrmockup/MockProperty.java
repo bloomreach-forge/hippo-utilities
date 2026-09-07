@@ -29,7 +29,7 @@ import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlTransient;
 
-import org.mockito.Matchers;
+import org.mockito.ArgumentMatchers;
 import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
@@ -134,13 +134,13 @@ public class MockProperty {
         Mockito.when(definition.isMultiple()).thenReturn(this.values == null || this.values.size() > 1);
 
         final UnsupportedOperationException unsupportedOperation = new UnsupportedOperationException("The method set value is not supported yet.");
-        Mockito.doThrow(unsupportedOperation).when(jcrProperty).setValue(Matchers.anyString());
-        Mockito.doThrow(unsupportedOperation).when(jcrProperty).setValue(Matchers.anyDouble());
-        Mockito.doThrow(unsupportedOperation).when(jcrProperty).setValue(Matchers.anyBoolean());
-        Mockito.doThrow(unsupportedOperation).when(jcrProperty).setValue(Matchers.anyLong());
-        Mockito.doThrow(unsupportedOperation).when(jcrProperty).setValue(Matchers.any(Value.class));
-        Mockito.doThrow(unsupportedOperation).when(jcrProperty).setValue(Matchers.any(Value[].class));
-        Mockito.doThrow(unsupportedOperation).when(jcrProperty).setValue(Matchers.any(String[].class));
+        Mockito.doThrow(unsupportedOperation).when(jcrProperty).setValue(ArgumentMatchers.anyString());
+        Mockito.doThrow(unsupportedOperation).when(jcrProperty).setValue(ArgumentMatchers.anyDouble());
+        Mockito.doThrow(unsupportedOperation).when(jcrProperty).setValue(ArgumentMatchers.anyBoolean());
+        Mockito.doThrow(unsupportedOperation).when(jcrProperty).setValue(ArgumentMatchers.anyLong());
+        Mockito.doThrow(unsupportedOperation).when(jcrProperty).setValue(ArgumentMatchers.any(Value.class));
+        Mockito.doThrow(unsupportedOperation).when(jcrProperty).setValue(ArgumentMatchers.any(Value[].class));
+        Mockito.doThrow(unsupportedOperation).when(jcrProperty).setValue(ArgumentMatchers.any(String[].class));
 
         return jcrProperty;
     }

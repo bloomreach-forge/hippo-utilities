@@ -43,6 +43,6 @@ public class AnnotationUtilTest {
     public void testGetClassMethods() throws Exception {
         Collection<Method> methods = AnnotationUtil.getMethods(AnnotationUtilTest.class);
         int i = methods.size();
-        assertEquals(11, methods.size());
+        assertEquals(12, methods.size());
     }
 }
