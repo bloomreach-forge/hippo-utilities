@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
 <head><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <title>MockProperty xref</title>
 <link type="text/css" rel="stylesheet" href="../../../../../../stylesheet.css" />
@@ -37,7 +37,7 @@
 <a class="jxr_linenumber" name="L29" href="#L29">29</a>  <strong class="jxr_keyword">import</strong> jakarta.xml.bind.annotation.XmlElement;
 <a class="jxr_linenumber" name="L30" href="#L30">30</a>  <strong class="jxr_keyword">import</strong> jakarta.xml.bind.annotation.XmlTransient;
 <a class="jxr_linenumber" name="L31" href="#L31">31</a>  
-<a class="jxr_linenumber" name="L32" href="#L32">32</a>  <strong class="jxr_keyword">import</strong> org.mockito.Matchers;
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>  <strong class="jxr_keyword">import</strong> org.mockito.ArgumentMatchers;
 <a class="jxr_linenumber" name="L33" href="#L33">33</a>  <strong class="jxr_keyword">import</strong> org.mockito.Mockito;
 <a class="jxr_linenumber" name="L34" href="#L34">34</a>  <strong class="jxr_keyword">import</strong> org.mockito.invocation.InvocationOnMock;
 <a class="jxr_linenumber" name="L35" href="#L35">35</a>  <strong class="jxr_keyword">import</strong> org.mockito.stubbing.Answer;
@@ -142,13 +142,13 @@
 <a class="jxr_linenumber" name="L134" href="#L134">134</a>         Mockito.when(definition.isMultiple()).thenReturn(<strong class="jxr_keyword">this</strong>.values == <strong class="jxr_keyword">null</strong> || <strong class="jxr_keyword">this</strong>.values.size() &gt; 1);
 <a class="jxr_linenumber" name="L135" href="#L135">135</a> 
 <a class="jxr_linenumber" name="L136" href="#L136">136</a>         <strong class="jxr_keyword">final</strong> UnsupportedOperationException unsupportedOperation = <strong class="jxr_keyword">new</strong> UnsupportedOperationException(<span class="jxr_string">"The method set value is not supported yet."</span>);
-<a class="jxr_linenumber" name="L137" href="#L137">137</a>         Mockito.doThrow(unsupportedOperation).when(jcrProperty).setValue(Matchers.anyString());
-<a class="jxr_linenumber" name="L138" href="#L138">138</a>         Mockito.doThrow(unsupportedOperation).when(jcrProperty).setValue(Matchers.anyDouble());
-<a class="jxr_linenumber" name="L139" href="#L139">139</a>         Mockito.doThrow(unsupportedOperation).when(jcrProperty).setValue(Matchers.anyBoolean());
-<a class="jxr_linenumber" name="L140" href="#L140">140</a>         Mockito.doThrow(unsupportedOperation).when(jcrProperty).setValue(Matchers.anyLong());
-<a class="jxr_linenumber" name="L141" href="#L141">141</a>         Mockito.doThrow(unsupportedOperation).when(jcrProperty).setValue(Matchers.any(Value.<strong class="jxr_keyword">class</strong>));
-<a class="jxr_linenumber" name="L142" href="#L142">142</a>         Mockito.doThrow(unsupportedOperation).when(jcrProperty).setValue(Matchers.any(Value[].<strong class="jxr_keyword">class</strong>));
-<a class="jxr_linenumber" name="L143" href="#L143">143</a>         Mockito.doThrow(unsupportedOperation).when(jcrProperty).setValue(Matchers.any(String[].<strong class="jxr_keyword">class</strong>));
+<a class="jxr_linenumber" name="L137" href="#L137">137</a>         Mockito.doThrow(unsupportedOperation).when(jcrProperty).setValue(ArgumentMatchers.anyString());
+<a class="jxr_linenumber" name="L138" href="#L138">138</a>         Mockito.doThrow(unsupportedOperation).when(jcrProperty).setValue(ArgumentMatchers.anyDouble());
+<a class="jxr_linenumber" name="L139" href="#L139">139</a>         Mockito.doThrow(unsupportedOperation).when(jcrProperty).setValue(ArgumentMatchers.anyBoolean());
+<a class="jxr_linenumber" name="L140" href="#L140">140</a>         Mockito.doThrow(unsupportedOperation).when(jcrProperty).setValue(ArgumentMatchers.anyLong());
+<a class="jxr_linenumber" name="L141" href="#L141">141</a>         Mockito.doThrow(unsupportedOperation).when(jcrProperty).setValue(ArgumentMatchers.any(Value.<strong class="jxr_keyword">class</strong>));
+<a class="jxr_linenumber" name="L142" href="#L142">142</a>         Mockito.doThrow(unsupportedOperation).when(jcrProperty).setValue(ArgumentMatchers.any(Value[].<strong class="jxr_keyword">class</strong>));
+<a class="jxr_linenumber" name="L143" href="#L143">143</a>         Mockito.doThrow(unsupportedOperation).when(jcrProperty).setValue(ArgumentMatchers.any(String[].<strong class="jxr_keyword">class</strong>));
 <a class="jxr_linenumber" name="L144" href="#L144">144</a> 
 <a class="jxr_linenumber" name="L145" href="#L145">145</a>         <strong class="jxr_keyword">return</strong> jcrProperty;
 <a class="jxr_linenumber" name="L146" href="#L146">146</a>     }
@@ -242,6 +242,6 @@
 <a class="jxr_linenumber" name="L234" href="#L234">234</a> }
 </pre>
 <hr/>
-<div id="footer">Copyright &#169; 2011&#x2013;2024 <a href="https://www.bloomreach.com">Bloomreach</a>. All rights reserved.</div>
+<div id="footer">Copyright &#169; 2011&#x2013;2026 <a href="https://www.bloomreach.com">Bloomreach</a>. All rights reserved.</div>
 </body>
 </html>

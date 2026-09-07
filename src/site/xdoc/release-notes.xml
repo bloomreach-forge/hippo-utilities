@@ -29,6 +29,10 @@
             <th>Bloomreach XM Version</th>
           </tr>
           <tr>
+            <td>8.x</td>
+            <td>17.x</td>
+          </tr>
+          <tr>
             <td>7.x</td>
             <td>16.x</td>
           </tr>
@@ -64,6 +68,14 @@
       </table>
     </section>
     <section name="Release Notes">
+      <subsection name="8.0.0">
+        <p class="smallinfo">Release Date:  7 September 2026</p>
+        <ul>
+          <li>FORGE-601<br/>
+            Upgrade to Bloomreach Experience Manager 17, JDK 21.
+          </li>
+        </ul>
+      </subsection>
       <subsection name="7.0.0">
         <p class="smallinfo">Release Date:  7 August 2024</p>
         <ul>
