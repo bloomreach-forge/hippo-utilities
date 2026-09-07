@@ -35,9 +35,8 @@
   <properties>
 
     <!-- test related -->
-    <testng.version>7.10.0</testng.version>
+    <testng.version>7.12.0</testng.version>
     <mockftp.version>3.2.0</mockftp.version>
-    <mockito.version>5.12.0</mockito.version>
 
     <!-- build related -->
     <maven.plugin.jxr.version>3.4.0</maven.plugin.jxr.version>
